@@ -1,0 +1,89 @@
+.feeds-table {
+  .feed-element {
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: #e3e3e3;
+    }
+  }
+}
+
+.feed-details {
+  .feed-details-list {
+    padding: 24px !important;
+
+    .feed-details-item {
+      margin-bottom: 16px;
+      padding: 24px !important;
+    }
+
+    .panel-default {
+      background-color: #fff;
+      border-radius: .125rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .14);
+      border-color: #dfe3e9;
+    }
+
+    .panel-add-files {
+      background-color: rgba(97, 144, 195, .15);
+      border: 1px dashed #5b91c0;
+      border-radius: 2px;
+      color: #8a9cae;
+    }
+
+    .dataset-icon {
+      margin-right: 1.5rem;
+      height: 40px;
+      width: 40px;
+
+      svg {
+        font-size: 40px;
+        line-height: 40px;
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    .dataset-description {
+      padding-top: 5px;
+      color: #4e5057;
+      font-size: 24px;
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+
+    .summary-description {
+      color: #4e5057;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .add-files-description {
+      color: #4e5057;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1;
+      text-align: left;
+    }
+
+    .summary-subdescription {
+      font-size: 14px;
+    }
+
+    .icon-item-overview {
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+    }
+    
+    .link-feed {
+      color: #6290c3;
+
+      &:hover {
+        color: #3c6a9d;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

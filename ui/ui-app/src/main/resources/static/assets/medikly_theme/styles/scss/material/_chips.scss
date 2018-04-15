@@ -1,0 +1,144 @@
+.mat-chip {
+  min-height: 24px;
+
+  &.mat-basic-chip {
+    background: rgba(94, 205, 255, .5);
+    color: rgba(54, 54, 54, 0.87);
+    cursor: default;
+    margin: 5px 7px 0 0px;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    background-color: #eceff5;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 0px 5px 0px 5px;
+    /* text-transform: uppercase; */
+    color: #82868a;
+    display: inline-block;
+    border-radius: 2px !important;
+    line-height: 24px !important;
+
+    &:hover, &:focus {
+      background-color: rgba(94, 205, 255, .9) !important;
+      line-height: 24px !important;
+      color: rgba(255, 255, 255, .9) !important;
+
+      md-icon.td-chip-removal {
+        color: rgba(255, 255, 255, 0.9) !important;
+      }
+    }
+
+    md-icon {
+      &.td-chip-removal {
+
+        margin: 0 2px !important;
+        font-size: 14px !important;
+      }
+    }
+  }
+
+  .td-chip {
+
+    min-height: 25px;
+    font-size: 11px;
+    padding: 0 2px 0 2px;
+
+  }
+
+}
+
+td-chips {
+  padding: 0px 0px !important;
+
+  .mat-input-infix {
+    padding: .7em 0;
+    border-top: 0.84375em solid transparent;
+  }
+
+  .mat-input-placeholder-wrapper {
+    top: -0.64375em;
+    padding-top: 1.24375em;
+    font-size: 14px;
+  }
+  .mat-input-underline {
+    bottom: 2.296875em;
+  }
+
+  .mat-input-element {
+    background: 0 0;
+    //background: red;
+    color: currentColor;
+    border: none;
+    outline: 0;
+    width: 100%;
+    vertical-align: bottom;
+    font-size: 14px;
+    padding: 0 0 0 0;
+  }
+
+}
+
+/**
+[_nghost-c23] .mat-basic-chip .td-chip {
+    min-height: 25px;
+    font-size: 11px;
+    padding: 0 2px 0 2px;
+}
+
+[_nghost-c23] .mat-basic-chip {
+border-radius: 2px;
+}
+
+[_nghost-c23] .mat-basic-chip md-icon.td-chip-removal {
+    margin: 0 2px;
+    font-size: 14px;
+}
+
+.mat-chip.mat-basic-chip {
+     line-height: 24px;
+}
+
+.mat-chip.mat-basic-chip:hover {
+     line-height: 24px;
+color: #fff;
+}
+
+.mat-chip.mat-basic-chip md-icon.td-chip-removal:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+ */
+
+.chips-description-file {
+  .mat-chip {
+    line-height: 7px;
+    min-height: 7px;
+  }
+
+  .light-blue-color {
+    &.mat-chip {
+      background-color: #70bcf5 !important;
+    }
+  }
+  .rose-color {
+    &.mat-chip {
+      background-color: #f396bf !important;
+    }
+  }
+  .yellow-color {
+    &.mat-chip {
+      background-color: #ffc874 !important;
+    }
+  }
+  .purple-color {
+    &.mat-chip {
+      background-color: #CB96EB !important;
+    }
+  }
+  .orange-color {
+    &.mat-chip {
+      background-color: #ed9670 !important;
+    }
+  }
+
+}

@@ -1,0 +1,57 @@
+.accordion-sidenav .collapsible-item .title {
+  color: #eee;
+  background-color: rgb(43, 48, 59);
+}
+
+.accordion-sidenav md-list .md-button {
+  color: #A7A9AE;
+}
+
+.accordion-sidenav{
+  .md-button{
+    &.md-kylo-theme:not([disabled]):hover {
+      background-color: rgba(158, 158, 158, 0.2);
+      color: #eee;
+
+      ng-md-icon {
+        color: #eee;
+      }
+    }
+  }
+}
+
+/*.accordion-sidenav .md-button.md-kylo-theme:not([disabled]):hover {
+  background-color: rgba(158, 158, 158, 0.2);
+  color: #eee;
+}*/
+
+.accordion-sidenav .collapsible-item .title {
+  padding: 0px 6px;
+  margin: 6px 8px;
+  color: #A7A9AE;
+  line-height: 36px;
+  border-radius: 2px;
+}
+
+.accordion-sidenav .collapsible-item .title:hover {
+  background-color: rgba(158, 158, 158, 0.2);
+  color: #eee;
+}
+
+kylo-side-nav .accordion-list{
+  padding-left: 3px;
+}
+kylo-side-nav .accordion-list ng-md-icon {
+  width: 18px;
+  height: 18px;
+  color: #888;
+}
+
+kylo-side-nav .accordion-list ng-md-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+kylo-side-nav .accordion-list .md-button.md-icon-button {
+  padding: 8px 10px;
+}

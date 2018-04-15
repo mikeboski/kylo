@@ -1,0 +1,142 @@
+
+
+
+
+
+.search-wrapper {
+margin-top: 27px;
+  input[type="search"] {
+    -webkit-appearance: none;
+  }
+
+  position: relative;
+  width: 100%;
+
+  .search-icon {
+    position: absolute;
+    font-size: 18px;
+    top: 9px;
+    left: 24px;
+    transition: color 0.2s ease;
+    color: rgba(white, .5);
+  }
+
+  input.search-input {
+    display: block;
+    padding: 8px 8px 8px 60px;
+    //box-shadow: 0 1px 1.5px rgba(0,0,0,0.06),0 1px 1px rgba(0,0,0,0.12);
+    height: 36px;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 12px;
+    appearance: textfield;
+    font-weight: 300;
+    outline: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: currentColor;
+    background: rgba(255, 255, 255, 0.2);
+    width: 100%;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &::-webkit-input-placeholder {  color: rgba(white, .9);  }
+    &:-moz-placeholder {  opacity: 1;  color: rgba(white, .9);  }
+    &::-moz-placeholder {  opacity: 1;  color: rgba(white, .9);  }
+    &:-ms-input-placeholder {  color: rgba(white, .9);  }
+  }
+
+  &.focus {
+    .search-icon {
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    input.search-input {
+      background: white;
+      background: rgba(255, 255, 255, 0.9);
+      color: rgba(0, 0, 0, 0.87);
+
+      &::-webkit-input-placeholder {  color: rgba(0, 0, 0, 0.87);  }
+      &:-moz-placeholder {  opacity: 1;  color: rgba(0, 0, 0, 0.87);  }
+      &::-moz-placeholder {  opacity: 1;  color: rgba(0, 0, 0, 0.87);  }
+      &:-ms-input-placeholder {  color: rgba(0, 0, 0, 0.87);  }
+    }
+
+    .search-dropdown {
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+
+
+  .search-dropdown {
+    color: black;
+    background: white;
+    position: absolute;
+    top: ((64px - 36px) / 2) + 36px; // 36px is the height of the search-bar
+    width: 100%;
+    //z-index: -1;
+    z-index: 10;
+    transform: translateY(-110%);
+    visibility: hidden;
+    //transition: transform .4s cubic-bezier(.25,.8,.25,1), visibility .4s cubic-bezier(.25,.8,.25,1);
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+
+    .content {
+      padding: 16px;
+      font-size: 12px;
+
+      .heading {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 2px;
+
+        .icon {
+          font-size: 18px;
+          height: 18px;
+          width: 18px;
+          line-height: 18px;
+          margin-right: 6px;
+        }
+      }
+
+      .items {
+        .item {
+          position: relative;
+          padding: 8px 0 6px 26px;
+          margin: 2px 0;
+          cursor: pointer;
+          transition: background .1s;
+          outline: none;
+
+          &:hover {
+            background: #EFEFEF;
+          }
+        }
+      }
+
+      &.recents {
+        .recently {
+
+        }
+
+        .frequently {
+
+        }
+
+
+      }
+
+      &.results {
+
+      }
+    }
+  }
+}

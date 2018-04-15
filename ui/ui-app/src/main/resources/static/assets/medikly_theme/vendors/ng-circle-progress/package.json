@@ -1,0 +1,56 @@
+{
+  "_from": "ng-circle-progress@^0.9.5",
+  "_id": "ng-circle-progress@0.9.5",
+  "_inBundle": false,
+  "_integrity": "sha1-ASJsO0o4Z+RW22bMpJEO6149HpY=",
+  "_location": "/ng-circle-progress",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "ng-circle-progress@^0.9.5",
+    "name": "ng-circle-progress",
+    "escapedName": "ng-circle-progress",
+    "rawSpec": "^0.9.5",
+    "saveSpec": null,
+    "fetchSpec": "^0.9.5"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng-circle-progress/-/ng-circle-progress-0.9.5.tgz",
+  "_shasum": "01226c3b4a3867e456db66cca4910eeb5e3d1e96",
+  "_spec": "ng-circle-progress@^0.9.5",
+  "_where": "/Users/development/Sites/Medikly/kylo/ui/ui-app",
+  "author": {
+    "name": "bootsoon",
+    "email": "bootsoon@aliyun.com"
+  },
+  "bugs": {
+    "url": "https://github.com/bootsoon/ng-circle-progress/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A simple circle progress component created for Angular 4 based only on SVG graphics",
+  "homepage": "https://github.com/bootsoon/ng-circle-progress#readme",
+  "keywords": [
+    "angular",
+    "circle",
+    "progress",
+    "percentage"
+  ],
+  "license": "MIT",
+  "module": "ng-circle-progress.js",
+  "name": "ng-circle-progress",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bootsoon/ng-circle-progress.git"
+  },
+  "typings": "ng-circle-progress.d.ts",
+  "version": "0.9.5"
+}

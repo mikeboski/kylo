@@ -1,0 +1,85 @@
+$tab-color-blue: #0D94F6;
+$tab-color-red: #db4437;
+
+.mat-tab-label {
+  //color: rgba(mat-color($foreground, base), 0.87);
+  color: #888;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px !important;
+  min-width: 100px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  opacity: 1 !important;
+  height: 40px !important;
+}
+
+/*.app-dark .mat-tab-label {
+  color: mat-color($dark-foreground, base);
+}*/
+.mat-tab-nav-bar, .mat-tab-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+md-ink-bar.mat-ink-bar {
+  height:   3px !important;
+  background-color: $tab-color-blue;
+}
+
+.mat-tab-label-active {
+  color: $tab-color-blue !important;
+}
+
+.mat-tab-label:focus {
+  background-color: transparent !important;
+}
+
+.button-tab {
+  line-height: 17px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(136, 136, 136) !important;
+
+  &.active {
+    color: $tab-color-red !important;
+    border-bottom: 2px solid $tab-color-red;
+  }
+
+  &.button-tab-blue {
+
+    &.active {
+      color: $tab-color-blue !important;
+      border-bottom: 2px solid $tab-color-blue;
+    }
+  }
+}
+
+.button-tab-toolbar{
+  color: rgba(255, 255, 255, .5) !important;
+  font-weight: 500;
+}
+
+.button-tab-toolbar.active{
+  border-bottom: 2px solid #fff ;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+/*
+Tab (regular css)
+color: #888;
+padding: 10px 20px;
+font-size: 12px;
+font-weight: 500;
+line-height: 20px;
+Remove opacity
+Active tab:
+color: #0D94F6!important;
+Border-bottom:
+3px solid
+ color: #0D94F6!important;*/

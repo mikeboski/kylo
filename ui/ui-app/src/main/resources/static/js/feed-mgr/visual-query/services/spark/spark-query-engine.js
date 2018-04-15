@@ -243,6 +243,7 @@ define(["require", "exports", "@angular/common/http", "angular", "rxjs/Observabl
             // Send the request
             var transformId;
             return Observable_1.Observable
+                // Send transform script
                 .fromPromise(this.$http({
                 method: "POST",
                 url: this.apiUrl + "/transform",
@@ -250,6 +251,7 @@ define(["require", "exports", "@angular/common/http", "angular", "rxjs/Observabl
                 headers: { "Content-Type": "application/json" },
                 responseType: "json"
             }))
+                // Send save request
                 .mergeMap(function (response) {
                 transformId = response.data.table;
                 return _this.$http({
@@ -260,6 +262,7 @@ define(["require", "exports", "@angular/common/http", "angular", "rxjs/Observabl
                     responseType: "json"
                 });
             })
+                // Wait for save to complete
                 .expand(function (response) {
                 if (response.data.status === rest_model_1.SaveResponseStatus.PENDING) {
                     return Observable_1.Observable.interval(1000)
@@ -277,6 +280,7 @@ define(["require", "exports", "@angular/common/http", "angular", "rxjs/Observabl
                     throw response;
                 }
             })
+                // Map result to SaveResponse
                 .map(function (response) {
                 var save = response.data;
                 if (save.location != null && save.location.startsWith("./")) {

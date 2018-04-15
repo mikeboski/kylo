@@ -1,0 +1,56 @@
+.flat-badge {
+  display: inline-block;
+  height: 12px;
+  line-height: 12px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  min-width: 28px;
+  border: 2px solid rgb(92, 192, 222);
+  color: rgb(92, 192, 222);
+  text-align: center;
+  letter-spacing: 0.2px;
+
+  &.open-privacy{
+    color: #419949;
+    background-color: #e5f4e7;
+    box-shadow: inset 0 0 0 1px #68bf70;
+    border: none;
+    height: 14px;
+    line-height: 14px;
+    padding: 1px 4px;
+  }
+
+  &.orange-extension-file{
+    border-color: rgb(246, 189, 104) !important;
+    color: rgb(246, 189, 104) !important;
+  }
+
+  &.grey-extension-file{
+    border-color: rgb(163, 175, 191);
+    color: rgb(163, 175, 191);
+  }
+  &.purple-extension-file{
+    border-color: rgb(172, 64, 190);
+    color: rgb(172, 64, 190);
+  }
+}
+
+.rounded-badge{
+    display: inline-block;
+    height: 14px;
+    min-width: 32px;
+    line-height: 14px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 3px;
+    width: 26px;
+    background-color: #DCE3EB;
+    border: 1px solid #CFDAE5;
+    color: rgba(77,92,113,0.85);
+    text-align: center;
+    letter-spacing: 0.05px;
+    float: right;
+}

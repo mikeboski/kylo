@@ -1,0 +1,46 @@
+chart {
+  width: 100% !important;
+  margin: 0 auto;
+  display: block;
+
+
+  .highcharts-title {
+    fill: #777777;
+    color: #777777 !important;
+    font-weight: bold;
+
+
+    .hc-percent-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    .hc-percent-descr {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.54);
+    }
+  }
+}
+
+.highcharts-root {
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+.footer-chart{
+  background: #fff;
+  padding: 15px 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-bottom: -16px;
+
+  .footer-chart-text{
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 11px;
+  }
+
+  .bold-text{
+    font-weight: bold;
+  }
+}

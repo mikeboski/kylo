@@ -1,0 +1,93 @@
+a.c-inline-editor {
+  text-decoration: none;
+  color: #363636;
+  border-bottom: dashed 1px #363636;
+  cursor: pointer;
+  line-height: 2;
+  margin-right: 5px;
+  margin-left: 5px;
+
+  &::after {
+    width: 36px;
+    height: 36px;
+    content: '\f2bf';
+    display: inline-block;
+    font-family: "Ionicons";
+    float: right;
+    color: rgba(#363636, .5);
+  }
+}
+.c-inline-editor.editable-empty,
+.c-inline-editor.editable-empty:hover,
+.c-inline-editor.editable-empty:focus,
+.c-inline-editor.a.editable-empty,
+.c-inline-editor.a.editable-empty:hover,
+.c-inline-editor.a.editable-empty:focus {
+  font-style: italic;
+  color: #DD1144;
+  text-decoration: none;
+}
+
+.c-inline-editor.inlineEditForm {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+
+  textarea {
+    display: block;
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+#inlineEditWrapper {
+  display: inline-block;
+}
+
+.c-inline-editor.inlineEditForm input,
+.c-inline-editor.select {
+  width: auto;
+  display: inline;
+  min-width: 200px;
+}
+
+.c-inline-editor.inline-editor-button-group {
+  display: inline-block;
+}
+
+.c-inline-editor.editInvalid {
+  color: #a94442;
+  margin-bottom: 0;
+}
+
+.c-inline-editor.error {
+  border-color: #a94442;
+}
+
+[hidden].c-inline-editor {
+  display: none;
+}
+.c-inline-editor {
+
+  button {
+  .fa::before {
+    display: inline-block;
+    font-family: "Ionicons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+  }
+  .fa-check::before {
+    content: '\f121';
+  }
+
+  .fa-remove::before {
+    content: '\f2d7';
+  }
+  }
+}

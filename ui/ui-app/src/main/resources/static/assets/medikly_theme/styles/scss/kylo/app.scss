@@ -1,0 +1,70 @@
+@import "../../../../medikly_theme/vendors/markdown/markdown-theme";
+
+.content-sidenav{
+  background-color: rgb(43, 48, 59) !important;
+}
+
+.content-sidenav md-list .md-button:not(.md-no-style) {
+  color: #A7A9AE;
+}
+
+.header-sidenav{
+  background-color: #272B35 !important;
+}
+
+md-sidenav .collapse-btn {
+  color: #F9F9F9;
+  background-color: rgb(43, 48, 59);
+}
+md-sidenav{
+  &.mat-sidenav-end{
+    left: auto;
+  }
+}
+
+.medikly-covalent-styling .material-icons {
+  font-size: 18px;
+}
+
+.site-sidenav  :focus {
+  outline: none;
+}
+
+.kylo-logo {
+  padding-top: 15px;
+}
+
+
+.md-toolbar-tools {
+  .avatar {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+
+    
+  }
+}
+
+.chips-mdk {
+  .td-chip-removal {
+    padding-top: 5px;
+    padding-left: 6px;
+  }
+
+  md-input-container{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    .mat-input-wrapper {
+      padding-bottom: 1.296875em;
+      margin-top: 0px;
+
+    }
+  }
+}
+.mat-card {
+  padding: 0px !important;
+}

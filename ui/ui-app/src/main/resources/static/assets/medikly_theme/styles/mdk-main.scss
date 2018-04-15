@@ -1,0 +1,20 @@
+
+@import "scss/material.variables";
+@import "scss/material.themes";
+@import "scss/mixins/bi-app/bi-app-ltr";
+// Core Variables and Mixins
+@import "scss/app.variables";
+@import "scss/mixins";
+// Core Styles
+//@import "scss/theme/misc";
+//@import "scss/theme/cards";
+//@import "scss/theme/tables";
+
+@import "scss/utilities/utilities";
+
+@import "scss/components/bagdes";
+//@import "scss/core";
+@import "scss/core/searchbar";
+
+@import "scss/material";
+@import "scss/kylo/kylo";

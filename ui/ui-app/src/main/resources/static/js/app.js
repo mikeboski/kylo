@@ -73,8 +73,8 @@ define([
         tmhDynamicLocaleProvider.localeLocationPattern('../bower_components/angular-i18n/angular-locale_{{locale}}.js');
 
         var primaryBlue = $mdThemingProvider.extendPalette('blue', {
-            '500': '3483BA',
-            '900':'2B6C9A'
+            '500': '2196f3',
+            '900':'0D47A1'
         });
 
         var accentOrange = $mdThemingProvider.extendPalette('orange', {

@@ -1,0 +1,38 @@
+.feed-activity {
+  padding: 24px;
+  .activity-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid #dfe3e9;
+
+    &:first-child {
+      border-top: 1px solid #dfe3e9;
+    }
+
+    .small-since {
+      font-weight: 300;
+      white-space: nowrap;
+      color: #8c9caf;
+      display: block;
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .link-user {
+      color: #333d49;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .avatar {
+      border-radius: .125rem;
+      height: 28px;
+      margin-top: .375rem;
+      width: 28px;
+    }
+
+    .icon-activity {
+      margin-top: 0;
+      fill: #f396bf;
+    }
+  }
+}

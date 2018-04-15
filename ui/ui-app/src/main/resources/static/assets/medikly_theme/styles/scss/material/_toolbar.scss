@@ -1,0 +1,62 @@
+.fixed-toolbar {
+  position: fixed;
+}
+
+$mat-toolbar-height-desktop: 64px !default;
+$mat-toolbar-height-mobile-portrait: 56px !default;
+$mat-toolbar-height-mobile-landscape: 48px !default;
+
+body {
+
+  .mat-card-top {
+    margin-top: -($mat-toolbar-height-desktop);
+    z-index: 3;
+    position: absolute;
+  }
+
+  @media ($mat-xsmall) and (orientation: portrait) {
+    .mat-card-top {
+      margin-top: -($mat-toolbar-height-mobile-portrait);
+    }
+  }
+
+  @media ($mat-small) and (orientation: landscape) {
+    .mat-card-top {
+      margin-top: -($mat-toolbar-height-mobile-landscape);
+    }
+  }
+  .toolbar-color-grey {
+    background-color: #607d8b;
+    color: white;
+  }
+
+  .toolbar-color-dark-grey {
+    background-color: #37474F;
+    color: white;
+  }
+
+  .toolbar-color-aqua {
+    background-color: #00bcd4;
+    color: white;
+  }
+
+  .toolbar-color-blue {
+    background-color: #2196f3;
+    color: white;
+  }
+
+  .toolbar-color-dark-blue {
+    background-color: #3f51b5;
+    color: white;
+  }
+
+  .toolbar-color-green {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .toolbar-color-purple {
+    background-color: #7e57c2;
+    color: white;
+  }
+}

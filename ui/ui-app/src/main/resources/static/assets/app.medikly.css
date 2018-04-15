@@ -1,0 +1,23 @@
+.site-sidenav md-list {
+    padding: 0px 0px 8px 0px;
+}
+
+.site-sidenav md-list .alerts-count {
+    background-color: red;
+    color: white;
+    padding: 3px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.site-sidenav:not(.collapsed), .site-sidenav.md-locked-open:not(.collapsed) {
+    max-width: 200px;
+    min-width: 200px;
+    width: 200px;
+  }
+
+.site-sidenav.collapsed, .site-sidenav.md-locked-open.collapsed {
+    max-width: 50px;
+    min-width: 50px;
+    width: 50px;
+}

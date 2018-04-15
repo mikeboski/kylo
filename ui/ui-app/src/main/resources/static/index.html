@@ -2,19 +2,24 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>Kylo</title>
+  <title>Medikly Big Data</title>
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <!-- Material Font Icons (  <md-icon ... >icon_name </md-icon> -->
   <link rel="stylesheet" href="js/vendor/material-icons/material-icons.css"/>
   <link rel="stylesheet" href="js/vendor/material-design-icons/css/material-design-iconic-font.min.css"/>
   <link rel="stylesheet" href="js/common/accordion-menu/accordion.css">
   <link rel="stylesheet" href="assets/theme.css">
   <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="assets/appmedikly.css">
   <link rel="stylesheet" href="assets/feed-mgr.css">
   <link rel="stylesheet" href="assets/ops-mgr.css">
   <link rel="stylesheet" href="assets/drag-and-drop-lists.css"/>
   <link rel="stylesheet" href="js/vendor/ment.io/styles.css"/>
+  <link rel="stylesheet" href="assets/medikly_theme/styles/css/covalent.css"/>
+  <link rel="stylesheet" href="assets/medikly_theme/styles/css/mdk-main.css"/>
+  <link rel="stylesheet" href="assets/medikly_theme/vendors/simplemde/dist/simplemde.min.css"/>
 
   <script src="bower_components/core.js/client/shim.min.js"></script>
   <script src="js/vendor/tern/plugin/acorn.js"></script>
@@ -27,6 +32,8 @@
   <script src="js/vendor/tern/lib/comment.js"></script>
   <script src="js/vendor/tern/lib/infer.js"></script>
   <script src="js/vendor/tern/plugin/doc_comment.js"></script>
+  <script src="assets/medikly_theme/vendors/showdown/dist/showdown.js"></script>
+  <!--  <script src="assets/medikly_theme/vendors/simplemde/src/js/simplemde.js"></script>-->
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="assets/images/favicons/favicon-32x32.png" sizes="32x32">
@@ -44,6 +51,7 @@
   </script>
 </head>
 <body ng-cloak layout-fill>
+Mikerocks more
 <div ng-controller="IndexController as mc" layout="row" flex layout-fill>
   <div layout="row">
     <kylo-side-nav layout="row"></kylo-side-nav>
@@ -58,12 +66,9 @@
 
         <ui-router-breadcrumbs style="padding-left:25px;" displayname-property="data.displayName" template-url="js/common/ui-router-breadcrumbs/uiBreadcrumbs.tpl.html" flex md-truncate></ui-router-breadcrumbs>
 
-        <div layout="row" layout-fill layout-align="center" flex hide-xs class="global-search-container" ng-show="mc.allowSearch">
-          <ng-md-icon icon="search"></ng-md-icon>
-          <md-input-container class="condensed-no-float md-block global-search" md-no-float style="margin-top:8px;margin-bottom:-15px;" flex>
-            <input ng-model="mc.searchQuery" ng-keypress="mc.onSearchKeypress($event)" class="global-search-input" placeholder='{{"views.main.search-input" | translate}}' style="color:white">
-          </md-input-container>
-          <md-button ng-click="mc.search()">{{"views.main.search-btn" | translate}}</md-button>
+        <div layout-fill layout-align="center center" flex="40" hide-xs class="search-wrapper" ng-class="{focus: mc.searchHasFocus}" ng-show="mc.allowSearch" style="margin-left:197px;">
+          <ng-md-icon icon="search" size="18" class="search-icon md-18"></ng-md-icon>
+          <input type="search" ng-model="mc.searchQuery" ng-keypress="mc.onSearchKeypress($event)" class="search-input" ng-focus="mc.searchFocused(true)" ng-blur="mc.searchFocused(false)" placeholder="Search..." >
         </div>
 
         <span flex></span>
@@ -72,6 +77,10 @@
           <notification-menu></notification-menu>
           <kylo-options class="ng-isolate-scope"></kylo-options>
         </div>
+        <md-button class="md-icon-button ml-0 mr-0" ng-click="toggleRight()"
+          style="margin-top:-5px">
+          <ng-md-icon size="18" icon="more_vert"></ng-md-icon>
+        </md-button>
       </div>
     </md-toolbar>
 
@@ -79,6 +88,30 @@
       <div ui-view="content" class="main-content"></div>
     </md-content>
   </div>
+  <md-sidenav class="md-sidenav-right md-whiteframe-4dp notifications-sidenav" md-component-id="right">
+    <md-content>
+      <md-tabs md-dynamic-height md-border-bottom  md-swipe-content>
+        <md-tab>
+          <md-tab-label>
+            <div>Overview</div>
+          </md-tab-label>
+          <md-tab-body>
+            <div class="text-date">
+            </div>
+          </md-tab-body>
+        </md-tab>
+        <md-tab>
+          <md-tab-label>
+            <div>Notifications</div>
+          </md-tab-label>
+          <md-tab-body>
+            <div class="text-date">
+            </div>
+          </md-tab-body>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+  </md-sidenav>
 </div>
 </body>
 </html>

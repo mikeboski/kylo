@@ -1,0 +1,132 @@
+body {
+  .mat-card {
+
+    &:not([class*='mat-elevation-z']) {
+      @include mat-elevation(1);
+    }
+
+
+    &.mdk-card-inner-top {
+      margin: 0;
+      padding: 0;
+      min-height: 95px;
+    }
+
+
+    .mat-card-header-text {
+      margin: 0;
+      color: rgba(0,0,0,.87);
+/*      .mat-card-title {
+        font-weight: 400;
+        font-size: 20px !important;
+        line-height: 1.5;
+      }*/
+
+      .mat-card-subtitle {
+        color: rgba(0,0,0,.54);
+      }
+    }
+
+
+    .mat-card-content {
+      font-size: 13px !important;
+    }
+
+    &.inner-chart-card {
+      .mat-card-title {
+        font-size: 14px !important;
+      }
+    }
+  }
+}
+
+.social-card {
+  position: relative;
+
+  [md-card-avatar] {
+    margin-right: 4px;
+    width: 40px;
+  }
+
+  md-card-subtitle {
+    margin-bottom: 4px;
+
+  }
+}
+
+.activity-card {
+  position: relative;
+  background: white;
+  padding: 0;
+
+  .title-container {
+    padding: 12px 18px;
+    color: #757575;
+    background: #EEEEEE;
+    border-bottom: 1px solid #E1E1E1;
+
+    .title {
+      font-weight: 500;
+    }
+
+    .extra {
+      font-size: 13px;
+
+      .arrow {
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        vertical-align: sub;
+      }
+    }
+  }
+
+  md-list {
+    padding: 0;
+
+    .extra {
+      color: #757575;
+    }
+  }
+}
+
+.traffic-sources-card {
+  position: relative;
+  background: white;
+  padding: 0;
+
+  .title-container {
+    padding: 12px 18px;
+    color: #757575;
+    background: #EEEEEE;
+    border-bottom: 1px solid #E1E1E1;
+
+    .title {
+      font-weight: 500;
+    }
+
+    .extra {
+      font-size: 13px;
+    }
+  }
+
+  .content {
+    padding: 12px 18px;
+
+    .section {
+      padding: 12px 0;
+
+      .source {
+        color: white;
+        border-radius: 15px;
+        padding: 5px 0;
+        font-size: 16px;
+      }
+
+      .value {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+}

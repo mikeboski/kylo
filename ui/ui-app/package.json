@@ -1,6 +1,6 @@
 {
   "name": "kylo",
-  "version": "0.9.0.1",
+  "version": "0.9.0-1",
   "private": true,
   "description": "kylo",
   "scripts": {
@@ -8,14 +8,18 @@
     "start": "tsc -p src/main/resources/static/tsconfig.app.json && concurrently \"tsc -p src/main/resources/static -w\" \"lite-server -c src/main/resources/static/bs-config.js\"",
     "reinstall": "rm -rf node_modules tmp deploy dist && npm i",
     "test": "karma start karma.conf.js",
-    "test:watch": "tsc -p src/main/resources/static/tsconfig.app.json && concurrently \"tsc -p src/main/resources/static/tsconfig.spec.json -w\" \"karma start karma.conf.js\""
+    "test:watch": "tsc -p src/main/resources/static/tsconfig.app.json && concurrently \"tsc -p src/main/resources/static/tsconfig.spec.json -w\" \"karma start karma.conf.js\"",
+    "build-css": "node-sass --include-path scss ./src/main/resources/static/assets/medikly_theme/styles/mdk-main.scss ./src/main/resources/static/assets/medikly_theme/styles/css/mdk-main.css",
+    "build-css-pricing": "node-sass --include-path scss ./src/main/resources/static/assets/medikly_theme/styles/scss/components/_pricing.scss ./src/main/resources/static/assets/medikly_theme/styles/css/pricing.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": "https://github.com/teradata/kylo.git",
   "license": "Apache-2.0",
   "author": "Think Big Analytics",
   "dependencies": {
+    "@agm/core": "1.0.0-beta.2",
     "@angular/animations": "~5.1",
-    "@angular/cdk": "^5.0",
+    "@angular/cdk": "~5.0",
     "@angular/common": "~5.1",
     "@angular/compiler": "~5.1",
     "@angular/core": "~5.1",

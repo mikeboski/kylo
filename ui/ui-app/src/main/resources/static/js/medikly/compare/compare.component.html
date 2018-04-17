@@ -6,7 +6,7 @@
         <div fxLayout="row"  fxLayoutAlign="center center" class="mt-1">
           <div fxFlex>
             <button md-icon-button>
-              <md-icon>email</md-icon>
+              <mat-icon>email</mat-icon>
             </button>
           </div>
           <div fxFlex>
@@ -14,8 +14,8 @@
           </div>
           <div fxFlex>
             <button md-icon-button>
-              <md-icon *ngIf="provider.key % 2 == 0" [class.tc-yellow-700]="provider.key % 2 == 0" >star</md-icon>
-              <md-icon class="mat-text-muted" *ngIf="provider.key % 2 != 0">star_border</md-icon>
+              <mat-icon *ngIf="provider.key % 2 == 0" [class.tc-yellow-700]="provider.key % 2 == 0" >star</mat-icon>
+              <mat-icon class="mat-text-muted" *ngIf="provider.key % 2 != 0">star_border</mat-icon>
             </button>
           </div>
         </div>
@@ -97,7 +97,7 @@
 
         <div class="compare-info">
         <h3 class="mt-0 bio-title">
-          <md-icon>school</md-icon>
+          <mat-icon>school</mat-icon>
           Education
         </h3>
         <div class="activity-stream">

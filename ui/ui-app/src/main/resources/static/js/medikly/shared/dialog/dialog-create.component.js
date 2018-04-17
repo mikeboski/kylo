@@ -37,7 +37,7 @@ define(["require", "exports", "@angular/core", "@angular/material", "@angular/fo
                 styles: [
                     "img {\n      max-width: 100%;\n    }"
                 ],
-                template: "\n    <h2 md-dialog-title>Create Project</h2>\n    <md-dialog-content>\n \n    </md-dialog-content>\n    <md-dialog-actions>\n         <span fxFlex></span>\n            <button\n        md-button\n        color=\"warn\"\n        md-dialog-close>CANCEL</button>\n            <button\n        md-button\n        color=\"primary\"\n        md-dialog-close=\"true\">OK</button>\n    </md-dialog-actions>\n  "
+                template: "\n    <h2 mat-dialog-title>Create Project</h2>\n    <mat-dialog-content>\n \n    </mat-dialog-content>\n    <mat-dialog-actions>\n         <span fxFlex></span>\n            <button\n        md-button\n        color=\"warn\"\n        mat-dialog-close>CANCEL</button>\n            <button\n        md-button\n        color=\"primary\"\n        mat-dialog-close=\"true\">OK</button>\n    </mat-dialog-actions>\n  "
             }),
             __metadata("design:paramtypes", [material_1.MatDialogRef, forms_1.FormBuilder])
         ], DialogCreate);

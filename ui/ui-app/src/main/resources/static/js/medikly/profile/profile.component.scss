@@ -114,7 +114,7 @@ app-profile {
     //margin-top: 5px;
 
     /deep/ {
-      md-input-container {
+      mat-input-container {
 
         .mat-input-underline {
           display: none;
@@ -281,6 +281,6 @@ app-profile {
   }
 }
 
-md-input-container:not(.md-input-has-value) input:not(:focus) {
+mat-input-container:not(.mat-input-has-value) input:not(:focus) {
   color: inherit;
 }

@@ -17,9 +17,9 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
   styleUrls: ['js/medikly/project-workspace/dialog/upload-files/upload-files.dialog.css'],
   template: `
     <div class="dialog-content">
-    <h2 md-dialog-title>Add files to your dataset</h2>
+    <h2 mat-dialog-title>Add files to your dataset</h2>
     
-    <md-dialog-content class="content-dialog-upload-files">
+    <mat-dialog-content class="content-dialog-upload-files">
     
       <md-tab-group color="primary">
         <md-tab>
@@ -31,7 +31,7 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
                 {{file.file.name}}
               </div>
               <div fxFlex></div>
-                    <button md-icon-button (click)="removeFile(file)"><md-icon>close</md-icon></button>
+                    <button md-icon-button (click)="removeFile(file)"><mat-icon>close</mat-icon></button>
               </div>
             </div>
             <div class="upload-files" *ngIf="uploader.queue.length==0">
@@ -49,20 +49,20 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
             </div>
           </md-tab>
       </md-tab-group>
-    </md-dialog-content>   
+    </mat-dialog-content>   
     </div>
     
-    <md-dialog-actions>
+    <mat-dialog-actions>
          <span fxFlex></span>
         <button
         md-button
           color="warn"
         class="mr-1"
-        md-dialog-close>CANCEL</button>
+        mat-dialog-close>CANCEL</button>
         
-        <button md-raised-button md-button-sm color="primary" type="button" md-dialog-close="true"
+        <button md-raised-button md-button-sm color="primary" type="button" mat-dialog-close="true"
           (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">UPLOAD</button>
-    </md-dialog-actions>
+    </mat-dialog-actions>
   `
 })
 export class DialogUploadFiles implements OnInit {

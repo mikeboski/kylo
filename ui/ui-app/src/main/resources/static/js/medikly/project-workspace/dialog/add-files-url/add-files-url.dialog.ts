@@ -11,42 +11,42 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
   styleUrls: ['js/medikly/project-workspace/dialog/add-files-url/add-files-url.dialog.css'],
   template: `
     <div class="dialog-content">
-    <h2 md-dialog-title>Add files via URL</h2>
+    <h2 mat-dialog-title>Add files via URL</h2>
     
-    <md-dialog-content>
+    <mat-dialog-content>
     
        <form [formGroup]="form">
           <div class="mb-1">
-            <md-input-container style="width: 75%">
+            <mat-input-container style="width: 75%">
               <input mdInput placeholder="Paste URL" [formControl]="form.controls['url']" type="url">
-            </md-input-container>
+            </mat-input-container>
           <button color="primary" [disabled]="!form.controls.url.valid" *ngIf="!urlAdded" md-raised-button (click)="addToFiles(form.value)">ADD</button>
           <button md-button color="primary" *ngIf="urlAdded" (click)="removeFile(form.value)">REMOVE</button>
           </div>
           <div class="mb-1">
-          <md-input-container style="width: 100%" *ngIf="urlAdded">
+          <mat-input-container style="width: 100%" *ngIf="urlAdded">
             <input mdInput placeholder="File name" [formControl]="form.controls['fname']">
-          </md-input-container>
+          </mat-input-container>
           <small *ngIf="form.controls['fname'].hasError('required') && form.controls['fname'].touched" class="mat-text-warn">
           Add the extension type if you know it.</small>
         </div>
    
       </form>
-    </md-dialog-content>   
+    </mat-dialog-content>   
      
      </div>
-    <md-dialog-actions>
+    <mat-dialog-actions>
          <span fxFlex></span>
             <button
         md-button
           color="warn"
         class="mr-1"
-        md-dialog-close>CANCEL</button>
+        mat-dialog-close>CANCEL</button>
             <button
         md-button
         color="primary" [disabled]="!form.valid"
-        md-dialog-close="true" >SAVE</button>
-    </md-dialog-actions>
+        mat-dialog-close="true" >SAVE</button>
+    </mat-dialog-actions>
   `
 })
 export class DialogAddFilesUrl implements OnInit {

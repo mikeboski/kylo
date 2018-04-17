@@ -17,20 +17,20 @@
 
     <!--Toolbar-->
     <div fxFlex.gt-sm="100" fxFlex.gt-xs="100">
-      <md-toolbar color="primary" class="toolbar-style">
+      <mat-toolbar color="primary" class="toolbar-style">
 
         <div class="main-top-items" fxFlex>
           <button md-button [md-menu-trigger-for]="user" class="mr-1 style-font">
             All Providers (5,324,112)
-            <md-icon>keyboard_arrow_down</md-icon>
+            <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
           <md-menu #user="mdMenu" x-position="before">
             <md-nav-list dense>
               <a md-list-item class="submenu-subitems tc-blue-600 all-providers-fs">
                 All people
                 <span fxFlex></span>
-                <md-icon [class.tc-yellow-700]="true"> star
-                </md-icon>
+                <mat-icon [class.tc-yellow-700]="true"> star
+                </mat-icon>
               </a>
               <div class="divider"></div>
               <h4 md-subheader class="all-providers-fs">Private Filters</h4>
@@ -41,10 +41,10 @@
               <a md-list-item class="submenu-subitems all-providers-fs">
                 Current Customers
                 <span fxFlex></span>
-                <md-icon> star_border
-                </md-icon>
-                <md-icon> lock
-                </md-icon>
+                <mat-icon> star_border
+                </mat-icon>
+                <mat-icon> lock
+                </mat-icon>
 
               </a>
               <a md-list-item class="submenu-subitems all-providers-fs">
@@ -69,25 +69,25 @@
         <div class="fxFlex"></div>
 
         <button md-icon-button class="ml-xs button-toolbar-margin">
-          <md-icon>search</md-icon>
+          <mat-icon>search</mat-icon>
         </button>
         <button md-icon-button class="ml-xs button-toolbar-margin">
-          <md-icon>person</md-icon>
+          <mat-icon>person</mat-icon>
         </button>
         <button md-icon-button class="ml-xs button-toolbar-margin">
-          <md-icon>settings</md-icon>
+          <mat-icon>settings</mat-icon>
         </button>
         <button md-icon-button (click)="quickpanel.open(); comparePanel=false; filterPanel=true; listingEnabled= false; directoryListing=undefined"
                 class="ml-xs overflow-visible button-toolbar-margin">
-          <md-icon>filter_list</md-icon>
+          <mat-icon>filter_list</mat-icon>
         </button>
         <button md-icon-button (click)="quickpanel.open(); comparePanel=true; filterPanel=false"
                 class="ml-xs overflow-visible button-toolbar-margin"
                 style="margin-right: 10px">
-          <md-icon>compare_arrows</md-icon>
+          <mat-icon>compare_arrows</mat-icon>
           <span class="notification-label">{{providersCompare.length}}</span>
         </button>
-      </md-toolbar>
+      </mat-toolbar>
 
       <agm-map [streetViewControl]="false" [latitude]="mapCfg.lat" [longitude]="mapCfg.lng" [zoom]="mapCfg.zoom"
                [styles]="styles" #map1>
@@ -111,17 +111,17 @@
                 </div>
 
                 <a class="relative icon-label" style="height: 42px; margin-left: 5px">
-                  <md-icon *ngIf="provider.key % 2 == 0" [class.tc-yellow-700]="provider.key % 2 == 0"
+                  <mat-icon *ngIf="provider.key % 2 == 0" [class.tc-yellow-700]="provider.key % 2 == 0"
                            (click)="$event.stopPropagation()">
                     star
-                  </md-icon>
-                  <md-icon class="mat-text-muted" *ngIf="provider.key % 2 != 0" (click)="$event.stopPropagation()">
+                  </mat-icon>
+                  <mat-icon class="mat-text-muted" *ngIf="provider.key % 2 != 0" (click)="$event.stopPropagation()">
                     star_border
-                  </md-icon>
+                  </mat-icon>
                   Favorite
                 </a>
                 <a class="relative icon-label" (click)="throwEventProviderCompare(item)" style="margin-right: 0px">
-                  <md-icon class="mat-text-muted">compare_arrows</md-icon>
+                  <mat-icon class="mat-text-muted">compare_arrows</mat-icon>
                   Compare
                 </a>
               </div>
@@ -149,7 +149,7 @@
             <p md-line style="font-size: 12px" class="mat-text-muted text-md">Oncologist </p>
             <p md-line style="font-size: 12px" class="mat-text-muted text-md">{{item.addresses[0].city}},
               {{item.addresses[0].state}} </p>
-            <md-icon class="mat-text-muted" (click)="removeToProvidersCompare(item)">delete</md-icon>
+            <mat-icon class="mat-text-muted" (click)="removeToProvidersCompare(item)">delete</mat-icon>
           </a>
         </ng-template>
 

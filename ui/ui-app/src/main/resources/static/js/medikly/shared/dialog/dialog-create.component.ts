@@ -15,21 +15,21 @@ const confirmPassword = new FormControl('');
     }`
   ],
   template: `
-    <h2 md-dialog-title>Create Project</h2>
-    <md-dialog-content>
+    <h2 mat-dialog-title>Create Project</h2>
+    <mat-dialog-content>
  
-    </md-dialog-content>
-    <md-dialog-actions>
+    </mat-dialog-content>
+    <mat-dialog-actions>
          <span fxFlex></span>
             <button
         md-button
         color="warn"
-        md-dialog-close>CANCEL</button>
+        mat-dialog-close>CANCEL</button>
             <button
         md-button
         color="primary"
-        md-dialog-close="true">OK</button>
-    </md-dialog-actions>
+        mat-dialog-close="true">OK</button>
+    </mat-dialog-actions>
   `
 })
 export class DialogCreate implements OnInit {

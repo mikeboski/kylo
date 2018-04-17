@@ -9,17 +9,17 @@ import {MatDialog, MatDialogRef} from '@angular/material';
   template: `
     <h4 style="margin-bottom: 8px">Remove</h4>
     <span >Do you want to remove <b>{{file.name}}</b>?</span>
-    <md-dialog-actions style="margin-top: 16px">
+    <mat-dialog-actions style="margin-top: 16px">
          <span fxFlex></span>
             <button
         md-button
         color="warn"
-        md-dialog-close>CANCEL</button>
+        mat-dialog-close>CANCEL</button>
       <button
         md-button
         color="primary"
-        md-dialog-close="true">OK</button>
-    </md-dialog-actions>`,
+        mat-dialog-close="true">OK</button>
+    </mat-dialog-actions>`,
 })
 export class DialogRemoveFile {
   @Input('file') file: any;

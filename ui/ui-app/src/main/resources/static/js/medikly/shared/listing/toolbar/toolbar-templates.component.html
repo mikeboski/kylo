@@ -1,15 +1,15 @@
-<md-toolbar color="primary" class="toolbar-templates-style">
+<mat-toolbar color="primary" class="toolbar-templates-style">
 
-    <md-toolbar-row class="templates-contracted-header">
+    <mat-toolbar-row class="templates-contracted-header">
         <div class="template-contracted-header-text ">TITLE</div>
         <span fxFlex></span>
         <div class="template-contracted-header-actions">
             <a class="template-more">TEMPLATE GALLERY</a>
             <span class="border-separator"></span>
-            <span class="template-more-action"><md-icon>more_vert</md-icon></span>
+            <span class="template-more-action"><mat-icon>more_vert</mat-icon></span>
         </div>
-    </md-toolbar-row>
-    <md-toolbar-row class="templates-gallery" fxLayout="row" fxLayoutAlign="center center">
+    </mat-toolbar-row>
+    <mat-toolbar-row class="templates-gallery" fxLayout="row" fxLayoutAlign="center center">
         <div class="toolbar-templates-showcase " *ngFor="let product of products; let i = index">
             <div class="toolbar-template-preview">
                 <!--<img src="assets/images/unsplash/{{ product.id }}.jpg">-->
@@ -24,9 +24,9 @@
                 </div>
             </div>
         </div>
-    </md-toolbar-row>
+    </mat-toolbar-row>
 
-</md-toolbar>
+</mat-toolbar>
 
 
 

@@ -5,9 +5,9 @@
         <td-expansion-panel disableRipple class="expansion-section" *ngFor="let message of messages; let i = index" (click)="onSelect(message)">
             <ng-template td-expansion-panel-label>
                 <img alt="" class="message-icon mr-1 hide-on-open" src="{{message.avatar}}" *ngIf="!message.icon"/>
-                <md-icon [ngClass]="message.iconClass" class="mr-1 hide-on-open" *ngIf="message.icon">
+                <mat-icon [ngClass]="message.iconClass" class="mr-1 hide-on-open" *ngIf="message.icon">
                     {{message.icon}}
-                </md-icon>
+                </mat-icon>
                 <span class="header-title">{{message.from}}</span>
             </ng-template>
             <ng-template td-expansion-panel-sublabel >
@@ -17,9 +17,9 @@
             <md-card *ngIf="selectedMessage" class="shadow-none card-content-expansion">
                 <md-card-header>
                     <img md-card-avatar *ngIf="!selectedMessage.icon" src="{{selectedMessage.avatar}}" class="ml-0">
-                    <md-icon *ngIf="selectedMessage.icon" md-card-avatar [ngClass]="selectedMessage.iconClass"
+                    <mat-icon *ngIf="selectedMessage.icon" md-card-avatar [ngClass]="selectedMessage.iconClass"
                              class="ml-0">{{selectedMessage.icon}}
-                    </md-icon>
+                    </mat-icon>
                     <md-card-title>{{selectedMessage.from}}</md-card-title>
                     <md-card-subtitle>{{selectedMessage.date | date: 'fullDate'}}</md-card-subtitle>
                 </md-card-header>
@@ -42,9 +42,9 @@
             <md-expansion-panel-header (click)="onSelect(message)">
                 <div fxLayout="row" fxLayoutAlign="none center" class="w-100" style="font-size: 12px">
                     <img alt="" class="message-icon mr-1 hide-on-open" src="{{message.avatar}}" *ngIf="!message.icon"/>
-                    <md-icon [ngClass]="message.iconClass" class="mr-1 hide-on-open" *ngIf="message.icon">
+                    <mat-icon [ngClass]="message.iconClass" class="mr-1 hide-on-open" *ngIf="message.icon">
                         {{message.icon}}
-                    </md-icon>
+                    </mat-icon>
                     <div class="pr-1 hide-on-open" fxShow="false" fxShow.gt-xs style="min-width: 120px;">
                         <span>{{message.from}}</span>
                     </div>
@@ -60,9 +60,9 @@
             <md-card *ngIf="selectedMessage" class="shadow-none">
                 <md-card-header>
                     <img md-card-avatar *ngIf="!selectedMessage.icon" src="{{selectedMessage.avatar}}" class="ml-0">
-                    <md-icon *ngIf="selectedMessage.icon" md-card-avatar [ngClass]="selectedMessage.iconClass"
+                    <mat-icon *ngIf="selectedMessage.icon" md-card-avatar [ngClass]="selectedMessage.iconClass"
                              class="ml-0">{{selectedMessage.icon}}
-                    </md-icon>
+                    </mat-icon>
                     <md-card-title>{{selectedMessage.from}}</md-card-title>
                     <md-card-subtitle>{{selectedMessage.date | date: 'fullDate'}}</md-card-subtitle>
                 </md-card-header>

@@ -18,19 +18,19 @@
         <form [formGroup]="form">
 
           <div class="mb-1">
-            <md-input-container class="mt-0 mb-0" style="width: 100%">
+            <mat-input-container class="mt-0 mb-0" style="width: 100%">
               <input mdInput placeholder="Project name ({{!form._value.name || form._value.name.length==0 ? 'max. '+maxName : maxName-form.value.name.length}})"
                      [formControl]="form.controls['name']" maxlength="{{maxName}}">
-            </md-input-container>
+            </mat-input-container>
             <span *ngIf="privacy != 'private'" class="info-radio pl-0">This will also be your project URL: https://dev.medikly.ly/geraldmorris/{{form._value.name}} <br></span>
           </div>
 
           <div class="mb-1">
-            <md-input-container class="mt-0 mb-0" style="width: 100%">
+            <mat-input-container class="mt-0 mb-0" style="width: 100%">
         <textarea autosize rows="1" mdInput
                   placeholder="Project objective ({{!form._value.objective || form._value.objective.length==0 ? 'max. '+maxObjective : maxObjective-form.value.objective.length}})"
                   [formControl]="form.controls['objective']" maxlength="{{maxObjective}}"></textarea>
-            </md-input-container>
+            </mat-input-container>
           </div>
 
           <div class="mb-1">
@@ -55,13 +55,13 @@
         <button
           md-button
           color="warn"
-          md-dialog-close>CANCEL
+          mat-dialog-close>CANCEL
         </button>
         <button
           md-button
           color="primary"
           uiSref="view.home" [uiParams]="{ id: 15 }"
-          md-dialog-close="true" [disabled]="!form.valid">CREATE PROJECT
+          mat-dialog-close="true" [disabled]="!form.valid">CREATE PROJECT
         </button>
       </md-card-actions>
     </md-card>
@@ -87,7 +87,7 @@
         <button
           md-button
           color="warn"
-          md-dialog-close>CANCEL
+          mat-dialog-close>CANCEL
         </button>
       </md-card-actions>-->
     </md-card>
@@ -112,7 +112,7 @@
         <button
           md-button
           color="warn"
-          md-dialog-close>CANCEL
+          mat-dialog-close>CANCEL
         </button>
       </md-card-actions>
     </md-card>

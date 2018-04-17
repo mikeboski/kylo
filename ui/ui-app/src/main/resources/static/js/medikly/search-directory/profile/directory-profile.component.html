@@ -2,11 +2,11 @@
   <app-profile-header-card coverImage="https://maps.googleapis.com/maps/api/staticmap?center={{profile.addresses[0].point.lat}},{{profile.addresses[0].point.ln}}&markers=color:blue%7Clabel:S%7C{{profile.addresses[0].point.lat}},{{profile.addresses[0].point.ln}}4&zoom=15&size=600x150&maptype=roadmap&markers=color:blue%7Clabel:P%7C40.702147,-74.015794&key={{googleApiKey}}"  [profile]="profile">
     <app-card-top-actions>
       <button class="tc-white-4" (click)="toggleScreenfull()" md-icon-button>
-        <md-icon>fullscreen</md-icon>
+        <mat-icon>fullscreen</mat-icon>
       </button>
 
       <button class="tc-white-4" (click)="close()" md-icon-button>
-        <md-icon>close</md-icon>
+        <mat-icon>close</mat-icon>
       </button>
     </app-card-top-actions>
   </app-profile-header-card>

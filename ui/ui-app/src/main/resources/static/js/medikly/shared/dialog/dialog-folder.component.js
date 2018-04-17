@@ -17,7 +17,7 @@ define(["require", "exports", "@angular/core", "@angular/material"], function (r
         DialogFolder = __decorate([
             core_1.Component({
                 selector: 'dialog-folder',
-                template: "\n    <h4 >Folder name:</h4>\n    <md-dialog-content>\n         <md-input-container style=\"width: 100%\">\n          <input mdInput #nameFolder>\n        </md-input-container>\n    </md-dialog-content>\n    <md-dialog-actions>\n         <span fxFlex></span>\n      <button\n        md-button\n        color=\"primary\"\n        md-dialog-close (click)=\"dialogRef.close(nameFolder.value)\">CREATE</button>\n    </md-dialog-actions>",
+                template: "\n    <h4 >Folder name:</h4>\n    <mat-dialog-content>\n         <mat-input-container style=\"width: 100%\">\n          <input mdInput #nameFolder>\n        </mat-input-container>\n    </mat-dialog-content>\n    <mat-dialog-actions>\n         <span fxFlex></span>\n      <button\n        md-button\n        color=\"primary\"\n        mat-dialog-close (click)=\"dialogRef.close(nameFolder.value)\">CREATE</button>\n    </mat-dialog-actions>",
             }),
             __metadata("design:paramtypes", [material_1.MatDialogRef])
         ], DialogFolder);

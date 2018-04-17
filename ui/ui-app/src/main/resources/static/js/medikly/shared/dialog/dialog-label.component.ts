@@ -8,18 +8,18 @@ import {MatDialog, MatDialogRef} from '@angular/material';
   selector: 'dialog-label',
   template: `
     <h4 >Label name:</h4>
-    <md-dialog-content>
-         <md-input-container style="width: 100%">
+    <mat-dialog-content>
+         <mat-input-container style="width: 100%">
           <input mdInput #nameLabel>
-        </md-input-container>
-    </md-dialog-content>
-    <md-dialog-actions>
+        </mat-input-container>
+    </mat-dialog-content>
+    <mat-dialog-actions>
          <span fxFlex></span>
       <button
         md-button
         color="primary"
-        md-dialog-close (click)="dialogRef.close(nameLabel.value)">CREATE</button>
-    </md-dialog-actions>`,
+        mat-dialog-close (click)="dialogRef.close(nameLabel.value)">CREATE</button>
+    </mat-dialog-actions>`,
 })
 export class DialogLabel {
   constructor(public dialogRef: MatDialogRef<DialogLabel>) {

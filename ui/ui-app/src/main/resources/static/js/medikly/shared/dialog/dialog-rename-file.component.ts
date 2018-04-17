@@ -9,22 +9,22 @@ import {MatDialog, MatDialogRef} from '@angular/material';
   template: `
     <h4 style="margin-bottom: 8px">Rename</h4>
     <span >Please enter a new name for the item:</span>
-    <md-dialog-content style="margin-top: 16px">
-         <md-input-container style="width: 100%">
+    <mat-dialog-content style="margin-top: 16px">
+         <mat-input-container style="width: 100%">
           <input mdInput [(ngModel)]="currentName" #newFileName>
-        </md-input-container>
-    </md-dialog-content>
-    <md-dialog-actions>
+        </mat-input-container>
+    </mat-dialog-content>
+    <mat-dialog-actions>
          <span fxFlex></span>
             <button
         md-button
         color="warn"
-        md-dialog-close>CANCEL</button>
+        mat-dialog-close>CANCEL</button>
       <button
         md-button
         color="primary"
-        md-dialog-close (click)="dialogRef.close(newFileName.value)">OK</button>
-    </md-dialog-actions>`,
+        mat-dialog-close (click)="dialogRef.close(newFileName.value)">OK</button>
+    </mat-dialog-actions>`,
 })
 export class DialogRenameFile {
   @Input('currentName') currentName: string = '';

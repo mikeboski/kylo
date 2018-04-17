@@ -9,14 +9,14 @@
       </div>
       <span fxFlex></span>
       <button (click)="changeMode()" md-icon-button>
-        <md-icon *ngIf="modeCard" uiSref="projects.home.list">view_list</md-icon>
-        <md-icon *ngIf="!modeCard" uiSref="projects.home.recent">view_module</md-icon>
+        <mat-icon *ngIf="modeCard" uiSref="projects.home.list">view_list</mat-icon>
+        <mat-icon *ngIf="!modeCard" uiSref="projects.home.recent">view_module</mat-icon>
       </button>
       <button (click)="orderByName()" md-icon-button>
-        <md-icon>sort_by_alpha</md-icon>
+        <mat-icon>sort_by_alpha</mat-icon>
       </button>
       <button md-icon-button>
-        <md-icon>folder</md-icon>
+        <mat-icon>folder</mat-icon>
       </button>
     </div>
 

@@ -71,11 +71,11 @@ app-profile md-chip {
   border-bottom: 1px solid #e9e9e9; }
   .info-section .entity-section-tags {
     margin-top: 5px; }
-  .info-section .entity-section /deep/ md-input-container .mat-input-underline {
+  .info-section .entity-section /deep/ mat-input-container .mat-input-underline {
     display: none; }
-  .info-section .entity-section /deep/ md-input-container .mat-input-placeholder {
+  .info-section .entity-section /deep/ mat-input-container .mat-input-placeholder {
     font-size: 13px; }
-  .info-section .entity-section /deep/ md-input-container.mat-focused .mat-input-underline, .info-section .entity-section /deep/ md-input-container:hover .mat-input-underline {
+  .info-section .entity-section /deep/ mat-input-container.mat-focused .mat-input-underline, .info-section .entity-section /deep/ mat-input-container:hover .mat-input-underline {
     display: block;
     visibility: visible; }
   .info-section .entity-section .button-add-style {
@@ -169,7 +169,7 @@ app-profile md-chip {
 /deep/ app-profile-header-card.small-profile-header .mat-card-title {
   font-size: 14px !important; }
 
-md-input-container:not(.md-input-has-value) input:not(:focus) {
+mat-input-container:not(.mat-input-has-value) input:not(:focus) {
   color: inherit; }
 
 /*# sourceMappingURL=profile.component.css.map */

@@ -1,25 +1,25 @@
 <perfect-scrollbar class="scroll">
-  <md-toolbar>
+  <mat-toolbar>
     <span class="directory-listing-count text-sm">129 RESULTS</span>
     <span fxFlex></span>
     <button md-icon-button="">
-      <md-icon>sort</md-icon>
+      <mat-icon>sort</mat-icon>
     </button>
-  </md-toolbar>
+  </mat-toolbar>
 
   <md-nav-list dense style="margin-top: -5px;">
     <ng-template let-item let-i="index" let-last="last" ngFor [ngForOf]="providers">
 
       <md-card class="card-list-profile shadow-none" [class.activeList]="selected == item" (click)="selectItem(item)">
-        <md-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)==-1"
+        <mat-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)==-1"
                  [class.tc-grey-300]="following.indexOf(item.key)==-1" (click)="$event.stopPropagation(); throwEventFollow(item)"><i
-          class="icon ion-bookmark"></i></md-icon>
-        <md-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)>-1"
+          class="icon ion-bookmark"></i></mat-icon>
+        <mat-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)>-1"
                  [class.tc-yellow-700]="following.indexOf(item.key)>-1"
-                 (click)="$event.stopPropagation(); throwEventFollow(item)"><i class="icon ion-bookmark"></i></md-icon>
-        <!--    <md-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)==-1" (click)="throwEventFollow(item)">bookmark_border</md-icon>
-            <md-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)>-1" [class.tc-yellow-700]="following.indexOf(item.key)>-1"
-                     (click)="throwEventFollow(item)">bookmark</md-icon>-->
+                 (click)="$event.stopPropagation(); throwEventFollow(item)"><i class="icon ion-bookmark"></i></mat-icon>
+        <!--    <mat-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)==-1" (click)="throwEventFollow(item)">bookmark_border</mat-icon>
+            <mat-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)>-1" [class.tc-yellow-700]="following.indexOf(item.key)>-1"
+                     (click)="throwEventFollow(item)">bookmark</mat-icon>-->
         <div fxLayout="row" class="height-card-listing">
           <div class="media-grid bg-cover avatar-listing"
                [ngStyle]="{'background-image': 'url('+item.avatar+')'}">
@@ -55,7 +55,7 @@
             <md-card-actions class="card-actions-style" fxLayout="column">
               <div class="text-uppercase">
                 <p class="mt-0 mb-0 text-md mat-text-muted title-statics">PV INDEX
-                  <md-icon style="font-size: 11px">help_outline</md-icon>
+                  <mat-icon style="font-size: 11px">help_outline</mat-icon>
                 </p>
                 <div fxLayout="row" fxLayoutWrap="wrap" class="text-uppercase">
                   <div fxFlex="30%">
@@ -69,7 +69,7 @@
               <div fxFlex></div>
               <button md-raised-button md-button-sm color="accent" class="button-card-style btn-light-blue"
                       (click)="$event.stopPropagation(); throwEventProviderCompare(item)">
-                <md-icon style="font-size: 19px">add</md-icon>
+                <mat-icon style="font-size: 19px">add</mat-icon>
                 COMPARE
               </button>
             </md-card-actions>

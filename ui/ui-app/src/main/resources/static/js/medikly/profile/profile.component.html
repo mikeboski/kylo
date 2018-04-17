@@ -8,9 +8,9 @@
         <!--<div class="entity-section">-->
           <!--<h6 class="mt-0 title-info-section">Name</h6>-->
           <!--<div class="content-info-section">-->
-            <!--<md-input-container style="width: 100%">-->
+            <!--<mat-input-container style="width: 100%">-->
               <!--<input  mdInput  formControlName="name" >-->
-            <!--</md-input-container>-->
+            <!--</mat-input-container>-->
           <!--</div>-->
         <!--</div>-->
 
@@ -18,9 +18,9 @@
         <div class="entity-section">
           <h6 class="mt-0 title-info-section">Description</h6>
           <div class="content-info-section">
-            <md-input-container class="mt-0 mb-0" style="width: 100%">
+            <mat-input-container class="mt-0 mb-0" style="width: 100%">
               <textarea autosize mdInput formControlName="description" class="textarea-style"></textarea>
-            </md-input-container>
+            </mat-input-container>
           </div>
         </div>
         <!--End Description-->
@@ -35,12 +35,12 @@
               <md-option value="OtherPhone">Other Phone</md-option>
             </md-select>
             <div class="content-info-section">
-              <md-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
+              <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input placeholder="+1 111 1111 1111"  mdInput formControlName="value">
                 <span mdSuffix>
-                  <button *ngIf="userForm.controls.phones.controls.length > 1" (click)="removeArrayItem('phones',i)" md-icon-button><md-icon>close</md-icon></button>
+                  <button *ngIf="userForm.controls.phones.controls.length > 1" (click)="removeArrayItem('phones',i)" md-icon-button><mat-icon>close</mat-icon></button>
                 </span>
-              </md-input-container>
+              </mat-input-container>
             </div>
           </div>
           <div class="text-xs-right button-add-style">
@@ -58,12 +58,12 @@
               <md-option value="OtherAddress">Other Address</md-option>
             </md-select>
             <div class="content-info-section">
-              <md-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
+              <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input placeholder="25th street"  mdInput formControlName="value">
                 <span mdSuffix>
-                  <button *ngIf="userForm.controls.addresses.controls.length > 1" (click)="removeArrayItem('addresses',i)" md-icon-button><md-icon>close</md-icon></button>
+                  <button *ngIf="userForm.controls.addresses.controls.length > 1" (click)="removeArrayItem('addresses',i)" md-icon-button><mat-icon>close</mat-icon></button>
                 </span>
-              </md-input-container>
+              </mat-input-container>
             </div>
           </div>
           <div class="text-xs-right button-add-style">
@@ -81,12 +81,12 @@
               <md-option value="OtherEmail">Other Email</md-option>
             </md-select>
             <div class="content-info-section">
-              <md-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
+              <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input class="tc-blue-500" placeholder="email@email.com"  mdInput formControlName="value">
                 <span mdSuffix>
-                  <button *ngIf="userForm.controls.emails.controls.length > 1" (click)="removeArrayItem('emails',i)" md-icon-button><md-icon>close</md-icon></button>
+                  <button *ngIf="userForm.controls.emails.controls.length > 1" (click)="removeArrayItem('emails',i)" md-icon-button><mat-icon>close</mat-icon></button>
                 </span>
-              </md-input-container>
+              </mat-input-container>
             </div>
           </div>
           <div class="text-xs-right button-add-style">
@@ -106,12 +106,12 @@
               <md-option value="OtherWebsite">Other Website</md-option>
             </md-select>
             <div class="content-info-section">
-              <md-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
+              <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input class="tc-blue-500" placeholder="http://www.sample.com"  mdInput formControlName="value">
                 <span mdSuffix>
-                  <button *ngIf="userForm.controls.websites.controls.length > 1" (click)="removeArrayItem('websites',i)" md-icon-button><md-icon>close</md-icon></button>
+                  <button *ngIf="userForm.controls.websites.controls.length > 1" (click)="removeArrayItem('websites',i)" md-icon-button><mat-icon>close</mat-icon></button>
                 </span>
-              </md-input-container>
+              </mat-input-container>
             </div>
           </div>
           <div class="text-xs-right button-add-style">
@@ -131,12 +131,12 @@
               <md-option value="Other">Other</md-option>
             </md-select>
             <div class="content-info-section">
-              <md-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
+              <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input class="tc-blue-500" placeholder="http://www.twitter.com/myuser"  mdInput formControlName="value">
                 <span mdSuffix>
-                  <button *ngIf="userForm.controls.socials.controls.length > 1" (click)="removeArrayItem('socials',i)" md-icon-button><md-icon>close</md-icon></button>
+                  <button *ngIf="userForm.controls.socials.controls.length > 1" (click)="removeArrayItem('socials',i)" md-icon-button><mat-icon>close</mat-icon></button>
                 </span>
-              </md-input-container>
+              </mat-input-container>
             </div>
           </div>
           <div class="text-xs-right button-add-style">
@@ -177,12 +177,12 @@
 
   </md-sidenav>
 
-  <md-toolbar color="primary" fxHide="false" fxHide.gt-sm>
+  <mat-toolbar color="primary" fxHide="false" fxHide.gt-sm>
     <button (click)="column1.toggle()" md-icon-button>
-      <md-icon>short_text</md-icon>
+      <mat-icon>short_text</mat-icon>
     </button>
     <span class="mr-1 ml-1">Sections</span>
-  </md-toolbar>
+  </mat-toolbar>
 
   <div class="main-content-profile">
     <md-card class="card-profile shadow-soft">
@@ -197,7 +197,7 @@
       </div>
 
       <div fxFlex.gt-sm="30" fxFlex.gt-xs="50"  fxFlex="100" class="text-right section-filters-style">
-        <span>Showing: <a class="link-dropdown"><b>All activity</b> <md-icon class="dropdown-indicator">arrow_drop_down</md-icon></a></span>
+        <span>Showing: <a class="link-dropdown"><b>All activity</b> <mat-icon class="dropdown-indicator">arrow_drop_down</mat-icon></a></span>
       </div>
     </div>
 

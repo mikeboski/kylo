@@ -21,7 +21,7 @@ define(["require", "exports", "@angular/core", "@angular/material"], function (r
         DialogRemoveFile = __decorate([
             core_1.Component({
                 selector: 'dialog-remove-file',
-                template: "\n    <h4 style=\"margin-bottom: 8px\">Remove</h4>\n    <span >Do you want to remove <b>{{file.name}}</b>?</span>\n    <md-dialog-actions style=\"margin-top: 16px\">\n         <span fxFlex></span>\n            <button\n        md-button\n        color=\"warn\"\n        md-dialog-close>CANCEL</button>\n      <button\n        md-button\n        color=\"primary\"\n        md-dialog-close=\"true\">OK</button>\n    </md-dialog-actions>",
+                template: "\n    <h4 style=\"margin-bottom: 8px\">Remove</h4>\n    <span >Do you want to remove <b>{{file.name}}</b>?</span>\n    <mat-dialog-actions style=\"margin-top: 16px\">\n         <span fxFlex></span>\n            <button\n        md-button\n        color=\"warn\"\n        mat-dialog-close>CANCEL</button>\n      <button\n        md-button\n        color=\"primary\"\n        mat-dialog-close=\"true\">OK</button>\n    </mat-dialog-actions>",
             }),
             __metadata("design:paramtypes", [material_1.MatDialogRef])
         ], DialogRemoveFile);

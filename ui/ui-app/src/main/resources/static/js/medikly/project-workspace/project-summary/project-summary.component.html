@@ -14,9 +14,9 @@
         <form [formGroup]="form">
             <div fxLayout="row">
                 <div fxFlex="45" class="pr-1">
-                    <md-input-container style="width: 100%" class="mt-0 mb-0">
+                    <mat-input-container style="width: 100%" class="mt-0 mb-0">
                         <textarea mdInput mdTextareaAutosize [formControl]="form.controls['markdown']"></textarea>
-                    </md-input-container>
+                    </mat-input-container>
                 </div>
                 <div fxFlex="45">
                     <td-markdown [content]="form.value.markdown"></td-markdown>

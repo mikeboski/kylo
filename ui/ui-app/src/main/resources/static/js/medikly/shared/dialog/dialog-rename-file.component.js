@@ -22,7 +22,7 @@ define(["require", "exports", "@angular/core", "@angular/material"], function (r
         DialogRenameFile = __decorate([
             core_1.Component({
                 selector: 'dialog-rename-file',
-                template: "\n    <h4 style=\"margin-bottom: 8px\">Rename</h4>\n    <span >Please enter a new name for the item:</span>\n    <md-dialog-content style=\"margin-top: 16px\">\n         <md-input-container style=\"width: 100%\">\n          <input mdInput [(ngModel)]=\"currentName\" #newFileName>\n        </md-input-container>\n    </md-dialog-content>\n    <md-dialog-actions>\n         <span fxFlex></span>\n            <button\n        md-button\n        color=\"warn\"\n        md-dialog-close>CANCEL</button>\n      <button\n        md-button\n        color=\"primary\"\n        md-dialog-close (click)=\"dialogRef.close(newFileName.value)\">OK</button>\n    </md-dialog-actions>",
+                template: "\n    <h4 style=\"margin-bottom: 8px\">Rename</h4>\n    <span >Please enter a new name for the item:</span>\n    <mat-dialog-content style=\"margin-top: 16px\">\n         <mat-input-container style=\"width: 100%\">\n          <input mdInput [(ngModel)]=\"currentName\" #newFileName>\n        </mat-input-container>\n    </mat-dialog-content>\n    <mat-dialog-actions>\n         <span fxFlex></span>\n            <button\n        md-button\n        color=\"warn\"\n        mat-dialog-close>CANCEL</button>\n      <button\n        md-button\n        color=\"primary\"\n        mat-dialog-close (click)=\"dialogRef.close(newFileName.value)\">OK</button>\n    </mat-dialog-actions>",
             }),
             __metadata("design:paramtypes", [material_1.MatDialogRef])
         ], DialogRenameFile);

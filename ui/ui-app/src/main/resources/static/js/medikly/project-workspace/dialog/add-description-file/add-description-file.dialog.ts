@@ -12,19 +12,19 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
    <div class="dialog-content">
    
 
-    <h2 md-dialog-title class="mb-0">{{item.file.name}}</h2>
+    <h2 mat-dialog-title class="mb-0">{{item.file.name}}</h2>
     <span>{{this.Math.round(item.file.size/1024)}} kb</span>
     
-    <md-dialog-content class="pt-2 pb-2">
+    <mat-dialog-content class="pt-2 pb-2">
     
           <form [formGroup]="form">
 
           <div class="mb-1">
-            <md-input-container style="width: 100%">
+            <mat-input-container style="width: 100%">
               <textarea mdInput
                      placeholder="Description ({{!form._value.description || form._value.description.length==0 ? 'max. '+maxDescription : maxDescription-form.value.description.length}})"
                      [formControl]="form.controls['description']" maxlength="{{maxDescription}}"> </textarea>
-            </md-input-container>
+            </mat-input-container>
           </div>
             </form>
         
@@ -37,16 +37,16 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
          </md-chip-list>
            </div>
            </div> 
-    </md-dialog-content>   
+    </mat-dialog-content>   
 
    </div>
    
-      <md-dialog-actions>
+      <mat-dialog-actions>
          <span fxFlex></span>
             <button
         md-button
           color="warn"
-        md-dialog-close="false">CANCEL</button>
+        mat-dialog-close="false">CANCEL</button>
         
          <button
           md-button
@@ -56,7 +56,7 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
          
         </button>
          
-    </md-dialog-actions>
+    </mat-dialog-actions>
 
   `
 })

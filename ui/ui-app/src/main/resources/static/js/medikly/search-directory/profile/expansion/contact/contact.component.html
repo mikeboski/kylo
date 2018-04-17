@@ -2,7 +2,7 @@
     <div class="md-padding">
         <md-list>
             <md-list-item *ngIf="profile.addresses[0].us_telephone_number">
-                <md-icon md-list-avatar>phone</md-icon>
+                <mat-icon md-list-avatar>phone</mat-icon>
                 <h4 md-line>{{profile.addresses[0].us_telephone_number}}</h4>
                 <p md-line>Phone Number</p>
             </md-list-item>
@@ -10,7 +10,7 @@
             <md-divider *ngIf="profile.addresses[0].us_fax_number" md-inset></md-divider>
 
             <md-list-item *ngIf="profile.addresses[0].us_fax_number">
-                <md-icon md-list-avatar>perm_phone_msg</md-icon>
+                <mat-icon md-list-avatar>perm_phone_msg</mat-icon>
                 <h4 md-line>{{profile.addresses[0].us_fax_number}}</h4>
                 <p md-line>Fax Number</p>
             </md-list-item>
@@ -18,7 +18,7 @@
             <md-divider *ngIf="profile.addresses[0].address_1" md-inset></md-divider>
 
             <md-list-item *ngIf="profile.addresses[0].address_1">
-                <md-icon md-list-avatar>location_on</md-icon>
+                <mat-icon md-list-avatar>location_on</mat-icon>
                 <h4 md-line>{{profile.addresses[0].address_1}}, {{profile.addresses[0].city}}, {{profile.addresses[0].state}}</h4>
                 <p md-line>ZIP: {{profile.addresses[0].zip}}</p>
                 <p md-line>Address</p>

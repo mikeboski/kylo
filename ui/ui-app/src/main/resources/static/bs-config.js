@@ -6,6 +6,7 @@ var proxyFilter = function (pathName, req) {
 module.exports = {
     server: {
         baseDir: "src/main/resources/static",
+        open:false,
         middleware: [
             proxy(proxyFilter, {target: "http://localhost:8400/"})
         ]

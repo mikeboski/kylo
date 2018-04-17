@@ -7,6 +7,7 @@ import {UIRouterUpgradeModule} from "@uirouter/angular-hybrid";
 import { HttpModule } from '@angular/http';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import {MatDialogModule} from '@angular/material';
+import {HomeModule} from './medikly/home/home.module';
 
 import { ProjectSummaryComponent } from './medikly/project-workspace/project-summary/project-summary.component';
 

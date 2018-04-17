@@ -1,0 +1,31 @@
+<div class="chart-audience-affinity">
+  <table id="table-sparkline" class="table table-condensed">
+    <thead>
+    <tr>
+      <th class="category">Category</th>
+      <th class="audience">Audience</th>
+      <th class="total">Total</th>
+
+    </tr>
+    </thead>
+
+    <tbody id="tbody-sparkline">
+    <tr *ngFor="let category of categories;let i=index">
+      <td>{{category}}</td>
+      <td><chart [options]="setSparkLine(data1[i],data2[i])" ></chart></td>
+      <td>{{data1[i]+data2[i]}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="footer-chart">
+  <div class="footer-chart-text">
+    <div *ngIf="matched">
+      <md-icon style="font-size: inherit">pie_chart</md-icon>
+      {{matched}}% of audience matched
+    </div>
+    <div><span class="bold-text">Source:</span> source.</div>
+    <div><span class="bold-text">Notes:</span> notes.</div>
+  </div>
+</div>

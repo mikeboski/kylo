@@ -1,19 +1,42 @@
-<md-menu >
-  <md-button aria-label="Options" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
-    <ng-md-icon icon="{{menuIcon}}"></ng-md-icon>
+<md-menu>
+  <md-button class="ml-0 mr-0" aria-label="Options" style="margin-top:-5px" ng-click="openMenu($mdOpenMenu, $event)">
+    <img class="avatar" style="float: left; margin-right: 10px;"
+        src="/assets/medikly_theme/images/providers/M/4.png">
+    <span class="username" style="font-size: 14px; line-height: 40px">{{username}}</span>
+    <ng-md-icon size="18" icon="keyboard_arrow_down"></ng-md-icon>
   </md-button>
+
   <md-menu-content width="3">
-    <md-menu-item>
-      <header> <ng-md-icon icon="account_circle"></ng-md-icon>{{username}}</header>
-    </md-menu-item>
-    <md-menu-item>
-      <md-button ng-click="logout()">{{"views.kylo-options.Logout" | translate}}</md-button>
-    </md-menu-item>
-    <md-menu-divider></md-menu-divider>
     <md-menu-item layout="column">
-      <md-button ng-click="aboutKylo()" md-prevent-menu-close="md-prevent-menu-close">
-        <span style="float:left;">{{"views.kylo-options.AK" | translate}}</span>
-      </md-button>
-    </md-menu-item>
+  <md-button ui-sref="profile">
+    <ng-md-icon size="18" icon="account_circle"></ng-md-icon>
+    <span>Profile</span>
+  </md-button>
+</md-menu-item>
+
+<md-menu-item layout="column">
+  <md-button>
+    <ng-md-icon size="18" icon="settings"></ng-md-icon>
+    <span>Settings</span>
+  </md-button>
+</md-menu-item>
+<md-menu-item layout="column">
+  <md-button>
+    <ng-md-icon ng-click="aboutKylo()" size="18" icon="info_outline"></ng-md-icon>
+    <span>About Medikly</span>
+  </md-button>
+  </md-menu-item>
+  <md-menu-divider></md-menu-divider>
+  <md-menu-item layout="column">
+  <md-button ng-click="logout()" class="tc-red-500">
+  <ng-md-icon ng-click="aboutKylo()" size="18" icon="exit_to_app"></ng-md-icon>
+  <span>Logout</span>
+  </md-button>
+  </md-menu-item>
   </md-menu-content>
+  
+  <md-button class="md-icon-button ml-0 mr-0" aria-label="About Medikly" ng-click="aboutKylo()"
+     style="margin-top:-5px">
+    <ng-md-icon size="18" icon="help_outline"></ng-md-icon>
+  </md-button>
 </md-menu>

@@ -1,0 +1,80 @@
+
+<button md-icon-button (click)="openBar()"
+        class="ml-xs button-toolbar-margin info-absolute">
+  <md-icon>info</md-icon>
+</button>
+
+<div #panel class="theme-options-panel md-white-bg mat-elevation-z2 pb-16">
+
+  <md-nav-list>
+    <div fxLayout="row">
+      <h3 md-subheader>Container Information</h3>
+      <div fxFlex></div>
+      <button md-icon-button class="close-button" (click)="closeBar()">
+        <md-icon>close</md-icon>
+      </button>
+    </div>
+
+
+
+    <td-steps>
+      <td-step #step1 label="Manage accounts and users" sublabel="Toggle between active and inactive and emit events."
+               [active]="true" [disabled]="disabled" (activated)="activeStep1Event()"
+               (deactivated)="deactiveStep1Event()">
+        <ng-template td-step-label><span>Basic Usage (template)</span></ng-template>
+        Include any content you like for an active stepper
+      </td-step>
+      <td-step #step2 label="Create an experiment"
+               sublabel="Toggle between active and inactive while in required state and disable ripple."
+               [state]="stateStep3" [disabled]="disabled" disableRipple>
+        This step is required!
+        <ng-template td-step-actions>
+          <button md-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require
+          </button>
+          <button md-button (click)="step2.active = false" class="text-upper">Cancel</button>
+        </ng-template>
+      </td-step>
+      <td-step #step3 label="Link to Google Analytics"
+               sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3"
+               [disabled]="disabled">
+        Mark this step complete and get a summary
+        <ng-template td-step-summary>
+          Use an optional step summary to summarize the info in this step
+        </ng-template>
+
+        <ng-template td-step-actions>
+          <button md-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle
+            Complete
+          </button>
+          <button md-button (click)="step3.active = false" class="text-upper">Cancel</button>
+        </ng-template>
+      </td-step>
+
+
+      <td-step #step4 label="Install Optimize plugin"
+               sublabel="Toggle between active and inactive while in required state and disable ripple."
+               [disabled]="disabled" disableRipple>
+        This step is required!
+        <ng-template td-step-actions>
+          <button md-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require
+          </button>
+          <button md-button (click)="step2.active = false" class="text-upper">Cancel</button>
+        </ng-template>
+      </td-step>
+
+      <td-step #step5 label="Start an experiment"
+               sublabel="Toggle between active and inactive while in required state and disable ripple."
+               [disabled]="disabled" disableRipple>
+        This step is required!
+        <ng-template td-step-actions>
+          <button md-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require
+          </button>
+          <button md-button (click)="step2.active = false" class="text-upper">Cancel</button>
+        </ng-template>
+      </td-step>
+
+    </td-steps>
+
+  </md-nav-list>
+
+</div>

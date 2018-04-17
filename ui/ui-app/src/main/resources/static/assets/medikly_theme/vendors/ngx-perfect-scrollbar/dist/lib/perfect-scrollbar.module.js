@@ -5,8 +5,8 @@ var core_1 = require("@angular/core");
 var perfect_scrollbar_component_1 = require("./perfect-scrollbar.component");
 var perfect_scrollbar_directive_1 = require("./perfect-scrollbar.directive");
 var perfect_scrollbar_interfaces_1 = require("./perfect-scrollbar.interfaces");
-exports.PERFECT_SCROLLBAR_GUARD = new core_1.OpaqueToken('PERFECT_SCROLLBAR_GUARD');
-exports.PERFECT_SCROLLBAR_CONFIG = new core_1.OpaqueToken('PERFECT_SCROLLBAR_CONFIG');
+exports.PERFECT_SCROLLBAR_GUARD = new core_1.InjectionToken('PERFECT_SCROLLBAR_GUARD');
+exports.PERFECT_SCROLLBAR_CONFIG = new core_1.InjectionToken('PERFECT_SCROLLBAR_CONFIG');
 var PerfectScrollbarModule = /** @class */ (function () {
     function PerfectScrollbarModule(guard) {
     }

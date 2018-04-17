@@ -1,0 +1,234 @@
+<app-card-layout>
+
+  <mdk-card-layout-content class="content-home">
+
+    <md-card class="shadow-none pa-0 ma-0">
+      <app-project-info-top documentId="15"></app-project-info-top>
+      <md-card-content class="ml-0 mr-0 pl-0 pr-0 card-layout-content ">
+
+        <perfect-scrollbar class="overflow-container">
+          <md-card class="ml-0 mr-0">
+
+            <!--Projects Objective-->
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <md-card-header class="mt-0">
+                <md-card-subtitle>PROJECT OBJECTIVE</md-card-subtitle>
+                <md-card-title>{{projectObjective}}</md-card-title>
+              </md-card-header>
+              <span fxFlex></span>
+              <button md-icon-button md-button-sm [md-menu-trigger-for]="projectObjectiveMenu"
+                      aria-label="Open card menu">
+                <md-icon>more_vert</md-icon>
+              </button>
+              <md-menu #projectObjectiveMenu="mdMenu" x-position="before" dense>
+                <md-nav-list dense>
+                  <a md-list-item uiSref="workspace.summary" [uiParams]="{ id: project }"> <!--[routerLink]="['/projects/view/'+project+'/workspace/project-summary']">-->
+                    Edit
+                  </a>
+                </md-nav-list>
+              </md-menu>
+            </div>
+
+            <md-card-content class="pt-0 pb-0">
+
+              <td-chips class="chips-mdk"
+                        [chipAddition]="chipAddition"
+                        [chipRemoval]="chipRemoval"
+                        [items]="filteredStrings"
+                        [(ngModel)]="stringsModel"
+                        placeholder="Add tags"
+                        [disabled]="disabled"
+                        (inputChange)="filterStrings($event)"
+                        requireMatch="false">
+              </td-chips>
+            </md-card-content>
+
+          </md-card>
+
+
+          <md-card class="ml-0 mr-0 mt-1">
+
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <md-card-header class="mt-0">
+                <img md-card-avatar src="assets/medikly_theme/images/ic_text_fields.svg">
+                <md-card-title>Add a detailed summary of your project.</md-card-title>
+                <md-card-subtitle>Describe your project with images, links, and custom
+                  formatting using Markdown.
+                </md-card-subtitle>
+              </md-card-header>
+              <span fxFlex></span>
+              <button md-icon-button md-button-sm [md-menu-trigger-for]="projectSummaryMenu"
+                      aria-label="Open card menu">
+                <md-icon>more_vert</md-icon>
+              </button>
+              <md-menu #projectSummaryMenu="mdMenu" x-position="before" dense>
+                <md-nav-list dense>
+                  <a md-list-item uiSref="workspace.summary" [uiParams]="{ id: project }"> <!--[routerLink]="['/projects/view/'+project+'/workspace/project-summary']">-->
+                    Edit
+                  </a>
+                </md-nav-list>
+              </md-menu>
+            </div>
+
+          </md-card>
+
+          <md-card class="ml-0 mr-0 mt-1">
+
+            <!--Activity-->
+            <md-card-header>
+              <md-card-subtitle>ACTIVITY</md-card-subtitle>
+            </md-card-header>
+
+            <md-card-content class="pt-0">
+              <div class="activity-stream">
+                <md-card class="shadow-none">
+                  <md-card-header>
+                    <img md-card-avatar src="assets/medikly_theme/images/providers/F/1.png">
+                    <md-card-title>Received a call from Joel</md-card-title>
+                    <md-card-subtitle>Header subtitle</md-card-subtitle>
+                  </md-card-header>
+                </md-card>
+                <md-card class="shadow-none">
+                  <md-card-header>
+                    <img md-card-avatar src="assets/medikly_theme/images/providers/M/1.png">
+                    <md-card-title>Header title</md-card-title>
+                    <md-card-subtitle>Header subtitle</md-card-subtitle>
+                  </md-card-header>
+                  <md-card-content>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce
+                      dapibus,
+                      tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                      Donec
+                      id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat
+                      porttitor
+                      ligula, eget lacinia odio sem nec elit.</p>
+                  </md-card-content>
+                </md-card>
+                <md-card class="shadow-none">
+                  <md-card-header>
+                    <img md-card-avatar src="assets/medikly_theme/images/providers/M/3.png">
+                    <md-card-title>Header title</md-card-title>
+                    <md-card-subtitle>Added a photo</md-card-subtitle>
+                  </md-card-header>
+                  <md-card-content>
+
+                  </md-card-content>
+                </md-card>
+                <md-card class="shadow-none">
+                  <md-card-header>
+                    <img md-card-avatar src="assets/medikly_theme/images/providers/F/3.png">
+                    <md-card-title>Header title</md-card-title>
+                    <md-card-subtitle>Header subtitle</md-card-subtitle>
+                  </md-card-header>
+                  <md-card-content>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce
+                      dapibus,
+                      tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                      Donec
+                      id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat
+                      porttitor
+                      ligula, eget lacinia odio sem nec elit.</p>
+                  </md-card-content>
+                </md-card>
+                <md-card class="shadow-none">
+                  <md-card-header>
+                    <img md-card-avatar src="assets/medikly_theme/images/providers/M/6.png">
+                    <md-card-title>Uploaded new file</md-card-title>
+                    <md-card-subtitle>Header subtitle</md-card-subtitle>
+                  </md-card-header>
+                </md-card>
+              </div>
+            </md-card-content>
+          </md-card>
+        </perfect-scrollbar>
+      </md-card-content>
+
+    </md-card>
+
+
+  </mdk-card-layout-content>
+
+  <mdk-card-layout-right-sidebar class="right-sidebar-home">
+
+    <!--DATA SOURCES-->
+    <div class="block-sidebar">
+      <div class="title-block">DATA SOURCES</div>
+      <div class="content-block">
+        <div class="center-content" *ngIf="files.length==0">
+          <span>Your project files and linked datasets will show up here.</span>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" class="actions-block">
+        <button md-button color="primary" [disabled]="true" class="btn-outline btn-color-lightblue"><i
+          class="material-icons mr-3">link</i>Link a dataset
+        </button>
+        <button md-button color="primary" [md-menu-trigger-for]="addFiles" class="btn-outline btn-color-lightblue ml-5">
+          <i
+            class="material-icons mr-3">cloud_upload</i>Add
+          files
+        </button>
+        <md-menu #addFiles="mdMenu" x-position="before">
+          <md-nav-list dense>
+            <a md-list-item (click)="openDialogUploadFiles()">
+              Upload files
+            </a>
+            <a md-list-item (click)="openDialogAddFilesUrl()">
+              Add files from URL
+            </a>
+          </md-nav-list>
+        </md-menu>
+      </div>
+      <a *ngIf="files.length>0" (click)="redirectToWorkspace()">
+        <div class="project-block" fxLayout="row">
+          <div fxLayout="column">
+            <span class="pf-title">Project files</span>
+            <span class="pf-subtitle">{{files.length}} files, 0 tables</span>
+          </div>
+          <div fxFlex></div>
+          <md-icon class="icon-style">keyboard_arrow_right</md-icon>
+        </div>
+      </a>
+    </div>
+
+    <!--DOCUMENTS-->
+    <div class="block-sidebar bt-1">
+      <div class="title-block">DOCUMENTS ({{documents.length}})</div>
+      <div class="content-block">
+        <a class="link-chips" *ngFor="let document of documents">
+          <div class="md-caption link-option" uiSref="{{document.url}}" [uiParams]="{ id: project }">
+            <span class="title-document">{{document.name}}</span>
+            <span class="flat-badge pull-right">MD</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!--QUERIES-->
+    <div class="block-sidebar bt-1" *ngIf="files.length>0">
+      <div class="title-block">QUERIES (0)</div>
+      <div class="content-block">
+        <div class="center-content">
+          <span>Saved and published queries will show up here.</span>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" class="actions-block">
+
+        <button md-button color="primary" [md-menu-trigger-for]="newQuery" class="btn-outline btn-color-lightblue ml-5">
+          New query
+        </button>
+        <md-menu #newQuery="mdMenu" x-position="before">
+          <md-nav-list dense>
+            <a md-list-item>
+              SQL query
+            </a>
+            <a md-list-item>
+              SPARQL query
+            </a>
+          </md-nav-list>
+        </md-menu>
+      </div>
+    </div>
+  </mdk-card-layout-right-sidebar>
+
+</app-card-layout>

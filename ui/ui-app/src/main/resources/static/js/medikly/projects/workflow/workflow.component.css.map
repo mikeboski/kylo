@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,KAAM;EACJ,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,KAAK;EACd,MAAM,EAAE,kBAAkB;;AAE5B,UAAW;EACT,MAAM,EAAE,IAAI;;AAEd,UAAW;EACT,gBAAgB,EAAE,KAAK;EACvB,aAAa,EAAE,QAAQ;EACvB,OAAO,EAAE,MAAM;EACf,OAAO,EAAE,CAAC",
+"sources": ["workflow.component.scss"],
+"names": [],
+"file": "workflow.component.css"
+}

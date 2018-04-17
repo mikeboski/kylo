@@ -1,0 +1,34 @@
+<md-toolbar  class="toolbar-templates-style">
+
+    <md-toolbar-row class="templates-contracted-header">
+        <div class="template-contracted-header-text ">TITLE</div>
+        <span fxFlex></span>
+        <div class="template-contracted-header-actions">
+            <a class="template-more">TEMPLATE GALLERY</a>
+            <span class="border-separator"></span>
+            <span class="template-more-action"><md-icon>more_vert</md-icon></span>
+        </div>
+    </md-toolbar-row>
+    <md-toolbar-row class="templates-gallery" fxLayout="row" fxLayoutAlign="center center">
+        <div class="toolbar-templates-showcase " *ngFor="let product of products; let i = index">
+            <div class="toolbar-template-preview" [ngClass]="{'border-lightgrey': i == 0}">
+                <!--<img src="assets/images/unsplash/{{ product.id }}.jpg">-->
+                <img *ngIf="i > 0" src="http://via.placeholder.com/144x183" alt="Placeholder" (click)="openDialogNewProject()">
+                <img *ngIf="i == 0" src="assets/medikly_theme/images/docs-blank_1.png" alt="Placeholder" (click)="openDialogNewProject()">
+            </div>
+
+            <div class="toolbar-templates-caption">
+                <div class="toolbar-templates-metadata">
+                    <div class="toolbar-templates-title">{{i == 0 ? 'Blank' : 'Template '+i}}</div>
+                    <div *ngIf="i > 0" class="toolbar-templates-style">Lorem Ipsum</div>
+                </div>
+            </div>
+        </div>
+    </md-toolbar-row>
+
+</md-toolbar>
+
+
+
+
+

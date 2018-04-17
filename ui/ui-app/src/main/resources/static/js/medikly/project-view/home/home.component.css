@@ -1,0 +1,91 @@
+@import url(../../../../assets/medikly_theme/styles/css/social.css);
+.sidenav-container-project-view {
+  height: calc(100vh - 64px); }
+  .sidenav-container-project-view .info-absolute {
+    position: absolute;
+    right: 0px;
+    z-index: 2; }
+
+.m-0 {
+  margin: 0px; }
+
+.bt-1 {
+  border-top: 1px solid lightgrey; }
+
+.right-sidebar-home .block-sidebar {
+  padding: 16px 0px; }
+  .right-sidebar-home .block-sidebar .project-block {
+    margin-top: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 16px;
+    padding-left: 26px; }
+    .right-sidebar-home .block-sidebar .project-block .pf-title {
+      color: #4e5057;
+      font-size: 0.875rem; }
+    .right-sidebar-home .block-sidebar .project-block .pf-subtitle {
+      font-size: 13px;
+      color: #8c9caf; }
+    .right-sidebar-home .block-sidebar .project-block .icon-style {
+      font-size: 24px;
+      margin-top: 3px; }
+  .right-sidebar-home .block-sidebar .project-block:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    text-decoration: none; }
+.right-sidebar-home .title-block {
+  margin: 0px 16px;
+  font-size: 12px;
+  color: #8C9CB0;
+  font-weight: bold; }
+.right-sidebar-home .content-block {
+  padding-top: 14px; }
+  .right-sidebar-home .content-block .center-content {
+    padding: 32px 0;
+    margin: 0 24px; }
+    .right-sidebar-home .content-block .center-content span {
+      font-size: 14px;
+      color: #8c9caf;
+      line-height: 24px;
+      text-align: center;
+      display: block; }
+  .right-sidebar-home .content-block .link-option {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 16px;
+    padding-left: 26px;
+    line-height: 16px; }
+    .right-sidebar-home .content-block .link-option .title-document {
+      color: #4e5057;
+      font-size: 0.875rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1 1 auto;
+      overflow: hidden; }
+  .right-sidebar-home .content-block .link-option:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: #3c6a9d;
+    cursor: pointer; }
+.right-sidebar-home .mr-2 {
+  margin-right: 2px !important; }
+.right-sidebar-home .mr-3 {
+  margin-right: 3px !important; }
+.right-sidebar-home .ml-5 {
+  margin-left: 5px; }
+
+.content-home .title-section {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #8c9caf; }
+.content-home .invert-icon {
+  -moz-transform: scaleX(-1);
+  /* Firefox */
+  -o-transform: scaleX(-1);
+  /* Opera */
+  -webkit-transform: scaleX(-1);
+  /* Chrome y Safari */
+  transform: scaleX(-1);
+  /* w3org */ }
+
+/*# sourceMappingURL=home.component.css.map */

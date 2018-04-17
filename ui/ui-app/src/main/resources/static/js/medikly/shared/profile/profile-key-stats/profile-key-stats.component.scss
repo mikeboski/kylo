@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+}
+.profile-key-stats {
+  width: 100%;
+  font-size: 16px;
+
+  .card-widget {
+    border-bottom: 1px solid #cecece;
+    text-transform: uppercase;
+    min-height: 58px;
+
+    .content-widget{
+      min-height: 54px;
+    }
+  }
+  .card-widget > div{
+    padding: 8px !important;
+  }
+  .widget-text{
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+  .widget-text {
+    font-size: 16px !important;
+    font-weight: 500;
+  }
+
+  .title-stats{
+    font-size: 11px !important;
+  }
+}

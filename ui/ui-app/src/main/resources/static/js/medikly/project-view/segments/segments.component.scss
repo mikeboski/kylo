@@ -1,0 +1,230 @@
+@import "../../../../assets/medikly_theme/styles/css/pricing.css";
+
+$width-sidenav: 200px;
+
+:host {
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-top: 0px !important;
+  display: block;
+}
+
+$mat-toolbar-height-desktop: 64px !default;
+$mat-toolbar-height-mobile-portrait: 56px !default;
+$mat-toolbar-height-mobile-landscape: 48px !default;
+
+.mat-card-top {
+  margin-top: -($mat-toolbar-height-desktop);
+}
+
+@media ($mat-xsmall) and (orientation: portrait) {
+  .mat-card-top {
+    margin-top: -($mat-toolbar-height-mobile-portrait);
+  }
+  .main-content-projects {
+    padding: 0px!important;
+  }
+}
+
+@media ($mat-small) and (orientation: landscape) {
+  .mat-card-top {
+    margin-top: -($mat-toolbar-height-mobile-landscape);
+  }
+  .main-content-projects {
+    padding: 0px !important;
+  }
+}
+
+@media ($mat-small) {
+  .main-content-projects {
+    padding: 0px !important;
+  }
+}
+
+
+
+.margin-p {
+  margin-top: 16px !important;
+  min-height: 39px;
+}
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  //padding-left: 8px;
+}
+
+.subtitle {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  //padding-left: 8px;
+}
+
+.material-box {
+  min-height: 350px;
+}
+
+.mr-1 {
+  margin-right: 0px !important;
+}
+
+:host {
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-top: -5px;
+  display: block;
+}
+
+.title-toolbar {
+  padding-left: 5%;
+}
+
+.sidebar-menu {
+  width: $width-sidenav;
+  margin-left: 1px;
+  background-color: #EEEEEE;
+  margin-top: 5px !important;
+
+  md-icon {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+}
+
+.main-content-projects {
+  min-height: calc(100vh);
+  padding: 0px $width-sidenav;
+  width: 100%;
+  display: inline-block;
+
+}
+
+.submenu-item-measure {
+  padding-left: 24px;
+}
+
+.measure-list-item {
+  font-size: 13px !important;
+  font-weight: 500;
+}
+
+.nav-list-measure {
+  border: 1px solid #c4c4c4;
+  padding-top: 0px;
+
+  .mat-list-item {
+    background-color: white;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .mat-list-avatar {
+    height: 25px;
+    width: 25px;
+    min-width: 25px;
+  }
+
+}
+
+.description-item {
+  font-size: 14px;
+}
+
+.title-item {
+  color: #444;
+  font-weight: 500;
+}
+
+.nowrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+
+.overflow-container {
+  height: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.content-wrapper {
+  white-space: nowrap;
+  overflow-x: hidden;
+  display: block;
+  margin: 0;
+  width: 100%;
+
+  .labels {
+    .label {
+      padding: 2px 8px;
+      font-size: 13px;
+      color: #FFFFFF;
+    }
+
+    .label + .label {
+      margin-left: 6px;
+    }
+  }
+
+  .subject {
+    margin: 0 8px;
+  }
+
+  .middot {
+    font-weight: bold;
+  }
+
+  .content {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    margin: 0 8px;
+  }
+}
+
+.bottom-add-right {
+  position: fixed !important;
+  background-color: #db4437;
+}
+
+.top-bar {
+  position: fixed;
+  background-color: #ccc;
+  border: 1px solid #333;
+  height: 100px;
+  z-index: 1;
+}
+
+.top-bar:active {
+  background-color: #fff
+}
+
+.container {
+  margin: 0 auto;
+  padding: 10px;
+  min-width: 640px;
+  max-width: 960px;
+  background-color: #eee;
+}
+
+.container > div {
+  margin: 20px;
+  border: 1px solid #333;
+  background-image: linear-gradient(rgba(255, 255, 255, 1) 50%, transparent 50%, transparent);
+  background-size: 50px 50px;
+  height: 500px;
+}
+
+.float-left {
+  margin-top: 0;
+  background-color: rgba(255, 0, 0, .2);
+}
+
+.float-right {
+  background-color: rgba(0, 255, 0, .2);
+}
+
+.div-middle {
+  background-color: rgba(0, 0, 255, .2);
+}
+
+

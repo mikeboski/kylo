@@ -1,0 +1,47 @@
+<md-card class="app-avatar-card-heading shadow-none">
+
+    <ng-content select="app-card-top-actions"></ng-content>
+
+
+  <img md-card-image md-card-lg-image src="{{coverImage}}">
+  <img class="card-avatar" src="{{profile.avatar}}">
+
+  <div class="card-titles">
+    <md-card-title class="tc-blue-600">
+      {{profile.basic.first_name}} {{profile.basic.last_name}}, {{profile.basic.credential}}
+    </md-card-title>
+
+    <md-card-subtitle>Oncologist - {{profile.addresses[0].city}},
+      {{profile.addresses[0].state}}</md-card-subtitle>
+
+  </div>
+  <md-card-actions layout="row" layout-align="start center">
+
+    <button *ngFor="let network of socialNetworks" class="shadow-none social-icon" [class.tc-blue-600]="network.mouseOvered" (mouseover)="network.mouseOvered=true" (mouseleave)="network.mouseOvered=false" md-mini-fab md-card-icon color="transparent">
+      <i class="icon {{network.icon}}"></i>
+    </button>
+
+    <span fxFlex></span>
+    <!--<button md-button color="warn" class="mr-1 style-buttons-profile btn-rose" (click)="throwEventProviderCompare(profile)">Add to Compare</button>-->
+    <!--<button md-button color="accent" class="mr-1 style-buttons-profile tc-blue-600" (click)="throwEventFollow(profile)">Favorite</button>-->
+
+
+    <button md-icon-button [md-menu-trigger-for]="moreMenuActions"><md-icon class="mat-text-muted">more_vert</md-icon></button>
+    <md-menu #moreMenuActions="mdMenu" x-position="before">
+      <md-nav-list dense>
+        <a md-list-item>
+          Lookup LinkedIn
+        </a>
+        <a md-list-item>
+          Customize Detail Field Order
+        </a>
+        <a md-list-item>
+          Change Profile Image
+        </a>
+        <a md-list-item class="tc-red-500">
+          Delete
+        </a>
+      </md-nav-list>
+    </md-menu>
+  </md-card-actions>
+</md-card>

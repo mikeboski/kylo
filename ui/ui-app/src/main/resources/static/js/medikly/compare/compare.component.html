@@ -1,0 +1,156 @@
+<div class="content-compare">
+  <div fxFlex.gt-sm="{{doctors.length==2 ? '50' : '33'}}" fxFlex.gt-xs="50" fxFlex="100" *ngFor="let provider of doctors">
+    <md-card>
+      <md-card-content>
+        <div class="text-xs-center">
+        <div fxLayout="row"  fxLayoutAlign="center center" class="mt-1">
+          <div fxFlex>
+            <button md-icon-button>
+              <md-icon>email</md-icon>
+            </button>
+          </div>
+          <div fxFlex>
+            <img src="{{provider.avatar}}" class="radius-circle img-compare">
+          </div>
+          <div fxFlex>
+            <button md-icon-button>
+              <md-icon *ngIf="provider.key % 2 == 0" [class.tc-yellow-700]="provider.key % 2 == 0" >star</md-icon>
+              <md-icon class="mat-text-muted" *ngIf="provider.key % 2 != 0">star_border</md-icon>
+            </button>
+          </div>
+        </div>
+        <div class="mb-1">
+          <h3 class="name-compare">{{provider.basic.first_name}} {{provider.basic.last_name}}, {{provider.basic.credential}}</h3>
+          <span class="mat-text-muted">{{provider.addresses[0].city}}, {{provider.addresses[0].state}}</span>
+        </div>
+
+        <div fxLayout="row"  fxLayoutWrap="wrap" class="mt-1 text-uppercase">
+          <div fxFlex="33.33%">
+            <h5 class="mt-0 mb-0 statistics-compare">89</h5>
+            <p class="mt-0 mb-0 text-md mat-text-muted">Photos</p>
+          </div>
+          <div fxFlex="33.33%">
+            <h5 class="mt-0 mb-0 statistics-compare">354</h5>
+            <p class="mt-0 mb-0 text-md mat-text-muted">Followers</p>
+          </div>
+          <div fxFlex="33.33%">
+            <h5 class="mt-0 mb-0 statistics-compare">945</h5>
+            <p class="mt-0 mb-0 text-md mat-text-muted">Following</p>
+          </div>
+        </div>
+        </div>
+
+        <div fxLayout="row" layout-align="center" class="mb-2 text-md compare-info compare-info-font">
+          <div class="pr-1" fxFlex>
+            <div fxLayout="row">
+              <span>Specialty</span>
+              <span fxFlex></span>
+              <span>Oncologist</span>
+            </div>
+
+            <div fxLayout="row">
+              <span>Age</span>
+              <span fxFlex></span>
+              <span>50</span>
+              <span> years</span>
+            </div>
+
+            <div fxLayout="row">
+              <span>Gender</span>
+              <span fxFlex></span>
+              <span *ngIf="provider.basic.gender">{{provider.basic.gender}}</span>
+            </div>
+            <div fxLayout="row">
+              <span>Phone N.</span>
+              <span fxFlex></span>
+              <span *ngIf="provider.addresses[0].us_telephone_number">{{provider.addresses[0].us_telephone_number}}</span>
+            </div>
+
+          </div>
+          <div class="pl-1" fxFlex>
+            <div fxLayout="row">
+              <span>Fax N.</span>
+              <span fxFlex></span>
+              <span *ngIf="provider.addresses[0].us_fax_number">{{provider.addresses[0].us_fax_number}}</span>
+            </div>
+            <div fxLayout="row">
+              <span>ZIP</span>
+              <span fxFlex></span>
+              <span *ngIf="provider.addresses[0].zip">{{provider.addresses[0].zip}}</span>
+              <span></span>
+            </div>
+
+            <div fxLayout="row">
+              <span>Provider since</span>
+              <span fxFlex></span>
+              <span>2010</span>
+            </div>
+
+            <div fxLayout="row">
+              <span>Professional since</span>
+              <span fxFlex></span>
+              <span>1990</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="compare-info">
+        <h3 class="mt-0 bio-title">
+          <md-icon>school</md-icon>
+          Education
+        </h3>
+        <div class="activity-stream">
+          <md-card class="shadow-none">
+            <md-card-header>
+              <i md-card-avatar class="ion-ios-circle-filled"></i>
+              <md-card-title class="out-padding">MASTERS IN FINE ARTS <span class="text-md activity-stream-title">2002 - 2004</span>
+              </md-card-title>
+              <md-card-subtitle class="out-padding">Walters University</md-card-subtitle>
+            </md-card-header>
+ <!--           <md-card-content>
+              <p>
+                Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly
+                vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily
+                dalmatian a glowered. outside ignobly allegedly more when oh arrogantly vehement
+              </p>
+            </md-card-content>-->
+          </md-card>
+          <md-card class="shadow-none">
+            <md-card-header>
+              <i md-card-avatar class="ion-ios-circle-filled"></i>
+              <md-card-title class="out-padding">TOMMERS COLLEGE <span class="text-md activity-stream-title">2012 - 2015</span>
+              </md-card-title>
+              <md-card-subtitle class="out-padding">Bachlors in Fine Arts</md-card-subtitle>
+            </md-card-header>
+<!--            <md-card-content>
+              <p>
+                Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly
+                vehement irresistibly fussy penguin insect additionally wow absolutely.
+              </p>
+            </md-card-content>-->
+          </md-card>
+          <md-card class="shadow-none">
+            <md-card-header>
+              <i md-card-avatar class="ion-ios-circle-filled"></i>
+              <md-card-title class="out-padding">DIPLOMA IN FINE ARTS <span class="text-md activity-stream-title">2014 - 2015</span>
+              </md-card-title>
+              <md-card-subtitle class="out-padding">Imperieal Institute of Art Direction</md-card-subtitle>
+            </md-card-header>
+<!--            <md-card-content>
+              <p>
+                Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly
+                vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily
+                dalmatian a glowered. outside ignobly allegedly more when oh arrogantly vehement.
+              </p>
+            </md-card-content>-->
+          </md-card>
+        </div>
+        </div>
+
+      </md-card-content>
+    </md-card>
+  </div>
+
+</div>
+

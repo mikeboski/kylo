@@ -1,0 +1,214 @@
+<!--<md-expansion-panel class="md-expansion-demo-width tab-chart" *ngFor="let chart of children ; let i = index" #myPanel aria-expanded="true"
+                    [class.remove-padding-body]="!myPanel.expanded" [class.mat-expanded]="true" >
+  <md-expansion-panel-header>
+    <mat-panel-description *ngIf="!myPanel.expanded" class="nowrap-text subtitle-chart" >{{chart.subtitle}}
+    </mat-panel-description>
+    <mat-panel-title class="nowrap-text title-chart" [class.title-chart-card]="myPanel.expanded">
+      {{chart.title}}
+    </mat-panel-title>
+  </md-expansion-panel-header>
+
+  <div *ngIf="myPanel.expanded">
+    <span class="subtitle-chart" [class.subtitle-chart-card]="myPanel.expanded">
+      {{chart.subtitle}}</span><br><br>
+
+    &lt;!&ndash;Vertical Inverted&ndash;&gt;
+    <chart-vertical-inverted *ngIf="chart.type==='vertical-inverted'"
+                             [name1]="chart.data.name1"
+                             [name2]="chart.data.name2"
+                             [categories]="chart.data.categories"
+                             [data1]="chart.data.data1"
+                             [data2]="chart.data.data2"
+                             [data3]="chart.data.data3"
+                             [data4]="chart.data.data4"
+                             [matched]="chart.data.matched">
+    </chart-vertical-inverted>
+
+    &lt;!&ndash;Vertical&ndash;&gt;
+    <chart-vertical *ngIf="chart.type==='vertical'"
+                    [categories]="chart.data.categories"
+                    [data1]="chart.data.data1"
+                    [data2]="chart.data.data2">
+    </chart-vertical>
+
+    &lt;!&ndash;Horizontal&ndash;&gt;
+    <chart-horizontal *ngIf="chart.type==='horizontal'"
+                      [categories]="chart.data.categories"
+                      [data1]="chart.data.data1"
+                      [data2]="chart.data.data2"
+                      [matched]="chart.data.matched">
+    </chart-horizontal>
+
+    &lt;!&ndash;Map&ndash;&gt;
+    <div  *ngIf="chart.type==='map'">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <chart-map></chart-map>
+      </div>
+      <div class="footer-chart">
+        <div class="footer-chart-text">
+          <div><span class="bold-text">Source:</span> source.</div>
+          <div><span class="bold-text">Notes:</span> notes.</div>
+        </div>
+      </div>
+    </div>
+
+
+    &lt;!&ndash;Tab&ndash;&gt;
+    <div *ngIf="chart.type==='tab'">
+
+      <md-tab-group color="primary" (selectChange)="tabActive()">
+
+        <md-tab *ngFor="let tab of chart.data">
+          <ng-template md-tab-label>{{tab.name}}</ng-template>
+
+            &lt;!&ndash;Vertical Inverted&ndash;&gt;
+            <chart-vertical-inverted *ngIf="tab.type==='vertical-inverted'"
+                                     [name1]="tab.name1"
+                                     [name2]="tab.name2"
+                                     [categories]="tab.categories"
+                                     [data1]="tab.data1"
+                                     [data2]="tab.data2"
+                                     [data3]="tab.data3"
+                                     [data4]="tab.data4"
+                                     [matched]="tab.matched">
+            </chart-vertical-inverted>
+
+            &lt;!&ndash;Vertical&ndash;&gt;
+            <chart-vertical *ngIf="tab.type==='vertical'"
+                            [categories]="tab.categories"
+                            [data1]="tab.data1"
+                            [data2]="tab.data2">
+            </chart-vertical>
+
+            &lt;!&ndash;Horizontal&ndash;&gt;
+            <chart-horizontal *ngIf="tab.type==='horizontal'"
+                              [categories]="tab.categories"
+                              [data1]="tab.data1"
+                              [data2]="tab.data2"
+                              [matched]="tab.matched">
+            </chart-horizontal>
+
+
+        </md-tab>
+
+      </md-tab-group>
+
+    </div>
+
+
+  </div>
+
+  &lt;!&ndash;  <md-action-row>
+      <button md-button (click)="myPanel.expanded = false">CANCEL</button>
+      <button md-button>SAVE</button>
+    </md-action-row>&ndash;&gt;
+</md-expansion-panel>-->
+
+<div class="expansion-chart">
+  <td-expansion-panel class="md-expansion-demo-width tab-chart" [expand]="true"
+                      *ngFor="let chart of children ; let i = index" #myPanel (expanded)="expandedEvent(chart)"
+                      (collapsed)="collapsedEvent(chart)">
+
+    <ng-template td-expansion-panel-label>
+      <div fxLayout="row">
+        <div class="nowrap-text title-chart" [class.title-chart-card]="chart.open">{{chart.title}}</div>
+        <div *ngIf="!chart.open" class="nowrap-text subtitle-chart">{{chart.subtitle}}</div>
+      </div>
+    </ng-template>
+
+    <!--Main content expansion-->
+    <div *ngIf="chart.open">
+
+      <div class="main-content-expansion-chart">
+      <span class="subtitle-chart" [class.subtitle-chart-card]="chart.open">
+      {{chart.subtitle}}</span><br><br>
+
+        <!--Vertical Inverted-->
+        <chart-vertical-inverted *ngIf="chart.type==='vertical-inverted'"
+                                 [name1]="chart.data.name1"
+                                 [name2]="chart.data.name2"
+                                 [categories]="chart.data.categories"
+                                 [data1]="chart.data.data1"
+                                 [data2]="chart.data.data2"
+                                 [data3]="chart.data.data3"
+                                 [data4]="chart.data.data4"
+                                 [matched]="chart.data.matched">
+        </chart-vertical-inverted>
+
+        <!--Vertical-->
+        <chart-vertical *ngIf="chart.type==='vertical'"
+                        [categories]="chart.data.categories"
+                        [data1]="chart.data.data1"
+                        [data2]="chart.data.data2">
+        </chart-vertical>
+
+        <!--Horizontal-->
+        <chart-horizontal *ngIf="chart.type==='horizontal'"
+                          [categories]="chart.data.categories"
+                          [data1]="chart.data.data1"
+                          [data2]="chart.data.data2"
+                          [matched]="chart.data.matched">
+        </chart-horizontal>
+
+        <!--Map-->
+        <div *ngIf="chart.type==='map'">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <chart-map></chart-map>
+          </div>
+          <div class="footer-chart">
+            <div class="footer-chart-text">
+              <div><span class="bold-text">Source:</span> source.</div>
+              <div><span class="bold-text">Notes:</span> notes.</div>
+            </div>
+          </div>
+        </div>
+
+        <!--Tab-->
+        <div *ngIf="chart.type==='tab'">
+
+          <md-tab-group color="primary" (selectChange)="tabActive()">
+
+            <md-tab *ngFor="let tab of chart.data">
+              <ng-template md-tab-label>{{tab.name}}</ng-template>
+
+              <!--Vertical Inverted-->
+              <chart-vertical-inverted *ngIf="tab.type==='vertical-inverted'"
+                                       [name1]="tab.name1"
+                                       [name2]="tab.name2"
+                                       [categories]="tab.categories"
+                                       [data1]="tab.data1"
+                                       [data2]="tab.data2"
+                                       [data3]="tab.data3"
+                                       [data4]="tab.data4"
+                                       [matched]="tab.matched">
+              </chart-vertical-inverted>
+
+              <!--Vertical-->
+              <chart-vertical *ngIf="tab.type==='vertical'"
+                              [categories]="tab.categories"
+                              [data1]="tab.data1"
+                              [data2]="tab.data2">
+              </chart-vertical>
+
+              <!--Horizontal-->
+              <chart-horizontal *ngIf="tab.type==='horizontal'"
+                                [categories]="tab.categories"
+                                [data1]="tab.data1"
+                                [data2]="tab.data2"
+                                [matched]="tab.matched">
+              </chart-horizontal>
+
+
+            </md-tab>
+
+          </md-tab-group>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </td-expansion-panel>
+</div>
+

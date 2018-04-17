@@ -1,0 +1,35 @@
+/*@import "../../../assets/styles/scss/components/social";*/
+@import url(../../../../assets/medikly_theme/styles/css/social.css);
+/deep/ .bio-title md-icon {
+  font-size: 15px; }
+/deep/ .activity-stream i[md-card-avatar] {
+  color: #cecece;
+  font-size: 20px;
+  margin: 14px 0px 0 26px; }
+/deep/ .activity-stream .activity-stream-title {
+  color: rgba(0, 0, 0, 0.54); }
+/deep/ .activity-stream .mat-card-header-text {
+  margin: 0; }
+
+.btn-rose {
+  color: #FF1281; }
+
+.btn-light-blue {
+  color: #009CEE;
+  font-weight: normal !important;
+  font-size: 13px !important; }
+
+#directory-profile {
+  font-size: 12px;
+  color: #363636; }
+
+.expansion-profile-style {
+  font-size: 14px;
+  font-weight: 600; }
+
+.style-buttons-profile {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase; }
+
+/*# sourceMappingURL=directory-profile.component.css.map */

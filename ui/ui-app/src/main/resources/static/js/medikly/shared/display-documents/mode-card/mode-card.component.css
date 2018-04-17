@@ -1,0 +1,78 @@
+@import url(../../../../../assets/medikly_theme/styles/css/pricing.css);
+/deep/ .nav-list-measure .mat-list-item-content {
+  height: 48px !important;
+  width: 100%; }
+/deep/ .sidebar-menu .mat-list-item-content {
+  height: 40px !important; }
+
+@media (max-width: 1919px) {
+  .nowrap-text {
+    max-width: 110px !important; } }
+.nowrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px; }
+
+.card-grid {
+  transition: all .2s ease; }
+  .card-grid .media-grid .hover-content {
+    top: 0;
+    width: 100%;
+    height: calc(100% - 69px);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    position: absolute;
+    color: white;
+    display: none; }
+  .card-grid .media-grid .hover-button {
+    height: calc(100% - 23px);
+    margin-top: -11.5px; }
+
+.card-grid:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.3), 0 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.3), 0 0 1px 0 rgba(0, 0, 0, 0.25) !important; }
+  .card-grid:hover .hover-content {
+    display: block !important; }
+
+.style-content-card {
+  height: 120.17px !important; }
+
+.footer-card {
+  border-top: 1px solid lightgrey; }
+  .footer-card .description-item {
+    font-size: 14px; }
+  .footer-card .title-item {
+    color: #444;
+    font-size: 14px;
+    font-weight: 500; }
+
+.icon-hover-content {
+  font-size: 18px; }
+
+.invert-icon {
+  -moz-transform: scaleX(-1);
+  /* Firefox */
+  -o-transform: scaleX(-1);
+  /* Opera */
+  -webkit-transform: scaleX(-1);
+  /* Chrome y Safari */
+  transform: scaleX(-1);
+  /* w3org */ }
+
+.btn-light-blue {
+  background-color: #2196f3;
+  border-color: #2196f3; }
+
+.mat-card {
+  margin: 0.5rem !important;
+  padding: 0px !important; }
+
+.button-card-style {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  font-size: 11px;
+  padding: 0 15px; }
+
+/*# sourceMappingURL=mode-card.component.css.map */

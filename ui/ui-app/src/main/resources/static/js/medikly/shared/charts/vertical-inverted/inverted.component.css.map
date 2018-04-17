@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAM;EACJ,KAAK,EAAE,eAAe",
+"sources": ["inverted.component.scss"],
+"names": [],
+"file": "inverted.component.css"
+}

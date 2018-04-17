@@ -1,0 +1,54 @@
+<perfect-scrollbar class="scroll">
+  <app-profile-header-card coverImage="https://maps.googleapis.com/maps/api/staticmap?center={{profile.addresses[0].point.lat}},{{profile.addresses[0].point.ln}}&markers=color:blue%7Clabel:S%7C{{profile.addresses[0].point.lat}},{{profile.addresses[0].point.ln}}4&zoom=15&size=600x150&maptype=roadmap&markers=color:blue%7Clabel:P%7C40.702147,-74.015794&key={{googleApiKey}}"  [profile]="profile">
+    <app-card-top-actions>
+      <button class="tc-white-4" (click)="toggleScreenfull()" md-icon-button>
+        <md-icon>fullscreen</md-icon>
+      </button>
+
+      <button class="tc-white-4" (click)="close()" md-icon-button>
+        <md-icon>close</md-icon>
+      </button>
+    </app-card-top-actions>
+  </app-profile-header-card>
+
+
+  <div class="wrapper ">
+    <div fxLayout="row" fxLayoutWrap="wrap" fxFlexAlign="center" id="directory-profile">
+
+      <!--key-stats-->
+      <app-profile-key-stats [profile]="profile"></app-profile-key-stats>
+
+
+      <div class="md-padding">
+        <p><b>{{profile.basic.first_name}} {{profile.basic.last_name}}</b> is a Hematology-Oncology specialty provider
+          based out of {{profile.addresses[0].city}}, {{profile.addresses[0].state}}. The NPI number for
+          {{profile.basic.first_name}} {{profile.basic.last_name}} is {{profile.number}}. Based on a NPI lookup from the
+          NPI registry (NPPES), this provider holds a license number {{profile.licenses[0].code}}.</p>
+        <p>Based on Medicare data from 2014, the provider did accept the Medicare approved amount as payment in full. He
+          did not participate in the Physician Quality Reporting System (PQRS), which is a Medicare program that
+          encourages healthcare professionals and group practices to report information on their respective quality of
+          care. The provider did not utilize electronic health records (EHR systems), which are important because they
+          may improve a healthcare professional's ability to make well-informed treatment decisions.</p>
+      </div>
+
+      <!--EXPANSION-->
+      <!--STATS KEYS-->
+      <td-expansion-panel-group [style.width.px]="tabWidth" class="expansion-profile-style expansion-grey">
+
+        <!--<app-about-expansion [profile]="profile"></app-about-expansion>-->
+        <app-education-training-expansion [profile]="profile"></app-education-training-expansion>
+        <app-contact-expansion [profile]="profile"></app-contact-expansion>
+        <!--<app-more-doctors-expansion [profile]="profile"></app-more-doctors-expansion>-->
+        <app-professional-information-expansion [profile]="profile"></app-professional-information-expansion>
+        <app-common-conditions-expansion [profile]="profile"></app-common-conditions-expansion>
+        <app-physician-teaming-expansion [profile]="profile"></app-physician-teaming-expansion>
+        <app-prescribing-record-expansion [profile]="profile"></app-prescribing-record-expansion>
+        <app-open-payments-expansion [profile]="profile"></app-open-payments-expansion>
+        <app-more-medikly-expansion [profile]="profile"></app-more-medikly-expansion>
+        <app-references-expansion [profile]="profile"></app-references-expansion>
+
+
+      </td-expansion-panel-group>
+    </div>
+  </div>
+</perfect-scrollbar>

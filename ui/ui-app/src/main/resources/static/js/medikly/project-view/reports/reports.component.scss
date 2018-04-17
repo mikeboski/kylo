@@ -1,0 +1,50 @@
+
+
+/deep/ {
+  .highcharts-title {
+    left: 0px !important;
+    top: 45px !important;
+  }
+
+  .stacked-bar-vertical-container {
+    .highcharts-title {
+      left: 0px !important;
+      top: -3px !important;
+    }
+  }
+}
+.app-card-charts {
+  border-bottom: 1px solid rgba(0,0,0,.12);
+
+
+  .inner-chart-card {
+    .mat-card-content {
+      min-height: 200px;
+    }
+  }
+
+  .app-card-description {
+    padding-right: 20px;
+
+    h4 {
+      font-weight: 600;
+    }
+  }
+
+
+  .app-charts-footer {
+    margin-bottom: 10px;
+    p {
+      font-size: 11px;
+      color: rgba(0, 0, 0, 0.87);
+      padding: 0 1rem 0 0;
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.project-view-content {
+  padding: 0px 5%;
+}
+
+

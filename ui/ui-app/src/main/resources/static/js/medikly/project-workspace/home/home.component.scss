@@ -1,0 +1,102 @@
+.main-content-workspace {
+  padding-top: calc(13.7vh);
+}
+
+.another-file-over-class { border: dotted 3px green; }
+
+
+.my-drop-zone {
+  background-color: rgba(97,144,195,.15);
+  border: 1px dashed #5b91c0;
+  border-radius: 2px;
+  color: #8a9cae;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 300;
+  padding: 18px 0;
+  text-align: center;
+
+  //box-sizing: border-box;
+  .filedrop {
+    display: none;
+  }
+
+  .nodrop {
+    display: block;
+  }
+
+  &.nv-file-over {
+    .filedrop {
+      display: block;
+    }
+
+    .nodrop {
+      display: none;
+    }
+  }
+
+  &:hover, &.nv-file-over {
+
+    border: 1px solid #6290c3;
+    //margin: -1px;
+  }
+
+
+}
+
+.workspcae-intro-top {
+  text-align: center;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  img {
+    margin: 0;
+    vertical-align: middle;
+
+  }
+
+  .workspace-intro-title {
+    color: #4e5057;
+    //font-size: 1.5rem;
+    font-size: 24px;
+    font-weight: 700;
+    //margin-top: 1.5rem;
+
+    margin-top: 24px;
+  }
+
+  .workspace-intro-subtitle {
+    color: #4e5057;
+    padding-top: 5px;
+    font-size: 1rem;
+    max-width: 350px;
+    text-align: center;
+    line-height: 24px;
+
+    //max-width: 350px;
+  }
+}
+
+.workspace-actions {
+  margin-top: 2rem;
+  width: 300px;
+
+  .dragdrop-title {
+    color: #4e5057;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .dragdrop-description {
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.workspace-buttons {
+  width: 300px;
+}

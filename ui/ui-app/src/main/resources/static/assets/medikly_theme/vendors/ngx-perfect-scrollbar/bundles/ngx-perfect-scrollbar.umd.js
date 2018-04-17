@@ -5580,8 +5580,8 @@ var core_1 = __webpack_require__(4);
 var perfect_scrollbar_component_1 = __webpack_require__(14);
 var perfect_scrollbar_directive_1 = __webpack_require__(12);
 var perfect_scrollbar_interfaces_1 = __webpack_require__(13);
-exports.PERFECT_SCROLLBAR_GUARD = new core_1.OpaqueToken('PERFECT_SCROLLBAR_GUARD');
-exports.PERFECT_SCROLLBAR_CONFIG = new core_1.OpaqueToken('PERFECT_SCROLLBAR_CONFIG');
+exports.PERFECT_SCROLLBAR_GUARD = new core_1.InjectionToken('PERFECT_SCROLLBAR_GUARD');
+exports.PERFECT_SCROLLBAR_CONFIG = new core_1.InjectionToken('PERFECT_SCROLLBAR_CONFIG');
 var PerfectScrollbarModule = /** @class */ (function () {
     function PerfectScrollbarModule(guard) {
     }

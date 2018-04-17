@@ -1,0 +1,152 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+      <div class="content" style="width: 100%;">
+        <md-nav-list class="nav-list-measure">
+          <a class="mail" md-list-item *ngFor="let document of documents.slice(0, index1) | orderBy: order: reverse ; let i = index" fxLayout="row">
+            <div fxHide="true" fxHide.gt-xs="false" class="start-wrapper" fxFlex="180px" fxFlex.gt-sm="270px"
+                 fxLayout="row" fxLayoutAlign="start center">
+              <md-checkbox class="checkbox" color="accent" style="font-size: 18px" [checked]="false"></md-checkbox>
+              <button fxHide="true" fxHide.gt-sm="false" md-icon-button>
+                <md-icon *ngIf="i %2 === 0" class="star favorite-style">star_border</md-icon>
+                <md-icon *ngIf="i %2 != 0" [class.tc-yellow-700]="true" class="star active favorite-style">star</md-icon>
+              </button>
+              <span class="from-name title-item">{{ document.file_name }}</span>
+            </div>
+
+            <p class="content-wrapper" fxLayout="row">
+
+            </p>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="75px" fxFlex.gt-sm="150px" class="end-wrapper"
+                 fxLayout="row">
+              <span class="subject mat-text-muted description-item">Venkat Gullapalli, MD</span>
+            </div>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="50px" fxFlex.gt-sm="100px" class="end-wrapper"
+                 fxLayout="row">
+              <span class="when mat-text-muted description-item">{{ date | date : 'mediumDate'}}</span>
+            </div>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="20px" fxFlex.gt-sm="40px" class="end-wrapper"
+                 fxLayout="row" fxLayoutAlign="end center">
+              <button md-icon-button [md-menu-trigger-for]="moreMenuActions" style="margin-right: -10px;">
+                <md-icon class="mat-text-muted ">more_vert</md-icon>
+              </button>
+              <md-menu #moreMenuActions="mdMenu" x-position="before">
+                <md-nav-list dense>
+                  <a (click)="openDialogRenameFile(document)" md-list-item>
+                    Rename
+                  </a>
+                  <a (click)="openDialogRemoveFile(document)" md-list-item>
+                    Remove
+                  </a>
+                  <a md-list-item>
+                    Open in new tab
+                  </a>
+                </md-nav-list>
+              </md-menu>
+            </div>
+          </a>
+        </md-nav-list>
+
+        <div class="header-section-list">
+          <span style="padding-left: 5px">Previous 30 days</span>
+        </div>
+        <md-nav-list class="nav-list-measure">
+          <a class="mail" md-list-item *ngFor="let document of documents.slice(index1, index2) | orderBy: order: reverse ; let i = index" fxLayout="row">
+            <div fxHide="true" fxHide.gt-xs="false" class="start-wrapper" fxFlex="180px" fxFlex.gt-sm="270px"
+                 fxLayout="row" fxLayoutAlign="start center">
+              <md-checkbox class="checkbox" color="accent" [checked]="false"></md-checkbox>
+              <button fxHide="true" fxHide.gt-sm="false" md-icon-button>
+                <md-icon *ngIf="i %2 === 0" class="star favorite-style">star_border</md-icon>
+                <md-icon *ngIf="i %2 != 0" [class.tc-yellow-700]="true" class="star active favorite-style">star</md-icon>
+              </button>
+              <span class="from-name title-item">{{ document.file_name }}</span>
+            </div>
+
+            <p class="content-wrapper" fxLayout="row">
+
+            </p>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="75px" fxFlex.gt-sm="150px" class="end-wrapper"
+                 fxLayout="row">
+              <span class="subject mat-text-muted description-item">Venkat Gullapalli, MD</span>
+            </div>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="50px" fxFlex.gt-sm="100px" class="end-wrapper"
+                 fxLayout="row">
+              <span class="when mat-text-muted description-item">{{ date | date : 'mediumDate'}}</span>
+            </div>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="20px" fxFlex.gt-sm="40px" class="end-wrapper"
+                 fxLayout="row" fxLayoutAlign="end center">
+              <button md-icon-button [md-menu-trigger-for]="moreMenuActions" style="margin-right: -10px;">
+                <md-icon class="mat-text-muted ">more_vert</md-icon>
+              </button>
+              <md-menu #moreMenuActions="mdMenu" x-position="before">
+                <md-nav-list dense>
+                  <a (click)="openDialogRenameFile(document)" md-list-item>
+                    Rename
+                  </a>
+                  <a (click)="openDialogRemoveFile(document)" md-list-item>
+                    Remove
+                  </a>
+                  <a md-list-item>
+                    Open in new tab
+                  </a>
+                </md-nav-list>
+              </md-menu>
+            </div>
+          </a>
+        </md-nav-list>
+        <div class="header-section-list">
+          <span style="padding-left: 5px">Earlier</span>
+        </div>
+        <md-nav-list class="nav-list-measure">
+          <a class="mail" md-list-item *ngFor="let document of documents.slice(index2, index3) | orderBy: order: reverse ; let i = index" fxLayout="row">
+            <div fxHide="true" fxHide.gt-xs="false" class="start-wrapper" fxFlex="180px" fxFlex.gt-sm="270px"
+                 fxLayout="row" fxLayoutAlign="start center">
+              <md-checkbox class="checkbox" color="accent" [checked]="false"></md-checkbox>
+              <button fxHide="true" fxHide.gt-sm="false" md-icon-button>
+                <md-icon *ngIf="i %2 === 0" class="star favorite-style">star_border</md-icon>
+                <md-icon *ngIf="i %2 != 0" [class.tc-yellow-700]="true" class="star active favorite-style">star</md-icon>
+              </button>
+              <span class="from-name title-item">{{ document.file_name }}</span>
+            </div>
+
+            <p class="content-wrapper" fxLayout="row">
+
+            </p>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="75px" fxFlex.gt-sm="150px" class="end-wrapper"
+                 fxLayout="row">
+              <span class="subject mat-text-muted description-item">Venkat Gullapalli, MD</span>
+            </div>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="50px" fxFlex.gt-sm="100px" class="end-wrapper"
+                 fxLayout="row">
+              <span class="when mat-text-muted description-item">{{ date | date : 'mediumDate'}}</span>
+            </div>
+
+            <div fxHide="true" fxHide.gt-xs="false" fxFlex="20px" fxFlex.gt-sm="40px" class="end-wrapper"
+                 fxLayout="row" fxLayoutAlign="end center">
+              <button md-icon-button [md-menu-trigger-for]="moreMenuActions" style="margin-right: -10px;">
+                <md-icon class="mat-text-muted ">more_vert</md-icon>
+              </button>
+              <md-menu #moreMenuActions="mdMenu" x-position="before">
+                <md-nav-list dense>
+                  <a (click)="openDialogRenameFile(document)" md-list-item>
+                    Rename
+                  </a>
+                  <a (click)="openDialogRemoveFile(document)" md-list-item>
+                    Remove
+                  </a>
+                  <a md-list-item>
+                    Open in new tab
+                  </a>
+                </md-nav-list>
+              </md-menu>
+            </div>
+          </a>
+        </md-nav-list>
+      </div>
+    </div>

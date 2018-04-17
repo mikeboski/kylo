@@ -1,4 +1,4 @@
-define(['angular','feed-mgr/feeds/edit-feed/module-name'], function (angular,moduleName) {
+define(['angular', 'feed-mgr/feeds/edit-feed/module-name', 'showdown'], function (angular, moduleName) {
 
     /**
      * Displays the details for a feed.
@@ -19,7 +19,7 @@ define(['angular','feed-mgr/feeds/edit-feed/module-name'], function (angular,mod
     var controller = function ($scope, $q, $transition$, $mdDialog, $mdToast, $http, $state, AccessControlService, RestUrlService, FeedService, RegisterTemplateService, StateService, SideNavService,
                                FileUpload, ConfigurationService,EntityAccessControlDialogService, EntityAccessControlService, UiComponentsService,AngularModuleExtensionService,DatasourcesService) {
 
-        var SLA_INDEX = 3;
+        var SLA_INDEX = 7;
         var self = this;
 
         /**
@@ -86,7 +86,11 @@ define(['angular','feed-mgr/feeds/edit-feed/module-name'], function (angular,mod
 
         var requestedTabIndex = $transition$.params().tabIndex;
 
-
+        this.activities = [
+                {user: '@gonate', element: 'feeds', days: 5, img: 'assets/medikly_theme/images/providers/M/4.png'},
+                {user: '@astabile', element: 'feeds', days: 7, img: 'assets/medikly_theme/images/providers/M/5.png'},
+                {user: '@gbortoli', element: 'feeds', days: 9, img: 'assets/medikly_theme/images/providers/M/6.png'},
+            ];
 
         $scope.$watch(function() {
             return self.selectedTabIndex;
@@ -96,7 +100,7 @@ define(['angular','feed-mgr/feeds/edit-feed/module-name'], function (angular,mod
 
             //Make the Lineage tab fit without side nav
             //open side nav if we are not navigating between lineage links
-            if (newVal == 2 || (requestedTabIndex != undefined && requestedTabIndex == 2)) {
+            if (newVal == 6 || (requestedTabIndex != undefined && requestedTabIndex == 6)) {
                 SideNavService.hideSideNav();
                 self.cardWidth = false;
                 requestedTabIndex = 0;
@@ -221,6 +225,21 @@ define(['angular','feed-mgr/feeds/edit-feed/module-name'], function (angular,mod
                 $mdToast.show(
                     $mdToast.simple()
                         .textContent('File uploaded.')
+                        .hideDelay(3000)
+                );
+            });
+        };
+        this.showSummaryDialog = function () {
+            $mdDialog.show({
+                controller: 'FeedUploadFileDialogController',
+                escapeToClose: false,
+                fullscreen: true,
+                parent: angular.element(document.body),
+                templateUrl: "js/feed-mgr/feeds/edit-feed/feed-details-summary-dialog.html",
+                locals: {feedId: self.feedId}
+            }).then(function (msg) {
+                $mdToast.show(
+                    $mdToast.simple()
                         .hideDelay(3000)
                 );
             });
@@ -376,73 +395,64 @@ define(['angular','feed-mgr/feeds/edit-feed/module-name'], function (angular,mod
 
                         //deal with the feed data
                         var updatedFeedResponse = result.feedPromise;
-                            //merge in the template properties
-                            //this will update teh self.model as they point to the same object
-                            if (updatedFeedResponse == undefined || updatedFeedResponse.data == undefined) {
-                                self.loadingFeedData = false;
-                                var loadMessage = 'Unable to load Feed Details.  Please ensure that Apache Nifi is up and running and then refresh this page.';
-                                self.loadMessage = loadMessage;
-                                $mdDialog.show(
-                                    $mdDialog.alert()
-                                    //   .parent(angular.element(document.querySelector('#popupContainer')))
-                                        .clickOutsideToClose(true)
-                                        .title('Unable to load Feed Details')
-                                        .textContent(loadMessage)
-                                        .ariaLabel('Unable to load Feed Details')
-                                        .ok('Got it!')
-                                );
-                            } else {
-                                self.model.loaded = true;
-                                FeedService.updateFeed(updatedFeedResponse.data);
-                                if (tabIndex != null && tabIndex != undefined && tabIndex != self.selectedTabIndex) {
-                                    self.selectedTabIndex = tabIndex;
-                                }
+                          //merge in the template properties
+                //this will update teh self.model as they point to the same object
+                if (updatedFeedResponse == undefined || updatedFeedResponse.data == undefined) {
+                    self.loadingFeedData = false;
+                    var loadMessage = 'Unable to load Feed Details.  Please ensure that Apache Nifi is up and running and then refresh this page.';
+                    self.loadMessage = loadMessage;
+                    $mdDialog.show(
+                        $mdDialog.alert()
+                        //   .parent(angular.element(document.querySelector('#popupContainer')))
+                            .clickOutsideToClose(true)
+                            .title('Unable to load Feed Details')
+                            .textContent(loadMessage)
+                            .ariaLabel('Unable to load Feed Details')
+                            .ok('Got it!')
+                    );
+                } else {
+                    self.model.loaded = true;
+                    FeedService.updateFeed(updatedFeedResponse.data);
+                    if (tabIndex != null && tabIndex != undefined && tabIndex != self.selectedTabIndex) {
+                        self.selectedTabIndex = tabIndex;
+                             }
+ 
+                    RegisterTemplateService.initializeProperties(updatedFeedResponse.data.registeredTemplate, 'edit');
+                    self.model.inputProcessors = RegisterTemplateService.removeNonUserEditableProperties(updatedFeedResponse.data.registeredTemplate.inputProcessors, true);
+                    self.model.inputProcessor = _.find(self.model.inputProcessors, function (processor) {
+                        return self.model.inputProcessorType == processor.type;
+                    });
+                    self.model.nonInputProcessors = RegisterTemplateService.removeNonUserEditableProperties(updatedFeedResponse.data.registeredTemplate.nonInputProcessors, false);
+                    self.updateMenuOptions();
+                    self.loadingFeedData = false;
+                    self.model.isStream = updatedFeedResponse.data.registeredTemplate.stream;
+                    FeedService.updateEditModelStateIcon();
 
-                                RegisterTemplateService.initializeProperties(updatedFeedResponse.data.registeredTemplate,'edit');
-                                self.model.inputProcessors = RegisterTemplateService.removeNonUserEditableProperties(updatedFeedResponse.data.registeredTemplate.inputProcessors,true);
-                                //sort them by name
-                                self.model.inputProcessors = _.sortBy(self.model.inputProcessors,'name')
+                    var entityAccessControlled = AccessControlService.isEntityAccessControlled();
+                    //Apply the entity access permissions
+                    var requests = {
+                        entityEditAccess: entityAccessControlled === true
+                            ? FeedService.hasEntityAccess(EntityAccessControlService.ENTITY_ACCESS.FEED.EDIT_FEED_DETAILS, self.model)
+                            : true,
+                        entityExportAccess: !entityAccessControlled || FeedService.hasEntityAccess(EntityAccessControlService.ENTITY_ACCESS.FEED.EXPORT, self.model),
+                        entityPermissionAccess: entityAccessControlled === true
+                            ? FeedService.hasEntityAccess(EntityAccessControlService.ENTITY_ACCESS.FEED.CHANGE_FEED_PERMISSIONS, self.model)
+                            : true,
+                        functionalAccess: AccessControlService.getUserAllowedActions()
+                    };
+                    $q.all(requests).then(function (response) {
+                        var allowEditAccess = AccessControlService.hasAction(AccessControlService.FEEDS_EDIT, response.functionalAccess.actions);
+                        var allowAdminAccess = AccessControlService.hasAction(AccessControlService.FEEDS_ADMIN, response.functionalAccess.actions);
+                        var slaAccess = AccessControlService.hasAction(AccessControlService.SLA_ACCESS, response.functionalAccess.actions);
+                        var allowExport = AccessControlService.hasAction(AccessControlService.FEEDS_EXPORT, response.functionalAccess.actions);
 
-                                self.model.inputProcessor = _.find(self.model.inputProcessors,function(processor){
-                                    return angular.isDefined(self.model.inputProcessorName) && self.model.inputProcessorName != null ? self.model.inputProcessorType == processor.type && self.model.inputProcessorName.toLowerCase() == processor.name.toLowerCase() : self.model.inputProcessorType == processor.type;
-                                });
-
-                                if(angular.isUndefined(self.model.inputProcessor)){
-                                    self.model.inputProcessor = _.find(self.model.inputProcessors,function(processor){
-                                        return self.model.inputProcessorType == processor.type;
-                                    });
-                                }
-                                self.model.nonInputProcessors = RegisterTemplateService.removeNonUserEditableProperties(updatedFeedResponse.data.registeredTemplate.nonInputProcessors,false);
-                                self.updateMenuOptions();
-                                self.loadingFeedData = false;
-                                self.model.isStream = updatedFeedResponse.data.registeredTemplate.stream;
-                                FeedService.updateEditModelStateIcon();
-
-                                var entityAccessControlled = AccessControlService.isEntityAccessControlled();
-                                //Apply the entity access permissions
-                                var requests = {
-                                    entityEditAccess: entityAccessControlled === true
-                                        ? FeedService.hasEntityAccess(EntityAccessControlService.ENTITY_ACCESS.FEED.EDIT_FEED_DETAILS, self.model)
-                                        : true,
-                                    entityExportAccess: !entityAccessControlled || FeedService.hasEntityAccess(EntityAccessControlService.ENTITY_ACCESS.FEED.EXPORT, self.model),
-                                    entityPermissionAccess: entityAccessControlled === true
-                                        ? FeedService.hasEntityAccess(EntityAccessControlService.ENTITY_ACCESS.FEED.CHANGE_FEED_PERMISSIONS, self.model)
-                                        : true,
-                                    functionalAccess: AccessControlService.getUserAllowedActions()
-                                };
-                                $q.all(requests).then(function (response) {
-                                    var allowEditAccess =  AccessControlService.hasAction(AccessControlService.FEEDS_EDIT, response.functionalAccess.actions);
-                                    var allowAdminAccess =  AccessControlService.hasAction(AccessControlService.FEEDS_ADMIN, response.functionalAccess.actions);
-                                    var slaAccess =  AccessControlService.hasAction(AccessControlService.SLA_ACCESS, response.functionalAccess.actions);
-                                    var allowExport = AccessControlService.hasAction(AccessControlService.FEEDS_EXPORT, response.functionalAccess.actions);
-
-                                    self.allowEdit = response.entityEditAccess && allowEditAccess;
-                                    self.allowChangePermissions = entityAccessControlled && response.entityPermissionAccess && allowEditAccess;
-                                    self.allowAdmin = allowAdminAccess;
-                                    self.allowSlaAccess = slaAccess;
-                                    self.allowExport = response.entityExportAccess && allowExport;
-                                });
-                            }
+                        self.allowEdit = response.entityEditAccess && allowEditAccess;
+                        self.allowChangePermissions = entityAccessControlled && response.entityPermissionAccess && allowEditAccess;
+                        self.allowAdmin = allowAdminAccess;
+                        self.allowSlaAccess = slaAccess;
+                        self.allowExport = response.entityExportAccess && allowExport;
+                    });
+                }
 
 
 
@@ -522,6 +532,8 @@ define(['angular','feed-mgr/feeds/edit-feed/module-name'], function (angular,mod
         };
 
         init();
+        function openDialogAddFile() {
+        }
     };
 
     var FeedUploadFileDialogController = function ($scope, $mdDialog, $http, RestUrlService, FileUpload, feedId){
@@ -574,7 +586,36 @@ define(['angular','feed-mgr/feeds/edit-feed/module-name'], function (angular,mod
         }
     });
 
-    angular.module(moduleName).controller('FeedDetailsController', ["$scope","$q","$transition$","$mdDialog","$mdToast","$http","$state","AccessControlService","RestUrlService","FeedService","RegisterTemplateService","StateService","SideNavService","FileUpload","ConfigurationService","EntityAccessControlDialogService","EntityAccessControlService","UiComponentsService","AngularModuleExtensionService","DatasourcesService",controller]);
+    +    var FeedDetailsSummaryController = function ($scope, $mdDialog, ngSanitize, Showdown) {
+        var self = this;
+        $scope.uploading = false;
+        $scope.uploadFile = null;
+        $scope.input = 'Enter your [Markdown][1] here.' +
+            '\n' +
+            '\n- *first*' +
+            '\n- **second**' +
+            '\n- third' +
+            '\n' +
+            '\n[1]: http://daringfireball.net/projects/markdown/syntax';
+       
+       
+        $scope.hide = function () {
+            $mdDialog.hide();
+        };
+       
+        $scope.cancel = function () {
+            $mdDialog.cancel();
+        };
+          };
 
-    angular.module(moduleName).controller('FeedUploadFileDialogController',["$scope","$mdDialog","$http","RestUrlService","FileUpload","feedId",FeedUploadFileDialogController]);
+
+    
+    angular.module(moduleName).controller('FeedDetailsController', ["$scope", "$q", "$transition$", "$mdDialog", "$mdToast", "$http", "$state", "AccessControlService", "RestUrlService", "FeedService", "RegisterTemplateService", "StateService", "SideNavService", "FileUpload", "ConfigurationService", "EntityAccessControlDialogService", "EntityAccessControlService", "UiComponentsService","AngularModuleExtensionService","DatasourcesService",controller]);
+    
+    angular.module(moduleName).controller('FeedUploadFileDialogController', ["$scope", "$mdDialog", "$http", "RestUrlService", "FileUpload", "feedId", FeedUploadFileDialogController]);
+    angular.module(moduleName).controller('FeedDetailsSummaryController', ["$scope", "ngSanitize", "showdown", "$window", "$mdDialog", "$http", "RestUrlService", "FileUpload", "feedId", FeedDetailsSummaryController])
+        .filter('markdown', function() {
+            var converter = new showdown.converter();
+            return converter.makeHtml;
+        });
 });

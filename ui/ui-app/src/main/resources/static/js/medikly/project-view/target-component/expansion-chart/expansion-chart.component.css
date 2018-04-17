@@ -1,0 +1,36 @@
+/deep/ .remove-padding-body .mat-expansion-panel-body {
+  padding-bottom: 0px !important; }
+/deep/ .expansion-chart td-expansion-panel {
+  border-top: 1px solid lightgrey; }
+/deep/ .expansion-chart .td-expansion-panel-header .td-expansion-panel-header-content {
+  height: 48px !important; }
+/deep/ .mat-accent .mat-slider-track-fill, /deep/ .mat-accent .mat-slider-thumb, /deep/ .mat-accent .mat-slider-thumb-label {
+  background-color: #1e88e5; }
+/deep/ .mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, /deep/ .mat-checkbox-checked.mat-warn .mat-checkbox-background, /deep/ .mat-slider-thumb {
+  background-color: #1e88e5 !important; }
+
+.tab-chart .nowrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+.tab-chart .title-chart {
+  min-width: 188px;
+  font-size: 14px; }
+.tab-chart .subtitle-chart {
+  font-size: 12px;
+  color: rgba(54, 54, 54, 0.54);
+  padding-left: 10px; }
+.tab-chart .title-chart-card {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(54, 54, 54, 0.84);
+  width: 100%; }
+.tab-chart .subtitle-chart-card {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.54);
+  line-height: 1.5;
+  padding-left: 0px; }
+.tab-chart .main-content-expansion-chart {
+  padding: 10px 24px 16px 24px; }
+
+/*# sourceMappingURL=expansion-chart.component.css.map */

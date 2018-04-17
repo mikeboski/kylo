@@ -1,0 +1,79 @@
+<div class="messages-list" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+<!--    <md-accordion [displayMode]="displayMode" [multi]="multi">-->
+
+    <td-expansion-panel-group>
+        <td-expansion-panel disableRipple class="expansion-section" *ngFor="let message of messages; let i = index" (click)="onSelect(message)">
+            <ng-template td-expansion-panel-label>
+                <img alt="" class="message-icon mr-1 hide-on-open" src="{{message.avatar}}" *ngIf="!message.icon"/>
+                <md-icon [ngClass]="message.iconClass" class="mr-1 hide-on-open" *ngIf="message.icon">
+                    {{message.icon}}
+                </md-icon>
+                <span class="header-title">{{message.from}}</span>
+            </ng-template>
+            <ng-template td-expansion-panel-sublabel >
+                <span class="header-title">{{message.subject}}</span>
+            </ng-template>
+
+            <md-card *ngIf="selectedMessage" class="shadow-none card-content-expansion">
+                <md-card-header>
+                    <img md-card-avatar *ngIf="!selectedMessage.icon" src="{{selectedMessage.avatar}}" class="ml-0">
+                    <md-icon *ngIf="selectedMessage.icon" md-card-avatar [ngClass]="selectedMessage.iconClass"
+                             class="ml-0">{{selectedMessage.icon}}
+                    </md-icon>
+                    <md-card-title>{{selectedMessage.from}}</md-card-title>
+                    <md-card-subtitle>{{selectedMessage.date | date: 'fullDate'}}</md-card-subtitle>
+                </md-card-header>
+                <md-card-content class="pl-0">
+                    <div [innerHTML]="selectedMessage.body"></div>
+                </md-card-content>
+            </md-card>
+
+            <div layout="row" class="pad-sm style-action-row">
+                <button md-button md-button-sm color="warn" class="mr-0">DELETE</button>
+                <button md-button md-button-sm  color="accent" class="mr-0 blue-button">EDIT</button>
+            </div>
+        </td-expansion-panel>
+    </td-expansion-panel-group>
+
+
+
+<!--    <md-expansion-panel [hideToggle]="hideToggle" *ngFor="let message of messages; let i = index"
+                            [class.selected]="message === selectedMessage">
+            <md-expansion-panel-header (click)="onSelect(message)">
+                <div fxLayout="row" fxLayoutAlign="none center" class="w-100" style="font-size: 12px">
+                    <img alt="" class="message-icon mr-1 hide-on-open" src="{{message.avatar}}" *ngIf="!message.icon"/>
+                    <md-icon [ngClass]="message.iconClass" class="mr-1 hide-on-open" *ngIf="message.icon">
+                        {{message.icon}}
+                    </md-icon>
+                    <div class="pr-1 hide-on-open" fxShow="false" fxShow.gt-xs style="min-width: 120px;">
+                        <span>{{message.from}}</span>
+                    </div>
+                    <div class="text-ellipsis">
+                        <span>{{message.subject}}</span>
+                    </div>
+                    <span fxFlex></span>
+                    <div class="pl-1 text-xs-right text-ellipsis hide-on-open date-style" fxShow="false" fxShow.gt-sm>
+                        <small class="text-xs-muted">{{ message.date | date: 'fullDate' }}</small>
+                    </div>
+                </div>
+            </md-expansion-panel-header>
+            <md-card *ngIf="selectedMessage" class="shadow-none">
+                <md-card-header>
+                    <img md-card-avatar *ngIf="!selectedMessage.icon" src="{{selectedMessage.avatar}}" class="ml-0">
+                    <md-icon *ngIf="selectedMessage.icon" md-card-avatar [ngClass]="selectedMessage.iconClass"
+                             class="ml-0">{{selectedMessage.icon}}
+                    </md-icon>
+                    <md-card-title>{{selectedMessage.from}}</md-card-title>
+                    <md-card-subtitle>{{selectedMessage.date | date: 'fullDate'}}</md-card-subtitle>
+                </md-card-header>
+                <md-card-content class="pl-0">
+                    <div [innerHTML]="selectedMessage.body"></div>
+                </md-card-content>
+            </md-card>
+            <md-action-row class="style-action-row" fxLayoutAlign="start start">
+              <button md-button md-button-sm color="warn" class="mr-0">DELETE</button>
+              <button md-button md-button-sm  color="accent" class="mr-0 blue-button">EDIT</button>
+            </md-action-row>
+        </md-expansion-panel>-->
+  <!--  </md-accordion>-->
+</div>

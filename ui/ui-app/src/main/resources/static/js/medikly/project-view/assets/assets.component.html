@@ -1,0 +1,119 @@
+<app-card-layout class="project-view-content">
+
+  <mdk-card-layout-content class="content-assets">
+
+    <md-card class="shadow-none pa-0 ma-0">
+      <app-project-info-top documentId="15"></app-project-info-top>
+      <md-card-content class="ml-0 mr-0 pl-0 pr-0 card-layout-content ">
+
+        <perfect-scrollbar class="overflow-container">
+          <md-card class="ml-0 mr-0">
+
+            <!--Projects Objective-->
+
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <md-card-header class="mt-0">
+                <md-card-subtitle>AUDIENCES</md-card-subtitle>
+
+              </md-card-header>
+              <span fxFlex></span>
+              <button md-icon-button md-button-sm [md-menu-trigger-for]="projectObjectiveMenu"
+                      aria-label="Open card menu">
+                <md-icon>more_vert</md-icon>
+              </button>
+              <md-menu #projectObjectiveMenu="mdMenu" x-position="before" dense>
+                <md-nav-list dense>
+                  <a md-list-item><!-- [routerLink]="['/projects/view/'+project+'/workspace/project-summary']">-->
+                    Edit
+                  </a>
+                </md-nav-list>
+              </md-menu>
+            </div>
+
+            <md-card-content class="pt-0">
+
+              <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+                  <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+                    <span class="md-title">Title here</span>
+                  </span>
+                <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+                    <span *ngIf="selectedRows.length && selectable" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
+                  </span>
+                <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here"
+                               (searchDebounce)="search($event)" flex>
+                </td-search-box>
+              </div>
+              <md-divider></md-divider>
+              <td-data-table
+                #dataTable
+                [data]="filteredData"
+                [columns]="columns"
+                [selectable]="selectable"
+                [clickable]="clickable"
+                [multiple]="multiple"
+                [sortable]="true"
+                [sortBy]="sortBy"
+                [(ngModel)]="selectedRows"
+                [sortOrder]="sortOrder"
+                (sortChange)="sort($event)"
+                [style.height.px]="200">
+              </td-data-table>
+              <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+                <h3>No results to display.</h3>
+              </div>
+<!--              <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
+                <span hide-xs>Rows per page:</span>
+                <md-select [style.width.px]="50" [(ngModel)]="pageSize">
+                  <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+                    {{size}}
+                  </md-option>
+                </md-select>
+                {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+              </td-paging-bar>-->
+
+            </md-card-content>
+
+          </md-card>
+
+        </perfect-scrollbar>
+      </md-card-content>
+
+    </md-card>
+
+
+  </mdk-card-layout-content>
+
+  <mdk-card-layout-left-sidebar>
+
+    <md-nav-list class="messages-nav" dense>
+
+      <a href="javascript:;" class="measure-list-item" md-list-item>
+        <md-icon class="mat-text-muted ml-0 mr-0">people</md-icon>
+        <span class="ml-1">Audiences</span>
+      </a>
+
+      <a href="javascript:;" class="measure-list-item" md-list-item>
+        <md-icon class="mat-text-muted ml-0 mr-0">inbox</md-icon>
+        <span class="ml-1">Facebook Pixel</span>
+      </a>
+
+
+      <md-divider></md-divider>
+
+    </md-nav-list>
+
+  </mdk-card-layout-left-sidebar>
+
+</app-card-layout>
+
+
+<button md-fab color="warn"  class="mat-fab-bottom-right bottom-add-right" [ngClass]="{mdButtonRotate: showTemplates}">
+  <md-icon class="md-24">add</md-icon>
+</button>
+
+
+<!--<ngc-float-button icon="add">
+  <ngc-float-item-button icon="person_add" content="float item 1"></ngc-float-item-button>
+  <ngc-float-item-button icon="gps_fixed" content="float item 2"></ngc-float-item-button>
+  <ngc-float-item-button icon="mode_edit" content="float item 3"></ngc-float-item-button>
+</ngc-float-button>-->

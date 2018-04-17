@@ -1,7 +1,7 @@
-import { ModuleWithProviders, OpaqueToken } from '@angular/core';
+import { ModuleWithProviders, InjectionToken } from '@angular/core';
 import { PerfectScrollbarConfig, PerfectScrollbarConfigInterface } from './perfect-scrollbar.interfaces';
-export declare const PERFECT_SCROLLBAR_GUARD: OpaqueToken;
-export declare const PERFECT_SCROLLBAR_CONFIG: OpaqueToken;
+export declare const PERFECT_SCROLLBAR_GUARD: InjectionToken<any>;
+export declare const PERFECT_SCROLLBAR_CONFIG: InjectionToken<any>;
 export declare class PerfectScrollbarModule {
     constructor(guard: any);
     static forRoot(config?: PerfectScrollbarConfigInterface): ModuleWithProviders;

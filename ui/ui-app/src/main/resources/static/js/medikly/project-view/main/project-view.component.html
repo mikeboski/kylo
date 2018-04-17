@@ -1,0 +1,21 @@
+<md-sidenav-container class="app-inner background-none shadow-none sidenav-container-project-view medikly-covalent-styling">
+<!--  <info-panel></info-panel>-->
+  <md-toolbar class="toolbar-color-dark-blue">
+    <!--<md-toolbar-row></md-toolbar-row>-->
+    <span fxFlex></span>
+
+<!--    <span style="width: 23%">-->
+      <button md-icon-button>
+        <md-icon>thumb_up</md-icon>
+      </button>
+      <button md-icon-button>
+        <md-icon>share</md-icon>
+      </button>
+      <button md-button uiSref="workspace.home" [uiParams]="{ id: 15 }"> <!--[routerLink]="['/projects/view/'+documentId+'/workspace']"-->
+        <span>Launch Workspace</span>
+        <md-icon>chevron_right</md-icon>
+      </button>
+<!--    </span>-->
+  </md-toolbar>
+  <div ui-view="child-content" class="child-content"></div>
+</md-sidenav-container>

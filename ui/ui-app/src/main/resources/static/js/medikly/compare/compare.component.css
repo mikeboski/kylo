@@ -1,0 +1,33 @@
+.content-compare {
+  padding: 25px; }
+  .content-compare .name-compare {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 18px; }
+  .content-compare .statistics-compare {
+    font: 500 20px/32px Roboto,Helvetica Neue,sans-serif; }
+  .content-compare .compare-info {
+    margin-top: 25px;
+    padding-top: 25px;
+    margin-bottom: 0px !important;
+    border-top: 1px solid #e9e9e9; }
+  .content-compare .compare-info-font {
+    font-size: 13px !important; }
+  .content-compare .bio-title md-icon {
+    font-size: 15px; }
+  .content-compare .activity-stream i[md-card-avatar] {
+    color: #cecece;
+    font-size: 20px;
+    margin: 14px 0px 0 10px; }
+  .content-compare .activity-stream .activity-stream-title {
+    color: rgba(0, 0, 0, 0.54); }
+  .content-compare .activity-stream .mat-card-header-text {
+    margin: 0; }
+  .content-compare .out-padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important; }
+  .content-compare .img-compare {
+    height: 140px;
+    width: 140px; }
+
+/*# sourceMappingURL=compare.component.css.map */

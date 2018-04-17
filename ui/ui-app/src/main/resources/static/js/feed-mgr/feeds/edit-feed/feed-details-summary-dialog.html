@@ -1,0 +1,37 @@
+<md-dialog arial-label="Edit Field">
+    <md-dialog-content class="md-dialog-content">
+      <h2 class="md-title">Edit summary</h2>
+      <md-tabs md-dynamic-height md-border-bottom md-selected="vm.selectedTabIndex" md-swipe-content>
+        <md-tab>
+          <md-tab-label>
+            <div>Edit</div>
+          </md-tab-label>
+          <md-tab-body>
+            <md-input-container class="md-block">
+            <textarea rows="6" style="height: 480px; width: 686px" ng-model="input"></textarea>
+
+            </md-input-container>
+          </md-tab-body>
+        </md-tab>
+        <md-tab>
+          <md-tab-label>
+            <div>Preview</div>
+          </md-tab-label>
+          <md-tab-body>
+            <md-input-container class="md-block">
+              <td-markdown>
+                # Heading
+                ## Sub Heading (H2)
+                ### Steps (H2)
+              </td-markdown>
+
+            </md-input-container>
+          </md-tab-body>
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="cancel()">Cancel</md-button>
+      <md-button class="md-raised md-primary" ng-click="hide()">Save</md-button>
+    </md-dialog-actions>
+</md-dialog>

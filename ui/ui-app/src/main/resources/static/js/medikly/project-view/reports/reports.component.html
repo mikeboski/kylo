@@ -1,0 +1,264 @@
+<app-card-layout>
+
+  <mdk-card-layout-content>
+    <md-card class="shadow-none pa-0 ma-0">
+      <app-project-info-top documentId="15"></app-project-info-top>
+      <md-card-content class="ml-0 mr-0 pl-0 pr-0 card-layout-content ">
+
+        <perfect-scrollbar class="overflow-container">
+
+    <div fxLayout="row" fxLayoutWrap="wrap">
+
+      <div fxFlex.gt-sm="100" fxFlex="100">
+        <md-card class="ml-0 mr-0 mt-0">
+      <div fxLayout="row" fxLayoutAlign="center center" >
+        <md-card-header class="mt-0">
+          <img md-card-avatar src="assets/medikly_theme/images/hexa.png">
+          <md-card-title>Report Title</md-card-title>
+          <md-card-subtitle>Subtitle</md-card-subtitle>
+        </md-card-header>
+        <span fxFlex></span>
+        <button md-icon-button md-button-sm [md-menu-trigger-for]="card1" aria-label="Open card menu">
+          <md-icon>more_vert</md-icon>
+        </button>
+        <md-menu #card1="mdMenu" x-position="before" dense>
+          <md-nav-list dense>
+            <a (click)="openDialogRenameFile(document)" md-list-item>
+              Edit
+            </a>
+            <a (click)="openDialogRemoveFile(document)" md-list-item>
+              Delete
+            </a>
+          </md-nav-list>
+        </md-menu>
+      </div>
+      <md-sidenav-container>
+
+        <md-toolbar style="height: 120px;">
+          <span>FILTERS BAR</span>
+        </md-toolbar>
+
+        <md-card-content class="pa-0">
+          <!--Score in context-->
+          <md-card class="pa-0 ma-0 shadow-none app-card-charts" >
+            <md-card-header>
+              <md-card-title>Your score in context</md-card-title>
+            </md-card-header>
+            <md-card-content>
+              <div fxLayout="row" layout-align="center top">
+                <div fxFlex="255px" class="app-card-description">
+                  <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provid
+                  </p>
+                </div>
+                <div fxFlex="75">
+                  <div fxLayout="row" layout-align="center center" class="mb-2">
+                    <div fxFlex="30">
+                      <!--<circle-progress
+                              percent="45"
+                              [radius]="pieRadius"
+                              animation="false"
+                              toFixed="0"
+                              [showSubtitle]="true"
+                              [titleFontSize]="35"
+                              [unitsFontSize]="16"
+                              subtitle="Procedures"
+                              showTitle="false"
+                              backgroundPadding="-10"
+                              backgroundOpacity="1"
+                              backgroundStroke="transparent"
+                              outerStrokeColor="#C2185B"
+                              outerStrokeWidth="8"
+                              outerStrokeLinecap="inherit"
+                              innerStrokeWidth="2"
+                              innerStrokeColor="#9E9E9E"
+                              showBackground="false"
+                              showInnerStroke="false"
+                              [renderOnClick]="false"
+                      ></circle-progress>
+                    </div>
+                    <div fxFlex="30">
+                      <circle-progress
+                              percent="55"
+                              [radius]="pieRadius"
+                              animation="false"
+                              toFixed="0"
+                              [showSubtitle]="true"
+                              [titleFontSize]="35"
+                              [unitsFontSize]="16"
+                              subtitle="Prescriptions"
+                              showTitle="false"
+                              backgroundPadding="-10"
+                              backgroundOpacity="1"
+                              backgroundStroke="transparent"
+                              outerStrokeColor="#f48fb1"
+                              outerStrokeWidth="8"
+                              outerStrokeLinecap="inherit"
+                              innerStrokeWidth="2"
+                              innerStrokeColor="#9E9E9E"
+                              showBackground="false"
+                              showInnerStroke="false"
+                              [renderOnClick]="false"
+                      ></circle-progress>
+                    </div>
+                    <div fxFlex="30">
+                      <circle-progress
+                              percent="67"
+                              [radius]="pieRadius"
+                              animation="false"
+                              toFixed="0"
+                              [showSubtitle]="true"
+                              [titleFontSize]="35"
+                              [unitsFontSize]="16"
+                              subtitle="Referrals"
+                              showTitle="false"
+                              backgroundPadding="-10"
+                              backgroundOpacity="1"
+                              backgroundStroke="transparent"
+                              outerStrokeColor="#FCE4EC"
+                              outerStrokeWidth="8"
+                              outerStrokeLinecap="inherit"
+                              innerStrokeWidth="2"
+                              innerStrokeColor="#9E9E9E"
+                              showBackground="false"
+                              showInnerStroke="true"
+                              [renderOnClick]="false"
+                      ></circle-progress>-->
+                    </div>
+                  </div>
+                  <div fxLayout="row" layout-align="start center">
+                    <div fxFlex="50">
+                      <chart [options]="chartOptions"></chart>
+                    </div>
+                    <div fxFlex="50">
+                      <chart [options]="chartOptions"></chart>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </md-card-content>
+            <md-card-actions class="pl-1 app-charts-footer">
+              <p><b>Source:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <p><b>Notes:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel vestibulum est, et vehicula purus. Donec eu mattis tortor. Quisque sit amet ex nec nisl tincidunt vulputate sed id massa. Etiam a diam imperdiet, pharetra orci vel, aliquet dolor. Maecenas vestibulum quam nec fermentum vehicula.</p>
+            </md-card-actions>
+          </md-card>
+          <!--End Score in context-->
+
+          <md-card class="pa-0 ma-0 shadow-none app-card-charts" *ngFor="let mc of [1,2,3,4,5]">
+            <md-card-header>
+              <md-card-title>Et harum quidem rerum</md-card-title>
+              <md-card-subtitle>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio</md-card-subtitle>
+            </md-card-header>
+
+            <md-card-content class="pt-0">
+              <div fxLayout="row" layout-align="center top">
+                <div *ngIf="mc % 2 == 0" fxFlex="33">
+                  <md-card class="pa-0 ma-0 shadow-none inner-chart-card">
+                    <md-card-header>
+                      <md-card-title>Title</md-card-title>
+                      <md-card-subtitle>Subtitle</md-card-subtitle>
+                    </md-card-header>
+                    <md-card-content class="pt-0">
+                      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,</p>
+                    </md-card-content>
+                  </md-card>
+                </div>
+                <div *ngFor="let t of [1,2]" fxFlex="33">
+                  <md-card class="pa-0 ma-0 shadow-none inner-chart-card">
+                    <md-card-header>
+                      <md-card-title>Title</md-card-title>
+                      <md-card-subtitle>Subtitle</md-card-subtitle>
+                    </md-card-header>
+                    <md-card-content class="pt-0">
+                      <div class="stacked-bar-vertical-container">
+                        <chart *ngFor="let tt of [1,2,3]" [options]="chartOptionsVertical"></chart>
+                      </div>
+                    </md-card-content>
+                  </md-card>
+                </div>
+                <div  *ngIf="mc % 2 != 0" fxFlex="33" >
+                  <md-card class="pa-0 ma-0 shadow-none inner-chart-card">
+                    <md-card-header>
+                      <md-card-title>Title</md-card-title>
+                      <md-card-subtitle>Subtitle</md-card-subtitle>
+                    </md-card-header>
+                    <md-card-content class="pt-0">
+                      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,</p>
+                    </md-card-content>
+                  </md-card>
+                </div>
+              </div>
+            </md-card-content>
+            <md-card-footer class="app-charts-footer">
+              <div class="pl-1">
+                <p><b>Source:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p><b>Notes:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel vestibulum est, et vehicula purus. Donec eu mattis tortor. Quisque sit amet ex nec nisl tincidunt vulputate sed id massa. Etiam a diam imperdiet, pharetra orci vel, aliquet dolor. Maecenas vestibulum quam nec fermentum vehicula.</p>
+              </div>
+            </md-card-footer>
+          </md-card>
+
+        </md-card-content>
+
+      </md-sidenav-container>
+    </md-card>
+      </div>
+
+    </div>
+        </perfect-scrollbar>
+      </md-card-content>
+
+    </md-card>
+
+  </mdk-card-layout-content>
+
+  <mdk-card-layout-left-sidebar>
+    <md-nav-list class="messages-nav" dense>
+
+      <a href="javascript:;" class="measure-list-item" md-list-item>
+        <md-icon class="mat-text-muted ml-0 mr-0">inbox</md-icon>
+        <span class="ml-1">My Reports</span>
+      </a>
+      <a href="javascript:;"  class="measure-list-item submenu-item-measure" *ngFor="let folder of folderMenu"
+         md-list-item>
+        <md-icon class="mat-text-muted ml-0 mr-0">{{folder.icon}}</md-icon>
+        <span class="ml-1">{{folder.title}}</span>
+      </a>
+      <a href="javascript:;" (click)="openDialogFolder()"
+         class="measure-list-item submenu-item-measure tc-blue-500" md-list-item>
+        <md-icon class="tc-blue-500 ml-0 mr-0">add</md-icon>
+        <span class="ml-1">Create folder</span>
+      </a>
+
+      <a href="javascript:;" class="measure-list-item" *ngFor="let main of mainMenu" md-list-item>
+        <md-icon class="mat-text-muted ml-0 mr-0">{{main.icon}}</md-icon>
+        <span class="ml-1">{{main.title}}</span>
+      </a>
+
+      <md-divider></md-divider>
+      <h3 md-subheader>Labels</h3>
+      <a href="javascript:;" class="measure-list-item submenu-item-measure" *ngFor="let label of labelMenu"
+         md-list-item>
+        <md-icon class="mat-text-muted ml-0 mr-0">{{label.icon}}</md-icon>
+        <span class="ml-1">{{label.title}}</span>
+      </a>
+      <a href="javascript:;" (click)="openDialogLabel()"
+         class="measure-list-item submenu-item-measure tc-blue-500" md-list-item>
+        <md-icon class="tc-blue-500 ml-0 mr-0">add</md-icon>
+        <span>Create label</span>
+      </a>
+      <md-divider></md-divider>
+      <a href="javascript:;" class="measure-list-item" *ngFor="let data of dataMenu" md-list-item>
+        <md-icon class="mat-text-muted ml-0 mr-0">{{data.icon}}</md-icon>
+        <span class="ml-1">{{data.title}}</span>
+      </a>
+      <md-divider></md-divider>
+      <a href="javascript:;" class="measure-list-item" *ngFor="let info of infoMenu" md-list-item>
+        <md-icon class="mat-text-muted ml-0 mr-0">{{info.icon}}</md-icon>
+        <span class="ml-1">{{info.title}}</span>
+      </a>
+
+
+    </md-nav-list>
+  </mdk-card-layout-left-sidebar>
+
+</app-card-layout>

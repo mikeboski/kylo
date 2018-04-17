@@ -1,0 +1,83 @@
+<div class="feed-contributors">
+    <div class="box">
+        <div class="contributors-list">
+            <div flex layout-fill layout="row" class="item-contributor">
+                <img class="avatar" src="assets/medikly_theme/images/providers/M/4.png">
+                <div flex="30">
+                    <a layout="column" class="link-user">
+                        <span class="name-label">gmorris</span>
+                        <span flex></span>
+                        <span class="user-label">@gmorris</span>
+                    </a>
+                </div>
+                <div flex="30">
+                        <span class="authorization-label">
+                        Owner
+                        </span>
+                </div>
+            </div>
+            <div flex layout-fill layout="row" class="item-contributor element-contributor" ng-repeat="contributor in vm.contributors">
+                <img class="avatar" src="assets/medikly_theme/images/providers/M/4.png">
+                <div flex="30">
+                    <a layout="column" class="link-user">
+                        <span class="name-label">{{contributor.name}}</span>
+                        <span flex></span>
+                        <span class="user-label">{{contributor.user}}</span>
+                    </a>
+                </div>
+                <div flex="30">
+                        <span class="authorization-label">
+                            <img class="icon-contributor" md-card-avatar src="assets/medikly_theme/images/ic_access_time.svg">
+                            Request sent
+                        </span>
+                </div>
+                <div flex></div>
+                <md-button ng-click="vm.removeFromContributors(contributor)" class="btn-cancel-request">Cancel request</md-button>
+            </div>
+        </div>
+        <div class="contributors-actions">
+            <div layout="row" layout-fill layout-align="center" flex hide-xs class="contributors-search-container">
+
+                <div layout-align="space-between start" style="width: 100%">
+                    <div ng-controller="FeedDetailsContributorsController as ctrl" layout="column" ng-cloak>
+                        <md-content layout-padding layout="column" class="contributors-content">
+                            <form ng-submit="$event.preventDefault()">
+                                <md-autocomplete
+                                        ng-disabled="ctrl.isDisabled"
+                                        md-no-cache="ctrl.noCache"
+                                        md-selected-item="vm.selectedItem"
+                                        md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                                        md-search-text="ctrl.searchText"
+                                        md-selected-item-change="ctrl.selectedItemChange(item)"
+                                        md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                        md-item-text="item.name"
+                                        md-min-length="0"
+                                        placeholder="Search by username, full name, or email address"
+                                        md-menu-class="autocomplete-custom-template">
+                                    <md-item-template>
+                                  <span class="item-title">
+                                   <ng-md-icon icon="person" style="fill:grey"></ng-md-icon>
+                                    <span> {{item.name}} </span>
+                                  </span>
+                                        <span class="item-metadata">
+                                    <span>
+                                      | <strong>{{item.user}}</strong>
+                                    </span>
+                                  </span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                            </form>
+                        </md-content>
+                    </div>
+                </div>
+
+                <md-select ng-model="vm.can" ng-change="vm.onTimeFrameChange()" aria-label="Rule Type"
+                           class="select-contributors">
+                    <md-option value="{{opt}}" ng-repeat="opt in vm.canList">{{ opt }}</md-option>
+                </md-select>
+                <md-button class="btn-invite" ng-click="vm.addToContributors()" ng-disabled="!(vm.selectedItem)">Invite contributor</md-button>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,264 @@
+$height: calc(100vh - 64px);
+$heightOpen: calc(100vh - 130px);
+$sidebarWidth: 20%;
+$listingWidth: 500px;
+$leftPanel3: calc(20% + 400px);
+$toolBar: 64px;
+
+.app-inner {
+  //padding-left: 80px;
+}
+
+.listingEnabled {
+  .sebm-google-map-container {
+    height: $heightOpen;
+  }
+  .directory-side-panel {
+    height: $heightOpen;
+  }
+}
+
+.sebm-google-map-container {
+  width: 100%;
+  height: $height;
+  display: flex;
+}
+
+.directory-side-panel {
+  background-color: #2D3349;
+  box-shadow: 0 0 5px rgba(50, 50, 50, 0.3);
+  box-sizing: border-box;
+  height: $height;
+  width: $sidebarWidth;
+  z-index: 11;
+  transition: all .3s ease;
+
+  &.panel2 {
+    top: $toolBar;
+    //left: $sidebarWidth;
+    background-color: #fff;
+    width: $listingWidth;
+    position: absolute;
+    box-shadow: none;
+  }
+  &.panel3 {
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    box-shadow: 35px 0px 55px -20px rgba(33, 31, 31, 0.31);
+    left: $listingWidth;
+    position: absolute;
+    top: $toolBar;
+    width: 45%;
+  }
+}
+
+:host {
+  margin-left: -25px !important;
+  margin-right: -25px !important;
+  margin-top: -17px !important;
+  margin-bottom: -25px !important;
+  display: block;
+}
+:host /deep/ {
+
+  .scroll {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    width: 100%;
+  }
+
+  .mat-sidenav-container {
+    overflow: visible;
+    .mat-sidenav {
+      overflow: visible;
+    }
+  }
+  .mat-sidenav-content {
+    padding: 0;
+  }
+  @media (min-width: 959px) {
+    .mat-sidenav-side {
+      box-shadow: none!important;
+    }
+  }
+  .mat-slider-horizontal {
+    width: 100%;
+    min-width: 1px;
+  }
+}
+
+.sidenav-container-directory{
+  height: $height;
+}
+
+.sidenav-secondary {
+  // border-left: 1px solid #ccc;
+  background-color: #2D3349 !important;
+  color: white !important;
+  //width: 20% !important;
+}
+.nav-icon-hexa{
+  margin: 9px 10px 0px 1px;
+  font-size: 11px;
+  font-weight: 700;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-transform: initial;
+  text-align: center;
+  background: url(../../../assets/medikly_theme/images/hexa.png) left top no-repeat;
+}
+.content-filter{
+  margin-bottom: 10px;
+  color: white;
+  //background-color: #252a3c;
+  //border-top: none;
+  //padding: 9px 15px 9px 15px;
+}
+md-expansion-panel-header.mat-expansion-panel-header.ng-trigger-expansionHeight.mat-expanded{
+  height: 48px !important;
+}
+.expansion-filter > md-expansion-panel-header{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  color: white;
+  line-height:48px !important;
+}
+.expansion-filter{
+  background-color: #2D3349;
+}
+.expansion-filter > span::after{
+  color: #ffffff !important;
+}
+.mat-expansion-indicator::after {
+  color: #ffffff !important;
+}
+#panel1{
+  height:48px !important;
+}
+.label-title{
+  color: #C5D1CD;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  display: block;
+}
+span.mat-select-value-text{
+  color: white !important;
+}
+.title-modal-marker{
+  margin:0px;
+  font-size: 14px;
+}
+.subtitle-modal-marker{
+  margin-bottom: 0px;
+  margin-top: 5px;
+  font-size: 11.2px !important;
+}
+.content-info-marker{
+  margin-left: 10px;
+}
+.info-marker-img{
+  height: 44px;
+  width: 44px;
+  padding-top: 3px;
+}
+.buttons-marker{
+  margin-top: 45%;
+  margin-left: 15px;
+}
+.notification-label {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  background-color: #f44336;
+  border: 4px solid #f44336;
+  color: white;
+  text-align: center;
+}
+.footer-buttons{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.icon-label{
+  box-sizing: border-box ; flex-direction: row; -webkit-box-orient: horizontal; -webkit-box-direction: normal; text-align: center; padding-right: 0;
+  padding-left: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-align: center;
+  box-sizing: content-box !important;
+  -ms-flex-direction: column !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  flex-direction: column !important;
+  height: 42px !important;
+  width: 50px;
+  margin-right: 5px;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+}
+.marker-text{
+  margin-bottom: 0px !important;
+}
+.marker-subtitle{
+  font-size: 11.2px !important;
+}
+.marker-title{
+  font-size: 14px
+}
+.btn-light-blue{
+  background-color: #009CEE;
+  border-color: #009CEE;
+  font-weight: normal !important;
+}
+.button-toolbar-margin{
+  margin-right: 0px;
+  margin-left: 0px !important;
+}
+.expansion-section{
+  border-bottom: 1px solid rgb(233,233,233);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #888;
+  border: none;
+}
+.style-font{
+  font-size: 16px;
+  padding: 5px 12px !important;
+  font-weight: 500;
+}
+.submenu-subitems {
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.divider {
+  width: 250px;
+  height: 1px;
+  background: #EEE;
+  margin: 0 16px 0 14px;
+}
+.all-providers-fs{
+  font-size: 16px !important;
+}
+.add-new-style{
+  font-size: 12px;
+  font-weight: 700 !important;
+  line-height: 20px;
+  padding: 5px 12px;
+  text-transform: uppercase;
+
+}
+.toolbar-style{
+  text-transform: uppercase;
+  background-color: #2196f3 !important;
+}

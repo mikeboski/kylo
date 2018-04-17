@@ -1,0 +1,54 @@
+.content-compare{
+  padding: 25px;
+
+  .name-compare{
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 18px;
+  }
+
+  .statistics-compare{
+    font: 500 20px/32px Roboto,Helvetica Neue,sans-serif;
+  }
+  .compare-info{
+    margin-top: 25px;
+    padding-top: 25px;
+    margin-bottom: 0px !important;
+    border-top: 1px solid rgb(233,233,233);
+  }
+  .compare-info-font{
+    font-size: 13px !important;
+  }
+
+  .bio-title {
+    md-icon {
+      font-size: 15px;
+    }
+
+  }
+  .activity-stream {
+    i[md-card-avatar] {
+      color: #cecece;
+      font-size: 20px;
+      margin: 14px 0px 0 10px;
+
+    }
+
+    .activity-stream-title {
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    .mat-card-header-text {
+      margin: 0;
+    }
+  }
+
+  .out-padding{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .img-compare{
+    height: 140px;
+    width:140px;
+  }
+}

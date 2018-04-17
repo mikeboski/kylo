@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC",
+"sources": ["profile-header-card.component.scss"],
+"names": [],
+"file": "profile-header-card.component.css"
+}

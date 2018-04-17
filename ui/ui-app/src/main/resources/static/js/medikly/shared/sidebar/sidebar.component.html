@@ -1,0 +1,22 @@
+
+    <md-nav-list appAccordion class="navigation">
+      <md-list-item appAccordionLink *ngFor="let menuitem of categories">
+        <a appAccordionToggle class="relative" md-ripple *ngIf="menuitem.type === 'link'">
+          <md-icon>{{ menuitem.icon }}</md-icon>
+          <!--<span>{{ menuitem.title }}</span>-->
+          <!--<span fxFlex></span>-->
+          <!--<span class="menu-badge mat-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>-->
+        </a>
+
+        <a mdTooltipPosition="right" [mdTooltip]="menuitem.title" appAccordionToggle class="relative" md-ripple (click)="throwEvent(menuitem.children)" *ngIf="menuitem.type === 'sub'">
+          <md-icon>{{ menuitem.icon }}</md-icon>
+          <!--<span>{{ menuitem.title}}</span>-->
+          <!--<span fxFlex></span>-->
+          <!--<span class="menu-badge mat-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>-->
+          <!--<md-icon class="menu-caret">arrow_drop_down</md-icon>-->
+        </a>
+      </md-list-item>
+      <md-divider></md-divider>
+
+    </md-nav-list>
+

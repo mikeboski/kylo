@@ -1,0 +1,10 @@
+.mdk-card-inner-top {
+  margin: 16px 0 2px 0 !important; }
+  .mdk-card-inner-top.mat-card {
+    padding: 0px !important; }
+  .mdk-card-inner-top .mat-card-footer {
+    padding: 0 0 0 0.5rem; }
+  .mdk-card-inner-top .header-info-top {
+    height: 95px; }
+
+/*# sourceMappingURL=info-top.component.css.map */

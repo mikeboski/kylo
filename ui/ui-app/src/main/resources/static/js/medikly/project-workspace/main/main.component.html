@@ -1,0 +1,152 @@
+<md-sidenav-container class="background-none shadow-none main-workspace medikly-covalent-styling">
+  <md-sidenav disableClose="true" #settingsNav [mode]="isOver() ? 'over' : 'side'" [opened]="!isOver()"
+              class="ma-0 submenu-sidenav ">
+    <perfect-scrollbar class="overflow-container left-sidebar-workspace">
+
+      <!--DATA SOURCES-->
+      <div class="block-sidebar">
+        <div class="title-block">DATA SOURCES</div>
+        <div class="content-block">
+
+          <div fxLayout="row" fxLayoutAlign="center center" class="actions-block">
+            <button md-button color="primary" [disabled]="true" class="btn-outline btn-color-lightblue"><i
+              class="material-icons mr-3-workspace">link</i>Link a dataset
+            </button>
+            <button md-button color="primary" [md-menu-trigger-for]="addFiles"
+                    class="btn-outline btn-color-lightblue ml-5-workspace"><i
+              class="material-icons mr-3-workspace">cloud_upload</i>Add
+              files
+            </button>
+            <md-menu #addFiles="mdMenu" x-position="before">
+              <md-nav-list dense>
+                <a md-list-item (click)="openDialogUploadFiles()">
+                  Upload files
+                </a>
+                <a md-list-item (click)="openDialogAddFilesUrl()">
+                  Add files from URL
+                </a>
+              </md-nav-list>
+            </md-menu>
+          </div>
+        </div>
+
+
+        <div class="content-block">
+
+          <td-expansion-panel class="expansion-project">
+
+            <ng-template td-expansion-panel-label>
+              <div class="project-block-workspace" fxLayout="row">
+                <div fxLayout="column">
+                  <span class="pf-title">Project files</span>
+                  <span class="pf-subtitle">{{files.length}} files, 0 tables</span>
+                </div>
+              </div>
+            </ng-template>
+
+            <a *ngFor="let item of files" class="link-chips">
+              <div class="md-caption link-option item-expansion">
+                <span class="title-document">{{item.file.name}}</span>
+                <span class="flat-badge grey-extension-file pull-right"
+                      [ngClass]="{'orange-extension-file': getExtension(item.file.name)==='json' || getExtension(item.file.name)==='png' }">{{getExtension(item.file.name)}}</span>
+              </div>
+            </a>
+          </td-expansion-panel>
+
+     <!--     <md-expansion-panel class="expansion-project">
+            <md-expansion-panel-header>
+
+              <div class="project-block-workspace" fxLayout="row">
+                <div fxLayout="column">
+                  <span class="pf-title">Project files</span>
+                  <span class="pf-subtitle">{{files.length}} files, 0 tables</span>
+                </div>
+              </div>
+            </md-expansion-panel-header>
+
+            <a *ngFor="let item of files" class="link-chips">
+              <div class="md-caption link-option item-expansion">
+                <span class="title-document">{{item.file.name}}</span>
+                <span class="flat-badge grey-extension-file pull-right"
+                      [ngClass]="{'orange-extension-file': getExtension(item.file.name)==='json' || getExtension(item.file.name)==='png' }">{{getExtension(item.file.name)}}</span>
+              </div>
+            </a>
+          </md-expansion-panel>-->
+        </div>
+      </div>
+
+      <!--DOCUMENTS-->
+      <div class="block-sidebar bt-1">
+        <div class="title-block">DOCUMENTS ({{documents.length}})</div>
+        <div class="content-block">
+
+          <a *ngFor="let document of documents" class="link-chips">
+            <div class="md-caption link-option" uiSrefActive="active" uiSref="{{document.url}}" ><!--routerLinkActive="active" [routerLink]="[document.url]"-->
+              <span class="title-document">{{document.name}}</span>
+              <span class="flat-badge pull-right">MD</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!--QUERIES-->
+      <div class="block-sidebar bt-1">
+        <div class="title-block">QUERIES ({{files.length}})</div>
+        <div class="content-block">
+
+          <div fxLayout="row" fxLayoutAlign="center center" class="actions-block">
+
+            <button md-button color="primary" [md-menu-trigger-for]="newQuery"
+                    class="btn-outline btn-color-lightblue ml-5">New query
+            </button>
+            <md-menu #newQuery="mdMenu" x-position="before">
+              <md-nav-list dense>
+                <a md-list-item>
+                  SQL query
+                </a>
+                <a md-list-item>
+                  SPARQL query
+                </a>
+              </md-nav-list>
+            </md-menu>
+          </div>
+
+        </div>
+        <div class="content-block">
+          <div class="project-block-workspace link-option" style="padding-left: 16px" fxLayout="row">
+            <div fxLayout="column">
+              <span class="pf-title">Schema by File</span>
+              <span class="pf-subtitle">sample</span>
+            </div>
+            <div fxFlex></div>
+            <span class="flat-badge grey-extension-file purple-extension-file pull-right">SPARQL</span>
+          </div>
+
+          <div class="project-block-workspace link-option" style="padding-left: 16px" fxLayout="row">
+            <div fxLayout="column">
+              <span class="pf-title">First 100 Data Points</span>
+              <span class="pf-subtitle">sample</span>
+            </div>
+            <div fxFlex></div>
+            <span class="flat-badge grey-extension-file purple-extension-file pull-right">SPARQL</span>
+          </div>
+        </div>
+      </div>
+
+    </perfect-scrollbar>
+  </md-sidenav>
+
+  <md-toolbar color="primary" fxHide="false" fxHide.gt-sm>
+    <button (click)="settingsNav.toggle()" md-icon-button>
+      <md-icon>short_text</md-icon>
+    </button>
+    <span class="mr-1 ml-1">Sections</span>
+  </md-toolbar>
+
+  <div class="content-workspace">
+    <div ui-view="child-content" class="child-content"></div>
+  </div>
+
+</md-sidenav-container>
+
+

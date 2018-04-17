@@ -1,0 +1,42 @@
+<md-card class="mdk-card-inner-top ">
+
+  <div fxLayout="row" fxLayoutAlign="center center" >
+    <md-card-header class="mt-0 header-info-top">
+      <md-card-title>{{projectName}}</md-card-title>
+      <md-card-subtitle>@geraldmorris | 24 Mins ago</md-card-subtitle>
+    </md-card-header>
+    <span fxFlex></span>
+    <button md-icon-button md-button-sm [md-menu-trigger-for]="topEdit" aria-label="Open card menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #topEdit="mdMenu" x-position="before" dense>
+      <md-nav-list dense>
+        <a md-list-item uiSref="workspace.summary" [uiParams]="{ id: documentId }"> <!--[routerLink]="['/projects/view/'+documentId+'/workspace/project-summary']">-->
+          Edit
+        </a>
+        <a class="tc-red-500" md-list-item>
+          Delete
+        </a>
+      </md-nav-list>
+    </md-menu>
+  </div>
+
+  <md-card-footer>
+
+    <div class="card-tabs">
+      <!--<a class="button-tab" routerLinkActive="active" md-button-sm [routerLink]="['recent']">Recent</a>-->
+      <button class="button-tab button-tab-blue" disableRipple md-button md-button-sm uiSref="view.home" uiSrefActive="active">Overview</button><!--routerLinkActive="active"  [routerLink]="['/projects/view/'+documentId+'/home']"-->
+      <button class="button-tab button-tab-blue" disableRipple md-button md-button-sm uiSref="view.target" uiSrefActive="active">Target</button><!--routerLinkActive="active" [routerLink]="['/projects/view/'+documentId+'/target']"-->
+      <button md-button md-button-sm class="button-tab button-tab-blue" disableRipple>
+        Personalize
+      </button>
+
+      <button md-button md-button-sm  routerLinkActive="active" class="button-tab button-tab-blue" md-button-sm  disableRipple uiSref="view.reports" uiSrefActive="active">Measure</button><!-- [routerLink]="['/projects/view/'+documentId+'/measure/reports']" [routerLinkActiveOptions]="{exact: false}"-->
+
+      <button md-button md-button-sm  routerLinkActive="active"  class="button-tab button-tab-blue" md-button-sm disableRipple uiSref="view.assets" uiSrefActive="active">Assets</button><!--[routerLink]="['/projects/view/'+documentId+'/assets']" [routerLinkActiveOptions]="{exact: false}"-->
+
+
+    </div>
+  </md-card-footer>
+
+</md-card>

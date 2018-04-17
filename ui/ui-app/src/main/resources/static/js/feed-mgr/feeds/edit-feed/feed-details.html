@@ -1,6 +1,7 @@
 <div class="centered">
 
-    <card-layout class="not-centered" style="" flex="initial" ng-class="{'card-width':vm.cardWidth, 'card-full-width':!vm.cardWidth }">
+    <card-layout class="not-centered" style="" flex="initial"
+            ng-class="{'card-width':vm.cardWidth, 'card-full-width':!vm.cardWidth }">
         <header-section>
 
             <div class="card-title" flex> {{"views.feed-details.FD" | translate}} </div>
@@ -12,7 +13,7 @@
             <md-tabs md-dynamic-height md-border-bottom md-selected="vm.selectedTabIndex">
                 <md-tab>
                     <md-tab-label>
-                        <div> {{"views.feed-details.Details" | translate}} </div>
+                        <div> Overview </div>
                     </md-tab-label>
                     <md-tab-body>
                         <md-progress-linear md-mode="indeterminate" ng-if="vm.loadingFeedData"></md-progress-linear>

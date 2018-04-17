@@ -1,0 +1,26 @@
+.card-data-dictionary {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+.content-data-dictionary .file-item {
+  padding: 1.5rem 0rem;
+  border-bottom: 1px solid #dfdfdf; }
+  .content-data-dictionary .file-item .file-item-row {
+    margin-bottom: .5rem;
+    color: #4e5057;
+    flex: 1 1 auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem; }
+  .content-data-dictionary .file-item .file-item-description {
+    font-size: 16px;
+    line-height: 24px;
+    color: #4e5057; }
+    .content-data-dictionary .file-item .file-item-description .description-link {
+      color: #6290c3; }
+    .content-data-dictionary .file-item .file-item-description .description-link:hover {
+      color: #3c6a9d;
+      text-decoration: underline; }
+  .content-data-dictionary .file-item:last-of-type {
+    border-bottom: none; }
+
+/*# sourceMappingURL=data-dictionary.component.css.map */

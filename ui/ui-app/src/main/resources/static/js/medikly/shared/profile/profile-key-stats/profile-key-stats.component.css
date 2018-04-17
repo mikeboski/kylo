@@ -1,0 +1,24 @@
+:host {
+  width: 100%; }
+
+.profile-key-stats {
+  width: 100%;
+  font-size: 16px; }
+  .profile-key-stats .card-widget {
+    border-bottom: 1px solid #cecece;
+    text-transform: uppercase;
+    min-height: 58px; }
+    .profile-key-stats .card-widget .content-widget {
+      min-height: 54px; }
+  .profile-key-stats .card-widget > div {
+    padding: 8px !important; }
+  .profile-key-stats .widget-text {
+    font-size: 16px !important;
+    font-weight: 500 !important; }
+  .profile-key-stats .widget-text {
+    font-size: 16px !important;
+    font-weight: 500; }
+  .profile-key-stats .title-stats {
+    font-size: 11px !important; }
+
+/*# sourceMappingURL=profile-key-stats.component.css.map */

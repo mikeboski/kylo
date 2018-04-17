@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEI,uCAAqB;EACnB,KAAK,EAAE,IAAI;;AAKjB,kBAAmB;EACjB,SAAS,EAAE,eAAe;EAC1B,WAAW,EAAE,GAAG;;AAIhB,4BAAY;EACV,cAAc,EAAE,IAAI",
+"sources": ["target-tabs.component.scss"],
+"names": [],
+"file": "target-tabs.component.css"
+}

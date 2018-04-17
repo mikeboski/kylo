@@ -1,0 +1,15 @@
+<span>{{name1}}</span>
+<chart [options]="graph1"></chart>
+<chart [options]="graph2" style="margin-top: -16px"></chart>
+<span>{{name2}}</span>
+
+<div class="footer-chart">
+  <div class="footer-chart-text">
+    <div *ngIf="matched">
+      <md-icon style="font-size: inherit">pie_chart</md-icon>
+      {{matched}}% of audience matched
+    </div>
+    <div><span class="bold-text">Source:</span> source.</div>
+    <div><span class="bold-text">Notes:</span> notes.</div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,mBAAoB;EAClB,MAAM,EAAE,KAAK;;AAGf,eAAe;EACb,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,IAAI;;AAGtB,WAAW;EACT,SAAS,EAAE,IAAI;EACf,YAAY,EAAE,IAAI",
+"sources": ["dialog.new-project.scss"],
+"names": [],
+"file": "dialog.new-project.css"
+}

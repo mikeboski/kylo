@@ -1,0 +1,33 @@
+/deep/ .td-expansion-panel {
+  box-shadow: none;
+  background-color: inherit; }
+/deep/ app-profile-key-stats .profile-key-stats:last-of-type .card-widget {
+  border-bottom: none !important; }
+/deep/ app-profile-header-card.small-profile-header .mat-card-title {
+  font-size: 14px !important; }
+/deep/ .content-leftsidenav .mat-tab-label {
+  padding: 10px 5px !important;
+  width: 50%; }
+
+:host {
+  display: block;
+  position: relative;
+  height: 100%; }
+
+.project-view-content .content-target .card-profile {
+  width: 100%; }
+.project-view-content .content-target .second-card {
+  margin: 20px 0px 0px 0px; }
+  .project-view-content .content-target .second-card .mat-card-content {
+    padding-top: 0px;
+    padding-left: 0;
+    padding-right: 0; }
+  .project-view-content .content-target .second-card /deep/ .expansion-chart td-expansion-panel:first-of-type {
+    border-top: none !important; }
+.project-view-content .content-leftsidenav {
+  padding: 0px; }
+.project-view-content .nav-list {
+  padding-left: 8px;
+  padding-right: 8px; }
+
+/*# sourceMappingURL=target.component.css.map */

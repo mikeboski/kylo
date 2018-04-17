@@ -1,0 +1,42 @@
+<div class="main-content-workspace center-block" fxLayout="column" fxLayoutAlign="center center">
+
+  <div fxFlex="50" class="workspcae-intro-top">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MyIgaGVpZ2h0PSI2NCI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxwYXRoIGZpbGw9IiM4RThFOEUiIGQ9Ik0yNy41IDI1LjNsLTktOSAxLjMtMy43YzAtLjUgMC0xLS40LTEuNWwtNy44LTcuOGMtLjUtLjYtMS40LS42LTIgMGwtNy44IDhjLS4yLjItLjQuNS0uNCAxIDAgLjMuMi43LjQgMWw4IDhzLjUuMy44LjNoLjVsMy43LTEuMyA5IDljLjQuNiAxIDEgMS44IDEgLjcgMCAxLjQtLjQgMi0xIDEtMSAxLTIuOCAwLTR6Ii8+CiAgICA8cGF0aCBmaWxsPSIjRTg2QzYwIiBkPSJNMjcgNDNsMTcuNyAxNy44YzMuOCAzLjggMTAgMy44IDEzLjggMCAzLjgtNCAzLjgtMTAuMiAwLTE0TDQxIDI4LjcgMjcgNDN6Ii8+CiAgICA8cGF0aCBmaWxsPSIjQzk1MTRCIiBkPSJNNTIuOCA1Ni40Yy0uMyAwLS43LS4yLTEtLjRMNDAgNDRjLS40LS41LS40LTEuNCAwLTIgLjctLjUgMS42LS41IDIgMEw1NCA1NGMuNS41LjUgMS40IDAgMi0uMy4yLS42LjQtMSAuNHoiLz4KICAgIDxwYXRoIGZpbGw9IiNCM0IzQjMiIGQ9Ik02MiAxMmMtLjMtLjUtLjctLjgtMS0xLS42IDAtMSAwLTEuNC40bC03LjMgNy40LTcuOC04IDcuMi03LjNjLjQtLjQuNS0xIC40LTEuMyAwLS41LS40LTEtLjgtMS0yLS44LTQuNC0xLTYuNi0uOC04LjUuNy0xNS4zIDguNC0xNSAxNyAwIDEuNCAwIDIuNy40IDRMNCA0NC43Yy0yIDItMy40IDQuNy0zLjUgNy43IDAgMyAxIDUuOCAzIDggMiAyIDQuNyAzIDcuNiAzaC40YzMgMCA1LjYtMS4zIDcuNi0zLjVsMjMtMjYuNWMyLjMuNyA1IC43IDcuNC4yIDYtMS4yIDExLTUuOCAxMi42LTExLjggMS0zLjQgMS02LjggMC0xMHpNMTIuMiA1My44Yy0xLjYgMC0yLjgtMS4zLTIuOC0yLjggMC0xLjYgMS4yLTIuOCAyLjgtMi44IDEuNSAwIDIuNyAxLjIgMi43IDIuOCAwIDEuNS0xLjIgMi44LTIuNyAyLjh6Ii8+CiAgPC9nPgo8L3N2Zz4K">
+    <div class="workspace-intro-title"><span>Welcome to your workspace.</span></div>
+    <div class="workspace-intro-subtitle">
+      <span>Explore this project by choosing a data source, document, or query from the list on the left.</span>
+    </div>
+  </div>
+  <div fxFlex="50" class="workspace-actions">
+    <div class="dropzone">
+      <div *ngFor="let file of uploader.queue ; let i = index">
+        <div class="file-uploaded">
+          {{file.file.name}}
+        </div>
+      </div>
+      <div ng2FileDrop
+           [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+           (click)="openDialogUploadFiles()"
+           (fileOver)="fileOverBase($event)"
+           [uploader]="uploader" class="my-drop-zone mb-1 dragdrop-content">
+
+
+        <div class="dragdrop-title nodrop">Drag and drop or <span class="tc-blue-500">browse </span> to add files.</div>
+        <div class="dragdrop-title filedrop">Drop files here to upload.</div>
+        <div class="dragdrop-description"><span>You can add up to 1023.9 MB to this project.</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div fxFlex="50" class="workspace-buttons mt-1">
+    <button md-button class="btn-outline btn-color-lightblue btn-100">
+      <md-icon class="md-18 pull-left">add</md-icon>Write SQL queries</button>
+  </div>
+
+  <div fxFlex="50" class="workspace-buttons mt-1">
+    <button md-button class="btn-outline btn-color-lightblue btn-100">
+      <md-icon class="md-18 pull-left">playlist_add_check</md-icon> Read data dictionary</button>
+  </div>
+
+</div>

@@ -1,0 +1,75 @@
+/*@import "../../../assets/styles/scss/theme/var";*/
+$grey-text-muted : rgba(54, 54, 54, 0.54);
+
+:host {
+  margin-left: -25px;
+  margin-right: -25px;
+  margin-top: -17px !important;
+  display: block;
+}
+
+/deep/{
+
+  .mat-button-focus-overlay{
+    background-color: inherit;
+  }
+
+}
+md-toolbar{
+  background-color: #3f51b5 !important;
+  padding-right: 0px;
+}
+.title-expansion{
+  margin-left: 40px;
+}
+.sidenav-container-project-view{
+  height: calc(100vh - 64px);
+
+  .info-absolute{
+    position: absolute;
+    right: 0px;
+    z-index: 2;
+  }
+}
+
+.panel-project-view{
+
+
+  .close-button{
+    //margin-right: 6px;
+  }
+  .notification-label {
+    position: absolute;
+    top: 23px;
+    margin-left: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    background-color: white;
+    border: 2px solid $grey-text-muted;
+    color: $grey-text-muted;
+    text-align: center;
+  }
+  .notification-label-dark{
+    background-color: $grey-text-muted;
+    background-clip:  padding-box;
+    color: white;
+  }
+}
+
+.arrow-style{
+  height: 17px !important;
+  width: 17px !important;
+}
+.container-tabs{
+  padding-left: calc(23%);
+  margin-bottom: -27px;
+
+  md-icon{
+    font-size: 18px;
+    line-height: 14px;
+  }
+}

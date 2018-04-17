@@ -1,0 +1,84 @@
+<perfect-scrollbar class="scroll">
+  <md-toolbar>
+    <span class="directory-listing-count text-sm">129 RESULTS</span>
+    <span fxFlex></span>
+    <button md-icon-button="">
+      <md-icon>sort</md-icon>
+    </button>
+  </md-toolbar>
+
+  <md-nav-list dense style="margin-top: -5px;">
+    <ng-template let-item let-i="index" let-last="last" ngFor [ngForOf]="providers">
+
+      <md-card class="card-list-profile shadow-none" [class.activeList]="selected == item" (click)="selectItem(item)">
+        <md-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)==-1"
+                 [class.tc-grey-300]="following.indexOf(item.key)==-1" (click)="$event.stopPropagation(); throwEventFollow(item)"><i
+          class="icon ion-bookmark"></i></md-icon>
+        <md-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)>-1"
+                 [class.tc-yellow-700]="following.indexOf(item.key)>-1"
+                 (click)="$event.stopPropagation(); throwEventFollow(item)"><i class="icon ion-bookmark"></i></md-icon>
+        <!--    <md-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)==-1" (click)="throwEventFollow(item)">bookmark_border</md-icon>
+            <md-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)>-1" [class.tc-yellow-700]="following.indexOf(item.key)>-1"
+                     (click)="throwEventFollow(item)">bookmark</md-icon>-->
+        <div fxLayout="row" class="height-card-listing">
+          <div class="media-grid bg-cover avatar-listing"
+               [ngStyle]="{'background-image': 'url('+item.avatar+')'}">
+
+          </div>
+          <div fxFlex>
+            <div fxLayout="column" style="margin-left: 20px">
+              <div>
+                <h3 md-line class="name-provider-style mt-0">{{item.basic.first_name}} {{item.basic.last_name}},
+                  {{item.basic.credential}}</h3>
+                <p md-line class="mat-text-muted text-md speciality-city-style mt-0">Oncologist </p>
+                <p md-line class="text-md speciality-city-style tc-amber-600 mt-0">{{item.addresses[0].city}} |
+                  {{item.addresses[0].state}} </p>
+              </div>
+              <div fxFlex></div>
+              <div fxLayout="row" fxLayoutWrap="wrap" class="text-uppercase">
+                <div>
+                  <p class="mt-0 mb-0 text-md mat-text-muted title-statics">attendes</p>
+                  <h3 class="mt-0 mb-0 number-statics">400</h3>
+                </div>
+                <div style="margin-left: 10px">
+                  <p class="mt-0 mb-0 text-md mat-text-muted title-statics">spaces</p>
+                  <h3 class="mt-0 mb-0 number-statics">4</h3>
+                </div>
+                <div style="margin-left: 10px">
+                  <p class="mt-0 mb-0 text-md mat-text-muted title-statics">rooms</p>
+                  <h3 class="mt-0 mb-0 number-statics">190</h3>
+                </div>
+              </div>
+            </div>
+            <span fxFlex></span>
+
+            <md-card-actions class="card-actions-style" fxLayout="column">
+              <div class="text-uppercase">
+                <p class="mt-0 mb-0 text-md mat-text-muted title-statics">PV INDEX
+                  <md-icon style="font-size: 11px">help_outline</md-icon>
+                </p>
+                <div fxLayout="row" fxLayoutWrap="wrap" class="text-uppercase">
+                  <div fxFlex="30%">
+                    <h2 class="mt-0 mb-0">85</h2>
+                  </div>
+                  <div fxFlex="30%">
+                    <h4 class="mb-0 tc-light-green-500" style="margin-top: 3px; font-size: 14px">+19%</h4>
+                  </div>
+                </div>
+              </div>
+              <div fxFlex></div>
+              <button md-raised-button md-button-sm color="accent" class="button-card-style btn-light-blue"
+                      (click)="$event.stopPropagation(); throwEventProviderCompare(item)">
+                <md-icon style="font-size: 19px">add</md-icon>
+                COMPARE
+              </button>
+            </md-card-actions>
+
+          </div>
+        </div>
+      </md-card>
+
+    </ng-template>
+  </md-nav-list>
+</perfect-scrollbar>
+

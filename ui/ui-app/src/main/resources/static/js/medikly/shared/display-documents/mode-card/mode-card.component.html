@@ -1,0 +1,58 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap" >
+      <div fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33" fxFlex.sm="33" fxFlex.xs="50"
+           *ngFor="let document of documents | orderBy: order: reverse">
+        <md-card class="card-grid">
+          <div  class="media-grid">
+            <div>
+              <div class="style-content-card" fxLayoutAlign="center center">
+                <md-icon class="mat-text-muted" style="font-size: 24px">insert_chart</md-icon>
+              </div>
+
+            </div>
+            <div class="hover-content">
+              <div fxLayout="row" style="padding-left: 5px; padding-top: 5px;">
+                <md-icon class="icon-hover-content invert-icon ml-0 mr-0">reply</md-icon>
+                <md-icon class="icon-hover-content ml-0 mr-0">flash_on</md-icon>
+              </div>
+              <div fxLayoutAlign="center center" class="hover-button">
+                <button md-raised-button md-button-sm color="accent" class="button-card-style btn-light-blue"
+                        (click)="$event.stopPropagation()" uiSref="view.home" [uiParams]="{ id: document.id }">
+                  View Project
+                </button>
+              </div>
+
+            </div>
+          </div>
+          <md-card-content class="footer-card">
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div fxFlex>
+                <p class="ma-0 title-item nowrap-text">{{document.file_name}}</p>
+                <p class="ma-0 pa-0 text-md mat-text-muted description-item nowrap-text">Description {{ date | date :
+                  'mediumDate'}}</p>
+              </div>
+              <div class="mat-text-primary text-xl">
+                <button md-icon-button [md-menu-trigger-for]="moreMenuActions" style="margin-right: -10px;">
+                  <md-icon class="mat-text-muted ">more_vert</md-icon>
+                </button>
+                <md-menu #moreMenuActions="mdMenu" x-position="before">
+                  <md-nav-list dense>
+                    <a (click)="openDialogRenameFile(document)" md-list-item>
+                      Rename
+                    </a>
+                    <a (click)="openDialogRemoveFile(document)" md-list-item>
+                      Remove
+                    </a>
+                    <a md-list-item>
+                      Open in new tab
+                    </a>
+                  </md-nav-list>
+                </md-menu>
+
+              </div>
+            </div>
+          </md-card-content>
+        </md-card>
+
+      </div>
+    </div>
+

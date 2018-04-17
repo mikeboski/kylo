@@ -1,0 +1,56 @@
+<md-card>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <md-card-header>
+      <md-card-title>Data Dictionary</md-card-title>
+      <md-card-subtitle></md-card-subtitle>
+
+    </md-card-header>
+    <span fxFlex></span>
+  </div>
+
+
+  <md-card-content class="pa-0 content-data-dictionary">
+
+    <md-card class="pa-0 ma-0 shadow-none card-data-dictionary">
+      <md-card-header class="mt-0">
+        <img md-card-avatar style="border-radius: 2px" src="assets/medikly_theme/images/providers/M/4.png">
+        <md-card-title>geraldmorris/Project Name</md-card-title>
+        <md-card-subtitle><span class="flat-badge open-privacy">OPEN</span>&nbsp;Updated 9/26/2017</md-card-subtitle>
+      </md-card-header>
+
+      <md-card-content>
+        <div *ngFor="let file of files" class="file-item">
+          <div fxLayout="row">
+            <div class="file-item-row">
+              {{file.file.name}}
+            </div>
+            <span fxFlex></span>
+            <button md-icon-button md-button-sm (click)="openDialogAddDescriptionFile(file)">
+              <md-icon>mode_edit</md-icon>
+            </button>
+          </div>
+          <div class="file-item-description">
+            <a class="description-link" (click)="openDialogAddDescriptionFile(file)" *ngIf="file.file.description == ''">
+              <span>+ Add a description</span>
+            </a>
+            <div  *ngIf="file.file.description != ''">
+              {{file.file.description}}
+            </div>
+            <div class="mt-1">
+
+              <md-chip-list selectable="false" class="chips-description-file">
+                  <md-chip *ngFor="let label of file.file.labels" color="accent" selected="true" class="{{label.color}}-color">{{label.name}}</md-chip>
+              </md-chip-list>
+            </div>
+
+          </div>
+
+        </div>
+      </md-card-content>
+
+    </md-card>
+
+  </md-card-content>
+
+</md-card>

@@ -1,0 +1,12 @@
+<app-toolbar-templates *ngIf="showTemplates" (newProject)="openDialogNewProject()">
+</app-toolbar-templates>
+
+  <div fxLayout="row" fxLayoutWrap="wrap">
+    <div class="main-content-projects">
+      <app-display-documents [titleMode]="titleMode"></app-display-documents>
+    </div>
+  </div>
+
+<button md-fab color="warn" (click)="openDialogNewProject()" class="mat-fab-bottom-right bottom-add-right" [ngClass]="{mdButtonRotate: showTemplates}">
+  <md-icon class="md-24">add</md-icon>
+</button>

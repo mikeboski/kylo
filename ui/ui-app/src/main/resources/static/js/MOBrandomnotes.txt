@@ -1,0 +1,24 @@
+src/main/resources/static/js/feed-mgr/visual-query/services/spark/spark-query-engine.spec.ts(19,25): error TS2554: Expected 9 arguments, but got 8.
+[0] src/main/resources/static/js/feed-mgr/visual-query/services/spark/spark-query-engine.spec.ts(32,30): error TS2554: Expected 9 arguments, but got 8.
+[0] src/main/resources/static/js/feed-mgr/visual-query/services/spark/spark-query-engine.spec.ts(44,30): error TS2554: Expected 9 arguments, but got 8.
+[0] src/main/resources/static/js/feed-mgr/visual-query/services/spark/spark-query-engine.spec.ts(57,30): error TS2554: Expected 9 arguments, but got 8.
+[0] src/main/resources/static/js/feed-mgr/visual-query/services/spark/spark-query-engine.spec.ts(80,30): error TS2554: Expected 9 arguments, but got 8.
+[0] src/main/resources/static/js/feed-mgr/visual-query/services/spark/spark-query-engine.spec.ts(96,30): error TS2554: Expected 9 arguments, but got 8.
+[0] 
+
+
+{
+  "status": 1,
+  "file": "/kylo/ui/ui-app/node_modules/@angular/material/_theming.scss",
+  "line": 1167,
+  "column": 34,
+  "message": "argument `$color` of `opacity($color)` must be a color",
+  "formatted": "Error: argument `$color` of `opacity($color)` must be a color\n 
+         on line 1167 of node_modules/@angular/material/_theming.scss, in function `opacity`\n    
+             from line 1167 of node_modules/@angular/material/_theming.scss, in function `if`\n  
+                   from line 1167 of node_modules/@angular/material/_theming.scss, in function `mat-color`\n   
+                        from line 3009 of node_modules/@angular/material/_theming.scss, in mixin `mat-slider-theme`\n  
+                              from line 3833 of node_modules/@angular/material/_theming.scss, in mixin `angular-material-theme`\n   
+                                   from line 2 of src/main/resources/static/assets/medikly_theme/styles/scss/_material.themes.scss\n 
+                                          from line 3 of src/main/resources/static/assets/medikly_theme/styles/mdk-main.scss\n>>   $opacity: if($opacity == null, opacity($color), $opacity);\n\n   ---------------------------------^\n"
+}

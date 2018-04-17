@@ -1,0 +1,27 @@
+/deep/ .nav-list-measure .mat-list-item-content {
+  height: 48px !important;
+  width: 100%; }
+/deep/ .sidebar-menu .mat-list-item-content {
+  height: 40px !important; }
+
+.header-section-list {
+  line-height: 46px;
+  padding-top: 10px; }
+  .header-section-list .button-toolbar-margin {
+    margin-right: 0px;
+    margin-left: 0px !important; }
+  .header-section-list md-icon {
+    color: #4E4E4E; }
+
+.submenu-item-measure {
+  padding-left: 24px; }
+
+.bottom-add-right {
+  position: fixed !important;
+  background-color: #db4437; }
+
+.btn-light-blue {
+  background-color: #2196f3;
+  border-color: #2196f3; }
+
+/*# sourceMappingURL=display-documents.component.css.map */

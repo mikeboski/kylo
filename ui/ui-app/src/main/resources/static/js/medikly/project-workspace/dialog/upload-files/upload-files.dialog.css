@@ -1,0 +1,58 @@
+/*@import "../../../../assets/styles/scss/components/upload";*/
+.content-dialog-upload-files .dragdrop-content {
+  margin: 16px;
+  padding: 50px;
+  text-align: center; }
+  .content-dialog-upload-files .dragdrop-content .dragdrop-title {
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: normal;
+    color: #8b9da0; }
+  .content-dialog-upload-files .dragdrop-content .middle-content {
+    font-size: 12px; }
+.content-dialog-upload-files .file-uploaded {
+  min-height: 46px;
+  line-height: 46px;
+  display: flex;
+  align-items: center;
+  background-color: #FFF;
+  border-bottom: 1px solid #dfe3e9;
+  width: 100%;
+  margin: 0;
+  padding: 4px 16px;
+  font-size: 14px;
+  font-size: 14px; }
+.content-dialog-upload-files .upload-files {
+  min-height: 48px;
+  line-height: 48px;
+  margin-bottom: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-bottom: 1px solid #dfe3e9;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  font-size: 14px; }
+
+.my-drop-zone {
+  background-color: #f7f7f7;
+  border: 2px dashed #ccc;
+  border-radius: 2px;
+  color: #8a9cae;
+  cursor: pointer;
+  padding: 18px 0;
+  text-align: center;
+  /*  &:hover, &.nv-file-over {
+      border: 2px solid #6290c3;
+      margin: -1px;
+    }*/ }
+  .my-drop-zone .filedrop {
+    display: none; }
+  .my-drop-zone .nodrop {
+    display: block; }
+  .my-drop-zone.nv-file-over .filedrop {
+    display: block; }
+  .my-drop-zone.nv-file-over .nodrop {
+    display: none; }
+
+/*# sourceMappingURL=upload-files.dialog.css.map */

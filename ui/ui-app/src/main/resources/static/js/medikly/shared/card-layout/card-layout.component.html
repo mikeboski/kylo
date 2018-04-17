@@ -1,0 +1,14 @@
+<!--Check this out https://github.com/angular/flex-layout/wiki/Responsive-API#mediaqueries-and-aliases-->
+<div fxLayout="row" fxLayoutAlign="center start" class="mat-card-top card-layout-container">
+    <div fxFlex="20" perfect-scrollbar fxFlex.gt-lg="330px" class="mdk-card-sidebar mdk-left-sidebar-container">
+        <ng-content select="mdk-card-layout-left-sidebar"></ng-content>
+    </div>
+
+    <div fxFlex="50" class="mdk-card-main-content-container ml-1 mr-1">
+        <ng-content select="mdk-card-layout-content"></ng-content>
+    </div>
+
+    <div fxFlex="20" perfect-scrollbar  fxFlex.gt-lg="330px" class="mdk-card-sidebar mdk-right-sidebar-container pr-1">
+        <ng-content select="mdk-card-layout-right-sidebar"></ng-content>
+    </div>
+</div>

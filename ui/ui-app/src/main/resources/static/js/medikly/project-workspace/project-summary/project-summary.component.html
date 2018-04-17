@@ -1,0 +1,35 @@
+<md-card class="">
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <md-card-header>
+            <md-card-title>Project Summary</md-card-title>
+            <md-card-subtitle></md-card-subtitle>
+
+        </md-card-header>
+        <span fxFlex></span>
+    </div>
+
+    <md-card-content>
+
+        <form [formGroup]="form">
+            <div fxLayout="row">
+                <div fxFlex="45" class="pr-1">
+                    <md-input-container style="width: 100%" class="mt-0 mb-0">
+                        <textarea mdInput mdTextareaAutosize [formControl]="form.controls['markdown']"></textarea>
+                    </md-input-container>
+                </div>
+                <div fxFlex="45">
+                    <td-markdown [content]="form.value.markdown"></td-markdown>
+                </div>
+            </div>
+        </form>
+
+
+        <div fxLayout="row">
+            <span fxFlex></span>
+            <button md-button color="primary" class="btn-outline btn-color-lightblue mt-1">Save</button>
+        </div>
+
+    </md-card-content>
+
+</md-card>

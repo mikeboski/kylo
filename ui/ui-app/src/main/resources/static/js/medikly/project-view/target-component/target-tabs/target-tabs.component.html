@@ -1,0 +1,67 @@
+
+  <td-expansion-panel class="expansion-section sidebar-filters" *ngFor="let filter of filters ; let i = index" (expanded)="expandedEvent(filter)"
+                      (collapsed)="collapsedEvent(filter)">
+    <ng-template td-expansion-panel-label>
+      <span>{{filter.name}}</span>
+    </ng-template>
+
+    <div *ngIf="filter.open">
+
+      <td-expansion-panel class="expansion-section-child" *ngFor="let child of filter.children ; let j = index" (expanded)="expandedEvent(child)"
+                          (collapsed)="collapsedEvent(child)">
+
+        <ng-template  td-expansion-panel-label>
+
+            <md-icon class="icon-expansion">label</md-icon>
+
+            <span class="ml-1">{{child.name}}</span>
+
+        </ng-template>
+
+        <div *ngIf="child.open">
+          <div class="md-padding content-filter" *ngFor="let item of child.filters ; let k = index">
+
+            <!--CHIP-->
+            <div *ngIf="item.type=='chip'">
+
+              <!--LINK-OPTIONS-->
+              <div *ngFor="let link of getLinks(item.list, item.selecteds) ; let l = index" class="link-chips">
+                <div class="link-option">
+                  <a (click)="addToModel(link, item.selecteds)" class="tc-blue-800 md-caption">
+                    {{link}}
+                    <span class="rounded-badge pull-right">{{(j*l)+179}}</span>
+                  </a>
+                </div>
+              </div>
+
+              <td-chips class="chip-style"
+                        [chipAddition]="chipAddition"
+                        [chipRemoval]="chipRemoval"
+                        [items]="filteredStrings"
+                        [(ngModel)]="item.selecteds"
+                        placeholder="Enter a filter"
+                        [disabled]="disabled"
+                        (inputChange)="filterStrings($event,item.list,item.selecteds)"
+                        requireMatch>
+              </td-chips>
+
+            </div>
+
+            <!--DROPDOWN-->
+            <md-select style="width: 100%" placeholder="{{item.name}}" *ngIf="item.type=='dropdown'" class="pb-content">
+              <md-option *ngFor="let item of item.options" [value]="item.value">
+                {{ item.name }}
+              </md-option>
+            </md-select>
+
+            <!--RANGE SLIDER-->
+            <div *ngIf="item.type=='slider'" class="pb-content">
+              <md-slider #slidey thumbLabel min="{{item.min}}" max="{{item.max}}" step="{{item.step}}"  style="width: 100%"></md-slider>
+            </div>
+
+          </div>
+        </div>
+      </td-expansion-panel>
+
+    </div>
+  </td-expansion-panel>

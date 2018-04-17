@@ -1,0 +1,61 @@
+@import url(../../../../assets/medikly_theme/styles/css/pricing.css);
+:host {
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-top: 0px !important;
+  display: block; }
+
+.mat-card-top {
+  margin-top: -64px; }
+
+/*@media ($mat-xsmall) and (orientation: portrait) {
+  .mat-card-top {
+    margin-top: -($mat-toolbar-height-mobile-portrait);
+  }
+  .main-content-projects {
+    padding: 0px!important;
+  }
+}
+
+@media ($mat-small) and (orientation: landscape) {
+  .mat-card-top {
+    margin-top: -($mat-toolbar-height-mobile-landscape);
+  }
+  .main-content-projects {
+    padding: 0px !important;
+  }
+}
+
+@media ($mat-small) {
+  .main-content-projects {
+    padding: 0px !important;
+  }
+}*/
+.main-content-projects {
+  min-height: calc(100vh);
+  padding: 0px 200px;
+  width: 100%;
+  display: inline-block; }
+
+.top-bar {
+  position: fixed;
+  background-color: #ccc;
+  border: 1px solid #333;
+  height: 100px;
+  z-index: 1; }
+
+.container {
+  margin: 0 auto;
+  padding: 10px;
+  min-width: 640px;
+  max-width: 960px;
+  background-color: #eee; }
+
+.container > div {
+  margin: 20px;
+  border: 1px solid #333;
+  background-image: linear-gradient(white 50%, transparent 50%, transparent);
+  background-size: 50px 50px;
+  height: 500px; }
+
+/*# sourceMappingURL=projects.component.css.map */

@@ -4,6 +4,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {UpgradeModule} from "@angular/upgrade/static";
 import {UIRouterModule} from "@uirouter/angular";
 import {UIRouterUpgradeModule} from "@uirouter/angular-hybrid";
+import { HttpModule } from '@angular/http';
+import { CovalentMarkdownModule } from '@covalent/markdown';
+import {MatDialogModule} from '@angular/material';
+
+import { ProjectSummaryComponent } from './medikly/project-workspace/project-summary/project-summary.component';
 
 import "routes"; // load AngularJS application
 import {KyloCommonModule} from "./common/common.module";
@@ -17,7 +22,11 @@ import {KyloServicesModule} from "./services/services.module";
         KyloServicesModule,
         UIRouterModule,
         UIRouterUpgradeModule,
-        UpgradeModule
+        UpgradeModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        HttpModule,
+        CovalentMarkdownModule
     ],
     providers: [
         {provide: "$ocLazyLoad", useFactory: (i: any) => i.get("$ocLazyLoad"), deps: ["$injector"]} as FactoryProvider,

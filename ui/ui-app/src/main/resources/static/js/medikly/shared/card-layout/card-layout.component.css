@@ -1,0 +1,18 @@
+:host {
+  padding: 0;
+  margin: 0; }
+
+.card-layout-container {
+  width: 100%; }
+  .card-layout-container .mdk-card-sidebar {
+    margin-top: 65px;
+    height: calc(100vh - 136px);
+    overflow-y: hidden; }
+  .card-layout-container .mdk-card-inner-top {
+    margin: -25px 0 0 0; }
+
+/deep/ .card-layout-content {
+  background-color: #F9F9F9;
+  height: calc(100vh - 230px); }
+
+/*# sourceMappingURL=card-layout.component.css.map */

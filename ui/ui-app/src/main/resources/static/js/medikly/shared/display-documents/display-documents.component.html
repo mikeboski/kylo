@@ -1,0 +1,24 @@
+
+    <div class="header-section-list">
+      <span *ngIf="!modeCard" style="padding-left: 9px">{{titleMode}}</span>
+      <div  *ngIf="modeCard" style="padding-left: 9px">
+        <a class="button-tab" uiSref="projects.home.recent" uiSrefActive="active" md-button-sm>Recent</a>
+        <a class="button-tab" uiSref="projects.home.shared" uiSrefActive="active" md-button-sm>Shared with me</a>
+        <a class="button-tab" uiSref="projects.home.starred" uiSrefActive="active" md-button-sm>Starred</a>
+        <a class="button-tab" uiSref="projects.home.archive" uiSrefActive="active" md-button-sm>Archive</a>
+      </div>
+      <span fxFlex></span>
+      <button (click)="changeMode()" md-icon-button>
+        <md-icon *ngIf="modeCard" uiSref="projects.home.list">view_list</md-icon>
+        <md-icon *ngIf="!modeCard" uiSref="projects.home.recent">view_module</md-icon>
+      </button>
+      <button (click)="orderByName()" md-icon-button>
+        <md-icon>sort_by_alpha</md-icon>
+      </button>
+      <button md-icon-button>
+        <md-icon>folder</md-icon>
+      </button>
+    </div>
+
+    <!--<router-outlet></router-outlet>-->
+    <div ui-view="display-documents" class="display-documents"></div>

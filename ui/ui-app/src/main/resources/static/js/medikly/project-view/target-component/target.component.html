@@ -1,0 +1,58 @@
+<app-card-layout class="project-view-content">
+
+    <mdk-card-layout-content class="content-target">
+
+        <md-card class="shadow-none pa-0 ma-0">
+            <app-project-info-top documentId="15"></app-project-info-top>
+            <md-card-content class="ml-0 mr-0 pl-0 pr-0 card-layout-content ">
+
+                <perfect-scrollbar class="overflow-container">
+
+                    <!--Profile key stats-->
+                    <md-card class="ml-0 mr-0 mt-0">
+                        <app-profile-key-stats class="small-profile-keystats" [profile]="null"></app-profile-key-stats>
+                    </md-card>
+
+                    <md-card class="second-card">
+                        <md-card-content>
+
+                            <md-tab-group color="primary" class="scroll-main-content" (selectChange)="tabActive()">
+
+                                <!--Tabs-->
+                                <md-tab *ngFor="let tab of mainContentTabs ; let i = index">
+                                    <ng-template md-tab-label>{{tab.name}}</ng-template>
+
+                                    <md-card-content>
+
+                                        <app-expansion-chart [children]="tab.children"></app-expansion-chart>
+
+                                    </md-card-content>
+                                </md-tab>
+
+                            </md-tab-group>
+                        </md-card-content>
+                    </md-card>
+                </perfect-scrollbar>
+            </md-card-content>
+
+        </md-card>
+    </mdk-card-layout-content>
+
+    <mdk-card-layout-left-sidebar>
+        <md-nav-list class="nav-list">
+            <div class="content-leftsidenav">
+                <md-tab-group color="primary" class="scroll-filter">
+                    <md-tab>
+                        <ng-template md-tab-label>PROVIDERS</ng-template>
+                        <app-target-tabs [filters]="filtersTabProviders" [opened]="true"></app-target-tabs>
+                    </md-tab>
+                    <md-tab>
+                        <ng-template md-tab-label>ORGANIZATIONS</ng-template>
+                        <app-target-tabs [filters]="filtersTabOrganizations" [opened]="false"></app-target-tabs>
+                    </md-tab>
+                </md-tab-group>
+            </div>
+        </md-nav-list>
+    </mdk-card-layout-left-sidebar>
+
+</app-card-layout>

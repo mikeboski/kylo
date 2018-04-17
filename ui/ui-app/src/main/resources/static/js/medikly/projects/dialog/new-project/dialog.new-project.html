@@ -1,0 +1,121 @@
+<md-tab-group color="primary" class="dialog-new-project">
+
+  <!--Create a new project-->
+  <md-tab>
+    <ng-template md-tab-label>CREATE PROJECT</ng-template>
+
+    <md-card class="ma-0">
+      <md-card-header>
+        <md-card-title>
+          Create a new project
+        </md-card-title>
+        <md-card-subtitle>
+          A project is a collection of analysis and insights alongside the underlying data.
+        </md-card-subtitle>
+      </md-card-header>
+
+      <md-card-content>
+        <form [formGroup]="form">
+
+          <div class="mb-1">
+            <md-input-container class="mt-0 mb-0" style="width: 100%">
+              <input mdInput placeholder="Project name ({{!form._value.name || form._value.name.length==0 ? 'max. '+maxName : maxName-form.value.name.length}})"
+                     [formControl]="form.controls['name']" maxlength="{{maxName}}">
+            </md-input-container>
+            <span *ngIf="privacy != 'private'" class="info-radio pl-0">This will also be your project URL: https://dev.medikly.ly/geraldmorris/{{form._value.name}} <br></span>
+          </div>
+
+          <div class="mb-1">
+            <md-input-container class="mt-0 mb-0" style="width: 100%">
+        <textarea autosize rows="1" mdInput
+                  placeholder="Project objective ({{!form._value.objective || form._value.objective.length==0 ? 'max. '+maxObjective : maxObjective-form.value.objective.length}})"
+                  [formControl]="form.controls['objective']" maxlength="{{maxObjective}}"></textarea>
+            </md-input-container>
+          </div>
+
+          <div class="mb-1">
+            <md-radio-group [formControl]="form.controls['privacy']" [(ngModel)]="privacy">
+              <div fxLayout="row">
+                <div fxFlex="50">
+                  <md-radio-button value="open" class="mb-0">Open</md-radio-button>
+                  <span class="info-radio"><br>Publicly available project that anyone can view</span>
+                </div>
+                <div fxFlex="50">
+                  <md-radio-button value="private" class="mb-0">Private</md-radio-button>
+                  <span class="info-radio"><br>You control who can view and contribute to this project</span>
+                </div>
+              </div>
+            </md-radio-group>
+          </div>
+        </form>
+      </md-card-content>
+
+      <md-card-actions>
+        <span fxFlex></span>
+        <button
+          md-button
+          color="warn"
+          md-dialog-close>CANCEL
+        </button>
+        <button
+          md-button
+          color="primary"
+          uiSref="view.home" [uiParams]="{ id: 15 }"
+          md-dialog-close="true" [disabled]="!form.valid">CREATE PROJECT
+        </button>
+      </md-card-actions>
+    </md-card>
+
+  </md-tab>
+
+  <!--Add a Data Source-->
+  <md-tab>
+    <ng-template md-tab-label>ADD A DATA SOURCE</ng-template>
+    <md-card class="ma-0">
+      <md-card-header>
+        <md-card-title>
+          Add a Data Source
+        </md-card-title>
+      </md-card-header>
+
+      <md-card-content>
+
+      </md-card-content>
+
+<!--      <md-card-actions>
+        <span fxFlex></span>
+        <button
+          md-button
+          color="warn"
+          md-dialog-close>CANCEL
+        </button>
+      </md-card-actions>-->
+    </md-card>
+
+  </md-tab>
+
+  <!--Use a Template-->
+  <md-tab>
+    <ng-template md-tab-label>USE A TEMPLATE</ng-template>
+    <md-card class="ma-0">
+
+      <md-card-content class="pt-0 pb-0">
+
+        <!--Toolbar templates-->
+        <app-modal-templates-gallery (openProject)="openProjectTemplate()">
+        </app-modal-templates-gallery>
+
+      </md-card-content>
+
+      <md-card-actions>
+        <span fxFlex></span>
+        <button
+          md-button
+          color="warn"
+          md-dialog-close>CANCEL
+        </button>
+      </md-card-actions>
+    </md-card>
+  </md-tab>
+
+</md-tab-group>

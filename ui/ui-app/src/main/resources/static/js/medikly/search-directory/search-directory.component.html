@@ -1,0 +1,201 @@
+<md-sidenav-container class="app-inner background-none shadow-none sidenav-container-directory medikly-covalent-styling" [class.listingEnabled]="listingEnabled">
+  <div class="main-content" fxLayout="row" fxLayoutWrap="wrap">
+
+    <!--List providers-->
+    <div class="directory-side-panel panel2" *ngIf="listingEnabled">
+      <app-directory-listing #directoryListing [category]="category" [providers]="providers" [selected]="selected"
+                             [providersCompare]="providersCompare" [following]="following"
+                             (addProviderCompare)="addToProvidersCompare($event)" (follow)="followMessage($event)"></app-directory-listing>
+    </div>
+
+    <!--Profile-->
+    <div class="directory-side-panel panel3" *ngIf="directoryListing && directoryListing.selected">
+      <app-directory-profile #directoryProfile (onClosed)="closeProfile()"
+                             [profile]="directoryListing.selected"
+                             (addProviderCompare)="addToProvidersCompare($event)" (follow)="followMessage($event)"></app-directory-profile>
+    </div>
+
+    <!--Toolbar-->
+    <div fxFlex.gt-sm="100" fxFlex.gt-xs="100">
+      <md-toolbar color="primary" class="toolbar-style">
+
+        <div class="main-top-items" fxFlex>
+          <button md-button [md-menu-trigger-for]="user" class="mr-1 style-font">
+            All Providers (5,324,112)
+            <md-icon>keyboard_arrow_down</md-icon>
+          </button>
+          <md-menu #user="mdMenu" x-position="before">
+            <md-nav-list dense>
+              <a md-list-item class="submenu-subitems tc-blue-600 all-providers-fs">
+                All people
+                <span fxFlex></span>
+                <md-icon [class.tc-yellow-700]="true"> star
+                </md-icon>
+              </a>
+              <div class="divider"></div>
+              <h4 md-subheader class="all-providers-fs">Private Filters</h4>
+              <a md-list-item class="submenu-subitems all-providers-fs">
+                No Private Filters
+              </a>
+              <h4 md-subheader class="all-providers-fs">Public Filters</h4>
+              <a md-list-item class="submenu-subitems all-providers-fs">
+                Current Customers
+                <span fxFlex></span>
+                <md-icon> star_border
+                </md-icon>
+                <md-icon> lock
+                </md-icon>
+
+              </a>
+              <a md-list-item class="submenu-subitems all-providers-fs">
+                People I'm Following
+              </a>
+              <a md-list-item class="submenu-subitems all-providers-fs">
+                Potential Customers
+              </a>
+              <div class="divider"></div>
+              <a md-list-item class="submenu-subitems tc-blue-600 all-providers-fs">
+                Create a Custom Filter
+              </a>
+            </md-nav-list>
+          </md-menu>
+          <button md-raised-button md-button-sm color="primary" class="mr-1 btn-light-blue add-new-style">
+            Add New
+          </button>
+
+
+        </div>
+
+        <div class="fxFlex"></div>
+
+        <button md-icon-button class="ml-xs button-toolbar-margin">
+          <md-icon>search</md-icon>
+        </button>
+        <button md-icon-button class="ml-xs button-toolbar-margin">
+          <md-icon>person</md-icon>
+        </button>
+        <button md-icon-button class="ml-xs button-toolbar-margin">
+          <md-icon>settings</md-icon>
+        </button>
+        <button md-icon-button (click)="quickpanel.open(); comparePanel=false; filterPanel=true; listingEnabled= false; directoryListing=undefined"
+                class="ml-xs overflow-visible button-toolbar-margin">
+          <md-icon>filter_list</md-icon>
+        </button>
+        <button md-icon-button (click)="quickpanel.open(); comparePanel=true; filterPanel=false"
+                class="ml-xs overflow-visible button-toolbar-margin"
+                style="margin-right: 10px">
+          <md-icon>compare_arrows</md-icon>
+          <span class="notification-label">{{providersCompare.length}}</span>
+        </button>
+      </md-toolbar>
+
+      <agm-map [streetViewControl]="false" [latitude]="mapCfg.lat" [longitude]="mapCfg.lng" [zoom]="mapCfg.zoom"
+               [styles]="styles" #map1>
+        <ng-template ngFor let-provider [ngForOf]="providers">
+          <agm-marker *ngIf="provider.addresses.length > 0 && provider.addresses[0].point"
+                      [latitude]="provider.addresses[0].point.lat" [longitude]="provider.addresses[0].point.ln"
+                      [iconUrl]="provider.enumeration_type == 'NPI-2' ? 'assets/medikly_theme/images/marker/hospital.svg' : 'assets/medikly_theme/images/marker/person_pin.svg'"
+                      (markerClick)="clickedMarker(infoWindow)">
+            <agm-info-window #infoWindow>
+              <div fxLayout="row">
+                <div>
+                  <img md-list-avatar src="{{provider.avatar}}" class="radius-circle info-marker-img"/>
+                </div>
+                <div fxFlex style="padding-left: 16px">
+                  <a (click)="selectedItem(provider)"><h3 md-line class="marker-text marker-title">
+                    {{provider.basic.first_name}} {{provider.basic.last_name}},
+                    {{provider.basic.credential}}</h3></a>
+                  <p md-line class="mat-text-muted text-md marker-text marker-subtitle">Oncologist </p>
+                  <p md-line class="mat-text-muted text-md marker-text">{{provider.addresses[0].city}},
+                    {{provider.addresses[0].state}} </p>
+                </div>
+
+                <a class="relative icon-label" style="height: 42px; margin-left: 5px">
+                  <md-icon *ngIf="provider.key % 2 == 0" [class.tc-yellow-700]="provider.key % 2 == 0"
+                           (click)="$event.stopPropagation()">
+                    star
+                  </md-icon>
+                  <md-icon class="mat-text-muted" *ngIf="provider.key % 2 != 0" (click)="$event.stopPropagation()">
+                    star_border
+                  </md-icon>
+                  Favorite
+                </a>
+                <a class="relative icon-label" (click)="throwEventProviderCompare(item)" style="margin-right: 0px">
+                  <md-icon class="mat-text-muted">compare_arrows</md-icon>
+                  Compare
+                </a>
+              </div>
+
+            </agm-info-window>
+          </agm-marker>
+        </ng-template>
+
+      </agm-map>
+    </div>
+
+  </div>
+
+  <md-sidenav align="end" [opened]="quickpanelOpen" mode="over" #quickpanel (close)="showListing()">
+
+    <!--Compare Sidenav-->
+    <perfect-scrollbar *ngIf="comparePanel" class="overflow-container">
+      <md-nav-list>
+        <h3 md-subheader>Providers to Compare</h3>
+
+        <ng-template let-item let-i="index" let-last="last" ngFor [ngForOf]="providersCompare">
+          <a [disableRipple]="true" md-list-item>
+            <img md-list-avatar src="{{item.avatar}}"/>
+            <h3 md-line>{{item.basic.first_name}} {{item.basic.last_name}}, {{item.basic.credential}}</h3>
+            <p md-line style="font-size: 12px" class="mat-text-muted text-md">Oncologist </p>
+            <p md-line style="font-size: 12px" class="mat-text-muted text-md">{{item.addresses[0].city}},
+              {{item.addresses[0].state}} </p>
+            <md-icon class="mat-text-muted" (click)="removeToProvidersCompare(item)">delete</md-icon>
+          </a>
+        </ng-template>
+
+      </md-nav-list>
+      <div class="footer-buttons">
+        <span fxFlex></span>
+        <button md-raised-button md-button-sm color="accent"
+                [disabled]="providersCompare.length<minProviders || providersCompare.length>maxProviders"
+                uiSref="compare" [uiParams]="{ ids: getsIdsProviders() }" class="mr-1">Compare
+        </button>
+      </div>
+
+    </perfect-scrollbar>
+
+    <!--Filters sidenav-->
+    <perfect-scrollbar *ngIf="filterPanel" class="overflow-container">
+      <md-nav-list>
+        <h3 md-subheader>Filters</h3>
+
+        <td-expansion-panel-group>
+          <td-expansion-panel *ngFor="let filter of filters; let i = index" label="{{ filter.title }}">
+            <div class="md-padding">
+            </div>
+          </td-expansion-panel>
+        </td-expansion-panel-group>
+
+
+        <!--        <md-list-item *ngFor="let filter of filters; let i = index">
+                  {{ filter.title }}
+                </md-list-item>
+                <md-list-item>
+                  More filters
+                </md-list-item>-->
+
+      </md-nav-list>
+      <div class="footer-buttons">
+        <span fxFlex></span>
+        <button md-raised-button md-button-sm color="accent"
+                class="mr-1">Search
+        </button>
+      </div>
+
+    </perfect-scrollbar>
+
+  </md-sidenav>
+
+</md-sidenav-container>
+
+

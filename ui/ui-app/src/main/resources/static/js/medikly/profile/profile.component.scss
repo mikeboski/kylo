@@ -1,0 +1,286 @@
+@import "../../../assets/medikly_theme/styles/css/social.css";
+
+:host {
+  margin-left: -25px !important;
+  margin-right: -25px !important;
+  margin-top: -17px !important;
+  margin-bottom: -25px !important;
+  display: block;
+}
+app-profile {
+  md-sidenav {
+    min-width: 300px;
+    width: 25%;
+  }
+
+  md-chip {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}
+
+.section-filters {
+  padding: 0 12px;
+  color: #888;
+  display: inline-block;
+  font-weight: 400;
+  height: 28px;
+  line-height: 24px;
+  overflow: hidden;
+  font-size: 12px;
+
+  h4 {
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+  .link-dropdown {
+    color: #363636;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+    height: 28px;
+    padding-right: 16px;
+    width: 100%;
+
+    .dropdown-indicator {
+      color: #888;
+      font-size: 16px;
+      font-weight: 400;
+      //position: absolute;
+      //right: 0;
+      //-ms-transform: translateY(-50%);
+      //-webkit-transform: translateY(-50%);
+      //transform: translateY(-50%);
+      //top: 53%;
+    }
+  }
+}
+
+.wrapper {
+  //margin: 6px;
+}
+
+.overflow-container {
+  height: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.main-content-profile {
+  height: calc(100vh);
+  padding: 7px;
+
+  .card-profile {
+    margin-bottom: 15px;
+    padding: 0;
+
+    md-card-content {
+      padding: 0px !important;
+    }
+
+  }
+}
+
+.expansion-section {
+  border-bottom: 1px solid rgb(233, 233, 233);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #888;
+
+  &.td-expanded {
+
+  }
+}
+
+.info-section-profile{
+  padding: 15px 10px;
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.info-section {
+  padding: 25px 25px 5px 25px;
+  border-bottom: 1px solid rgb(233, 233, 233);
+
+  .entity-section-tags {
+    margin-top: 5px;
+  }
+
+  .entity-section {
+    //margin-top: 5px;
+
+    /deep/ {
+      md-input-container {
+
+        .mat-input-underline {
+          display: none;
+          //visibility: hidden;
+        }
+        .mat-input-placeholder {
+          font-size: 13px;
+        }
+
+
+        &.mat-focused, &:hover {
+          .mat-input-underline {
+            display: block ;
+            visibility: visible ;
+          }
+        }
+      }
+    }
+
+    .button-add-style {
+      min-height: 14px;
+
+      position: sticky;
+      margin-top: -15px;
+
+      a {
+        display: none;
+      }
+
+    }
+
+    &:hover {
+      .button-add-style {
+        a {
+          display: block;
+        }
+      }
+    }
+
+  }
+  .title-info-section {
+    margin-bottom: 0px;
+    color: #888;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+
+    font-size: 13px !important;
+    line-height: 20px !important;
+    font-weight: 500 !important;
+    color: #777777 !important;
+  }
+
+  .content-info-section {
+    color: #363636;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 400;
+    width: 100%;
+
+  }
+  .color-url {
+    color: #009CEE;;
+  }
+
+}
+
+.info-marker-img {
+  height: 45px;
+  width: 45px;
+  margin: 10px 10px 0 10px;
+}
+
+.title-modal-marker {
+  margin: 10px 0 0 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.subtitle-modal-marker {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 13px !important;
+  color: #363636!important;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.content-info-marker {
+  margin-left: 10px;
+}
+
+.scroll {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+
+.content-info-selection > img {
+  width: 100%;
+}
+
+.section-filters-style{
+  color: #363636;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.right-sidenav {
+  min-width: 300px;
+  width: 25%;
+
+  .expansion-section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+  }
+
+}
+.left-sidenav{
+  min-width: 300px;
+  width: 25%;
+
+  .textarea-style{
+    resize: none;
+  }
+  .avatar-middle{
+    width: 100%;
+  }
+  .avatar-left{
+    max-width: 65px;
+  }
+  avatar-right{
+    max-width: 65px;
+  }
+}
+
+.practice-tab-info{
+  padding-left: 76px;
+}
+
+/deep/ {
+
+  app-profile-key-stats {
+    .profile-key-stats {
+      &:last-of-type {
+        .card-widget {
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+  app-profile-header-card {
+    &.small-profile-header {
+      .mat-card-title {
+        font-size: 14px !important;
+      }
+    }
+
+  }
+}
+
+md-input-container:not(.md-input-has-value) input:not(:focus) {
+  color: inherit;
+}

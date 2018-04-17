@@ -1,7 +1,7 @@
 define(['angular', 'kylo-common', '@uirouter/angular', 'kylo-services',
         'main/IndexController',
         'main/HomeController',
-        'main/AccessDeniedController'], function (angular, app, uirouter) {
+        'main/AccessDeniedController', 'medikly/home/home.component'], function (angular, app, uirouter) {
     'use strict';
     app.config(["$ocLazyLoadProvider", "$stateProvider", "$urlRouterProvider", function ($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
 
@@ -45,8 +45,66 @@ define(['angular', 'kylo-common', '@uirouter/angular', 'kylo-services',
             }
 
         });
+        // $stateProvider.state( {
+        //     name: 'homepage.**',
+        //     url: '/homepage',
+        //     loadChildren: 'medikly/home/home.module#HomeModule'
+        // })
 
-        $stateProvider
+
+        // $stateProvider.state( {
+        //     name: 'projects.**',
+        //     url: '/projects',
+        //     loadChildren: 'medikly/projects/projects.module#ProjectsModule'
+        // });
+
+        // $stateProvider.state( {
+        //     name: 'view.**',
+        //     url: '/projects/view',
+        //     loadChildren: 'medikly/project-view/project-view.module#ProjectViewModule'
+        // });
+
+        // $stateProvider.state( {
+        //     name: 'workspace.**',
+        //     url: '/projects/view/:id/workspace',
+        //     loadChildren: 'medikly/project-workspace/project-workspace.module#ProjectWorkspaceModule'
+        // });
+
+        // $stateProvider.state( {
+        //     name: 'directory.**',
+        //     url: '/directory',
+        //     loadChildren: 'medikly/search-directory/search-directory.module#SearchDirectoryModule'
+        // });
+
+        // $stateProvider.state( {
+        //     name: 'compare.**',
+        //     url: '/compare',
+        //     loadChildren: 'medikly/compare/compare.module#CompareModule'
+        // });
+
+        // $stateProvider.state( {
+        //     name: 'profile.**',
+        //     url: '/profile',
+        //     loadChildren: 'medikly/profile/profile.module#ProfileModule'
+        // });
+
+
+        // .state('contacts.detail', {
+        //     url: "/contacts/:contactId",
+        //     templateUrl: 'contacts.detail.html',
+        //     controller: function ($stateParams) {
+        //         // If we got here from a url of /contacts/42
+        //         expect($stateParams).toBe({contactId: "42"});
+        //     }
+        // })
+             //new         $stateProvider
+             $stateProvider.state('homepage', {
+                url: '/homepage',
+                templateUrl: "js/medikly/home/home.component.html",
+                controller: 'HomeComponent',
+                controllerAs: 'vm'
+            })
+        //original home page
             .state('home', {
                 url: '/home',
                 views: {

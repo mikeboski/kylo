@@ -1,0 +1,11 @@
+export { AboutComponent } from './about/about.component';
+export { CommonConditionsComponent } from './common-conditions/common-conditions.component';
+export { ContactComponent } from './contact/contact.component';
+export { EducationTrainingComponent } from './education-training/education-training.component';
+export { MoreDoctorsComponent } from './more-doctors/more-doctors.component';
+export { MoreMediklyComponent } from './more-medikly/more-medikly.component';
+export { OpenPaymentsComponent } from './open-payments/open-payments.component';
+export { PhysicianTeamingComponent } from './physician-teaming/physician-teaming.component';
+export { PrescribingRecordComponent } from './prescribing-record/prescribing-record.component';
+export { ProfessionalInformationComponent } from './professional-information/professional-information.component';
+export { ReferencesComponent } from './references/references.component';

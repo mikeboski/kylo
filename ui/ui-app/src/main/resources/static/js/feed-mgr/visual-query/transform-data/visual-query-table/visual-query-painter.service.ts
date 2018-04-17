@@ -357,7 +357,7 @@ export class VisualQueryPainterService extends fattable.Painter {
     /**
      * Shows the cell menu on the specified cell.
      */
-    private showMenu(cellDiv: HTMLElement, event: JQueryEventObject) {
+    private showMenu(cellDiv: HTMLElement, event: any) {
         // Get column info
         const cell = angular.element(cellDiv);
         const column = cell.data("column");

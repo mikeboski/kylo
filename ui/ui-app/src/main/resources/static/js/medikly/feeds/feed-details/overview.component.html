@@ -1,0 +1,78 @@
+<div class="feed-details">
+
+    <md-list flex layout-fill class="feed-details-list">
+
+        <md-list-item class="feed-details-item panel-default">
+
+            <div class="dataset-icon">
+                <svg viewBox="0 0 24 24" fill="#6290c3" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+            </div>
+            <div layout="column">
+                <span class="dataset-description">
+                    Add a short description
+                </span>
+            </div>
+
+            <span flex></span>
+            <md-button class="icon-btn md-icon-button md-primary icon-item-overview" ng-click="edit($event)">
+                <ng-md-icon icon="edit"></ng-md-icon>
+            </md-button>
+        </md-list-item>
+
+        <md-list-item class="feed-details-item panel-default">
+            <div class="dataset-icon">
+                <svg viewBox="0 0 24 24" fill="#6290c3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <path d="M24 24H0V0h24v24z" id="a"/>
+                    </defs>
+                    <clipPath id="b">
+                        <use overflow="visible" xlink:href="#a"/>
+                    </clipPath>
+                    <path clip-path="url(#b)" d="M2.5 4v3h5v12h3V7h5V4h-13zm19 5h-9v3h3v7h3v-7h3V9z"/>
+                </svg>
+            </div>
+            <div layout="column">
+                <span class="summary-description">
+                    Add a detailed summary for your feed.
+                </span>
+                <span flex></span>
+                <span class="summary-subdescription mat-text-muted">
+                    Add images, links, and custom formatting to your story using Markdown.
+                </span>
+            </div>
+
+            <span flex></span>
+            <md-button class="icon-btn md-icon-button md-primary icon-item-overview" ng-click="edit($event)">
+                <ng-md-icon icon="edit"></ng-md-icon>
+            </md-button>
+        </md-list-item>
+
+        <md-list-item class="feed-details-item panel-add-files" ng-click="vm.openDialogAddFileEvent()">
+
+            <div class="dataset-icon">
+                <svg fill="#8c9caf" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+                </svg>
+            </div>
+
+            <div layout="column">
+                <span class="add-files-description">
+                    Browse to add files.
+                </span>
+                <span flex></span>
+                <span class="summary-subdescription mat-text-muted">
+                    You can add up to 1 GB to this feed.
+                </span>
+            </div>
+
+            <span flex></span>
+
+        </md-list-item>
+
+    </md-list>
+
+</div>

@@ -1,0 +1,96 @@
+
+  <md-toolbar color="primary">
+    <span class="directory-listing-count text-sm">Filter</span>
+    <span fxFlex></span>
+    <button md-icon-button><md-icon>filter_list</md-icon></button>
+  </md-toolbar>
+
+
+  <md-accordion [displayMode]="displayMode" [multi]="multi"
+                class="md-expansion-demo-width" *ngFor="let category of categories">
+
+    <md-expansion-panel #panel1 class="expansion-filter" [hideToggle]="hideToggle">
+      <md-expansion-panel-header><span class="nav-icon-hexa"
+                                       style="color: #55698A; float: left;">{{category.icon}}</span>
+        <span>{{category.title}}</span></md-expansion-panel-header>
+
+      <md-accordion [displayMode]="displayMode" [multi]="multi"
+                    class="md-expansion-demo-width" *ngFor="let filter of category.children">
+        <md-expansion-panel #panel1 class="expansion-filter" [hideToggle]="hideToggle">
+          <md-expansion-panel-header><span class="nav-icon-hexa"
+                                           style="color: #55698A; float: left;">{{filter.icon}}</span>
+            <span>{{ filter.title}}</span></md-expansion-panel-header>
+          <div class="content-filter">
+            <label class="label-title">Is sole proprietor</label>
+            <md-button-toggle-group name="alignment" style="background: white">
+              <md-button-toggle value="left">Yes</md-button-toggle>
+              <md-button-toggle value="center">No</md-button-toggle>
+            </md-button-toggle-group>
+          </div>
+          <div class="content-filter">
+            <!-- <label class="label-title">Gender</label>-->
+            <md-select multiple placeholder="Multiselect" [(ngModel)]="currentStates" style=" width: 100%">
+              <md-option *ngFor="let state of states" [value]="state.value">
+                {{ state.viewValue }}
+              </md-option>
+            </md-select>
+          </div>
+
+          <div class="content-filter">
+            <label class="label-title">Slider</label>
+            <md-slider min="1" max="100" step="20" #slider5 style="width:80%;"></md-slider>
+            {{slider5.value}}
+          </div>
+
+          <div class="content-filter">
+            <!--     <label class="label-title">Dropdown</label>-->
+            <md-select placeholder="Dropdown" [color]="drinksTheme" [(ngModel)]="currentDrink"
+                       [floatPlaceholder]="floatPlaceholder" #drinkControl="ngModel">
+              <md-option>None</md-option>
+              <md-option *ngFor="let drink of drinks" [value]="drink.value" [disabled]="drink.disabled">
+                {{ drink.viewValue }}
+              </md-option>
+            </md-select>
+          </div>
+          <div class="content-filter">
+            <label class="label-title">Checkboxes</label>
+            <div fxLayout="column">
+              <md-checkbox color="warn">Option 1</md-checkbox>
+              <md-checkbox color="warn">Option 2</md-checkbox>
+              <md-checkbox color="warn">Option 3</md-checkbox>
+            </div>
+          </div>
+
+          <div class="content-filter">
+            <label class="label-title">Radiobutton</label>
+            <div fxLayout="column">
+
+              <md-radio-button name="group2" color="warn">Option 1</md-radio-button>
+              <md-radio-button name="group2" color="warn">Option 2</md-radio-button>
+              <md-radio-button name="group2" color="warn">Option 3</md-radio-button>
+
+            </div>
+          </div>
+
+          <!--      <div class="content-filter">
+                  <label class="label-title">From - To</label>
+
+                  <md-input-container style="width:50%;">
+                    <input mdInput type="number" placeholder="From">
+                    <input mdInput type="number" placeholder="To">
+                  </md-input-container>
+
+                </div>-->
+
+
+        </md-expansion-panel>
+
+      </md-accordion>
+
+    </md-expansion-panel>
+
+  </md-accordion>
+
+
+
+

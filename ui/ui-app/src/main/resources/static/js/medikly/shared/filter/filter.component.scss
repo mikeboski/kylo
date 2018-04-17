@@ -1,0 +1,114 @@
+$height: calc(100vh);
+
+.sidenav-secondary {
+ // border-left: 1px solid #ccc;
+  background-color: #2D3349 !important;
+  color: white !important;
+  height: $height;
+  //width: 20% !important;
+}
+.nav-icon-hexa{
+  margin: 9px 10px 0px 1px;
+  font-size: 11px;
+  font-weight: 700;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-transform: initial;
+  text-align: center;
+  background: url(../../../../assets/medikly_theme/images/hexa.png) left top no-repeat;
+}
+.content-filter{
+  margin-bottom: 10px;
+  color: white;
+  //background-color: #252a3c;
+  //border-top: none;
+  //padding: 9px 15px 9px 15px;
+}
+md-expansion-panel-header.mat-expansion-panel-header.ng-trigger-expansionHeight.mat-expanded{
+  height: 48px !important;
+}
+.expansion-filter > md-expansion-panel-header{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  color: white;
+  line-height:48px !important;
+}
+.expansion-filter{
+  background-color: #2D3349;
+}
+.expansion-filter > span::after{
+  color: #ffffff !important;
+}
+.mat-expansion-indicator::after {
+  color: #ffffff !important;
+}
+#panel1{
+  height:48px !important;
+}
+.label-title{
+  color: #C5D1CD;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  display: block;
+}
+span.mat-select-value-text{
+  color: white !important;
+}
+
+:host {
+  //margin-left: -6.33px;
+  //margin-right: 6.33px;
+  //margin-top: -6.33px;
+  //margin-bottom: -5.33px;
+  display: block;
+  //border-left: 1px solid #ccc;
+  background-color: #2D3349 !important;
+  color: white !important;
+  //width: 20% !important;
+}
+:host /deep/ {
+  .mat-sidenav-container {
+    overflow: visible;
+    .mat-sidenav {
+      overflow: visible;
+    }
+  }
+  .mat-sidenav-content {
+    padding: 0;
+  }
+  @media (min-width: 959px) {
+    .mat-sidenav-side {
+      box-shadow: none!important;
+    }
+  }
+  .mat-slider-horizontal {
+    width: 100%;
+    min-width: 1px;
+  }
+  .mat-expansion-panel-body{
+    padding-right: 5px !important;
+  }
+}
+
+//Select style
+span.mat-select-value-text, span.mat-select-placeholder.ng-trigger.ng-trigger-transformPlaceholder{
+  color: white !important;
+}
+//Slider style
+.mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
+  background-color: #F25457;
+}
+//Checkbox style WARN
+.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background {
+  background-color: #F25457 !important;
+}
+
+//Border bottom tabs
+md-ink-bar.mat-ink-bar {
+  height: 2.5px;
+}
+//Shadow filter
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}

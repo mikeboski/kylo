@@ -56,10 +56,10 @@
     &lt;!&ndash;Tab&ndash;&gt;
     <div *ngIf="chart.type==='tab'">
 
-      <md-tab-group color="primary" (selectChange)="tabActive()">
+      <mat-tab-group color="primary" (selectChange)="tabActive()">
 
-        <md-tab *ngFor="let tab of chart.data">
-          <ng-template md-tab-label>{{tab.name}}</ng-template>
+        <mat-tab *ngFor="let tab of chart.data">
+          <ng-template mat-tab-label>{{tab.name}}</ng-template>
 
             &lt;!&ndash;Vertical Inverted&ndash;&gt;
             <chart-vertical-inverted *ngIf="tab.type==='vertical-inverted'"
@@ -89,9 +89,9 @@
             </chart-horizontal>
 
 
-        </md-tab>
+        </mat-tab>
 
-      </md-tab-group>
+      </mat-tab-group>
 
     </div>
 
@@ -166,10 +166,10 @@
         <!--Tab-->
         <div *ngIf="chart.type==='tab'">
 
-          <md-tab-group color="primary" (selectChange)="tabActive()">
+          <mat-tab-group color="primary" (selectChange)="tabActive()">
 
-            <md-tab *ngFor="let tab of chart.data">
-              <ng-template md-tab-label>{{tab.name}}</ng-template>
+            <mat-tab *ngFor="let tab of chart.data">
+              <ng-template mat-tab-label>{{tab.name}}</ng-template>
 
               <!--Vertical Inverted-->
               <chart-vertical-inverted *ngIf="tab.type==='vertical-inverted'"
@@ -199,9 +199,9 @@
               </chart-horizontal>
 
 
-            </md-tab>
+            </mat-tab>
 
-          </md-tab-group>
+          </mat-tab-group>
 
         </div>
 

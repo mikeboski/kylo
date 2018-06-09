@@ -6,10 +6,10 @@
   margin-bottom: -25px !important;
   display: block; }
 
-app-profile md-sidenav {
+app-profile mat-sidenav {
   min-width: 300px;
   width: 25%; }
-app-profile md-chip {
+app-profile mat-chip {
   margin-top: 3px;
   margin-bottom: 3px; }
 
@@ -51,7 +51,7 @@ app-profile md-chip {
   .main-content-profile .card-profile {
     margin-bottom: 15px;
     padding: 0; }
-    .main-content-profile .card-profile md-card-content {
+    .main-content-profile .card-profile mat-card-content {
       padding: 0px !important; }
 
 .expansion-section {

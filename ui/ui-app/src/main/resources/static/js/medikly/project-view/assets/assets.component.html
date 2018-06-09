@@ -2,35 +2,35 @@
 
   <mdk-card-layout-content class="content-assets">
 
-    <md-card class="shadow-none pa-0 ma-0">
+    <mat-card class="shadow-none pa-0 ma-0">
       <app-project-info-top documentId="15"></app-project-info-top>
-      <md-card-content class="ml-0 mr-0 pl-0 pr-0 card-layout-content ">
+      <mat-card-content class="ml-0 mr-0 pl-0 pr-0 card-layout-content ">
 
         <perfect-scrollbar class="overflow-container">
-          <md-card class="ml-0 mr-0">
+          <mat-card class="ml-0 mr-0">
 
             <!--Projects Objective-->
 
             <div fxLayout="row" fxLayoutAlign="center center">
-              <md-card-header class="mt-0">
-                <md-card-subtitle>AUDIENCES</md-card-subtitle>
+              <mat-card-header class="mt-0">
+                <mat-card-subtitle>AUDIENCES</mat-card-subtitle>
 
-              </md-card-header>
+              </mat-card-header>
               <span fxFlex></span>
-              <button md-icon-button md-button-sm [md-menu-trigger-for]="projectObjectiveMenu"
+              <button md-icon-button md-button-sm [mat-menu-trigger-for]="projectObjectiveMenu"
                       aria-label="Open card menu">
                 <mat-icon>more_vert</mat-icon>
               </button>
-              <md-menu #projectObjectiveMenu="mdMenu" x-position="before" dense>
-                <md-nav-list dense>
+              <mat-menu #projectObjectiveMenu="matMenu" x-position="before" dense>
+                <mat-nav-list dense>
                   <a md-list-item><!-- [routerLink]="['/projects/view/'+project+'/workspace/project-summary']">-->
                     Edit
                   </a>
-                </md-nav-list>
-              </md-menu>
+                </mat-nav-list>
+              </mat-menu>
             </div>
 
-            <md-card-content class="pt-0">
+            <mat-card-content class="pt-0">
 
               <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
                   <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
@@ -43,7 +43,7 @@
                                (searchDebounce)="search($event)" flex>
                 </td-search-box>
               </div>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <td-data-table
                 #dataTable
                 [data]="filteredData"
@@ -63,29 +63,29 @@
               </div>
 <!--              <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)">
                 <span hide-xs>Rows per page:</span>
-                <md-select [style.width.px]="50" [(ngModel)]="pageSize">
-                  <md-option *ngFor="let size of [5,10,15,20]" [value]="size">
+                <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
+                  <mat-option *ngFor="let size of [5,10,15,20]" [value]="size">
                     {{size}}
-                  </md-option>
-                </md-select>
+                  </mat-option>
+                </mat-select>
                 {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
               </td-paging-bar>-->
 
-            </md-card-content>
+            </mat-card-content>
 
-          </md-card>
+          </mat-card>
 
         </perfect-scrollbar>
-      </md-card-content>
+      </mat-card-content>
 
-    </md-card>
+    </mat-card>
 
 
   </mdk-card-layout-content>
 
   <mdk-card-layout-left-sidebar>
 
-    <md-nav-list class="messages-nav" dense>
+    <mat-nav-list class="messages-nav" dense>
 
       <a href="javascript:;" class="measure-list-item" md-list-item>
         <mat-icon class="mat-text-muted ml-0 mr-0">people</mat-icon>
@@ -98,9 +98,9 @@
       </a>
 
 
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
 
-    </md-nav-list>
+    </mat-nav-list>
 
   </mdk-card-layout-left-sidebar>
 

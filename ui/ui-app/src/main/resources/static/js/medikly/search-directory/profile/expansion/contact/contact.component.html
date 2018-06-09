@@ -7,7 +7,7 @@
                 <p md-line>Phone Number</p>
             </md-list-item>
 
-            <md-divider *ngIf="profile.addresses[0].us_fax_number" md-inset></md-divider>
+            <mat-divider *ngIf="profile.addresses[0].us_fax_number" md-inset></mat-divider>
 
             <md-list-item *ngIf="profile.addresses[0].us_fax_number">
                 <mat-icon md-list-avatar>perm_phone_msg</mat-icon>
@@ -15,7 +15,7 @@
                 <p md-line>Fax Number</p>
             </md-list-item>
 
-            <md-divider *ngIf="profile.addresses[0].address_1" md-inset></md-divider>
+            <mat-divider *ngIf="profile.addresses[0].address_1" md-inset></mat-divider>
 
             <md-list-item *ngIf="profile.addresses[0].address_1">
                 <mat-icon md-list-avatar>location_on</mat-icon>

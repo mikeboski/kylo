@@ -29,35 +29,35 @@
           </div>
           <div class="content-filter">
             <!-- <label class="label-title">Gender</label>-->
-            <md-select multiple placeholder="Multiselect" [(ngModel)]="currentStates" style=" width: 100%">
-              <md-option *ngFor="let state of states" [value]="state.value">
+            <mat-select multiple placeholder="Multiselect" [(ngModel)]="currentStates" style=" width: 100%">
+              <mat-option *ngFor="let state of states" [value]="state.value">
                 {{ state.viewValue }}
-              </md-option>
-            </md-select>
+              </mat-option>
+            </mat-select>
           </div>
 
           <div class="content-filter">
             <label class="label-title">Slider</label>
-            <md-slider min="1" max="100" step="20" #slider5 style="width:80%;"></md-slider>
+            <mat-slider min="1" max="100" step="20" #slider5 style="width:80%;"></mat-slider>
             {{slider5.value}}
           </div>
 
           <div class="content-filter">
             <!--     <label class="label-title">Dropdown</label>-->
-            <md-select placeholder="Dropdown" [color]="drinksTheme" [(ngModel)]="currentDrink"
+            <mat-select placeholder="Dropdown" [color]="drinksTheme" [(ngModel)]="currentDrink"
                        [floatPlaceholder]="floatPlaceholder" #drinkControl="ngModel">
-              <md-option>None</md-option>
-              <md-option *ngFor="let drink of drinks" [value]="drink.value" [disabled]="drink.disabled">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let drink of drinks" [value]="drink.value" [disabled]="drink.disabled">
                 {{ drink.viewValue }}
-              </md-option>
-            </md-select>
+              </mat-option>
+            </mat-select>
           </div>
           <div class="content-filter">
             <label class="label-title">Checkboxes</label>
             <div fxLayout="column">
-              <md-checkbox color="warn">Option 1</md-checkbox>
-              <md-checkbox color="warn">Option 2</md-checkbox>
-              <md-checkbox color="warn">Option 3</md-checkbox>
+              <mat-checkbox color="warn">Option 1</mat-checkbox>
+              <mat-checkbox color="warn">Option 2</mat-checkbox>
+              <mat-checkbox color="warn">Option 3</mat-checkbox>
             </div>
           </div>
 

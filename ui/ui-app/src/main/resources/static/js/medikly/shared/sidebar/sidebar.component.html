@@ -1,5 +1,5 @@
 
-    <md-nav-list appAccordion class="navigation">
+    <mat-nav-list appAccordion class="navigation">
       <md-list-item appAccordionLink *ngFor="let menuitem of categories">
         <a appAccordionToggle class="relative" md-ripple *ngIf="menuitem.type === 'link'">
           <mat-icon>{{ menuitem.icon }}</mat-icon>
@@ -16,7 +16,7 @@
           <!--<mat-icon class="menu-caret">arrow_drop_down</mat-icon>-->
         </a>
       </md-list-item>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
 
-    </md-nav-list>
+    </mat-nav-list>
 

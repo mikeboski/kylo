@@ -2,7 +2,7 @@
 @import url(../../../../assets/medikly_theme/styles/css/social.css);
 /deep/ .bio-title md-icon {
   font-size: 15px; }
-/deep/ .activity-stream i[md-card-avatar] {
+/deep/ .activity-stream i[mat-card-avatar] {
   color: #cecece;
   font-size: 20px;
   margin: 14px 0px 0 26px; }

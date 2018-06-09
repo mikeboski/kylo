@@ -51,7 +51,26 @@ import {DialogWorkspaceModule} from '../project-workspace/dialog/dialog-workspac
 
 
 
-let projectsViewState = { name: 'view', url: '/projects/view/:id',    views: {
+export let HOME_STATES: Ng2StateDeclaration = {
+    name: 'mdkprojectsviewhome',
+    url: '/mdkprojectsviewhome',
+    views: {
+        "content": {
+            component: HomeComponent,
+        }
+    },
+    data: {
+        breadcrumbRoot: true,
+        displayName: "Projects Home",
+        module: 'projects',
+        permissions: ['']
+    }
+};
+
+
+/*
+let projectsViewState = { name: 'mdkprojectsview', url: '/mdkprojectsview', 
+   views: {
   "content": {
     component: ProjectViewComponent,
   }},
@@ -62,8 +81,8 @@ let projectsViewState = { name: 'view', url: '/projects/view/:id',    views: {
     permissions: ['']
   }
 };
-let homeState = { name: 'view.home', url: '/home',    views: {
-  "child-content": {
+let homeState = { name: 'mdkprojectsviewhome', url: '/mdkprojectsviewhome',    views: {
+  "content": {
     component: HomeComponent,
   }}
 };
@@ -82,11 +101,13 @@ let assetsState = { name: 'view.assets', url: '/assets',    views: {
     component: AssetsComponent,
   }}
 };
+*/
 
 @NgModule({
   imports: [
     CommonModule,
-    UIRouterModule.forChild({ states: [projectsViewState,homeState,targetState,reportsState,assetsState]}),
+    //UIRouterModule.forChild({ states: [projectsViewState,homeState,targetState,reportsState,assetsState]}),
+    UIRouterModule.forChild({ states: [HOME_STATES]}),
     PerfectScrollbarModule,
     MatIconModule,
     MatCardModule,

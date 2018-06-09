@@ -21,9 +21,9 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
     
     <mat-dialog-content class="content-dialog-upload-files">
     
-      <md-tab-group color="primary">
-        <md-tab>
-          <ng-template md-tab-label>MY COMPUTER</ng-template>
+      <mat-tab-group color="primary">
+        <mat-tab>
+          <ng-template mat-tab-label>MY COMPUTER</ng-template>
             
             <div *ngFor="let file of uploader.queue ; let i = index">
                  <div fxLayout="row" class="file-uploaded">
@@ -47,8 +47,8 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
               <input type="file" ng2FileSelect placeholder="" title="" [uploader]="uploader" multiple/>
                
             </div>
-          </md-tab>
-      </md-tab-group>
+          </mat-tab>
+      </mat-tab-group>
     </mat-dialog-content>   
     </div>
     

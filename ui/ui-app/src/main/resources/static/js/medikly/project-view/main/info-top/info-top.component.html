@@ -1,27 +1,27 @@
-<md-card class="mdk-card-inner-top ">
+<mat-card class="mdk-card-inner-top ">
 
   <div fxLayout="row" fxLayoutAlign="center center" >
-    <md-card-header class="mt-0 header-info-top">
-      <md-card-title>{{projectName}}</md-card-title>
-      <md-card-subtitle>@geraldmorris | 24 Mins ago</md-card-subtitle>
-    </md-card-header>
+    <mat-card-header class="mt-0 header-info-top">
+      <mat-card-title>{{projectName}}</mat-card-title>
+      <mat-card-subtitle>@geraldmorris | 24 Mins ago</mat-card-subtitle>
+    </mat-card-header>
     <span fxFlex></span>
-    <button md-icon-button md-button-sm [md-menu-trigger-for]="topEdit" aria-label="Open card menu">
+    <button md-icon-button md-button-sm [mat-menu-trigger-for]="topEdit" aria-label="Open card menu">
       <mat-icon>more_vert</mat-icon>
     </button>
-    <md-menu #topEdit="mdMenu" x-position="before" dense>
-      <md-nav-list dense>
+    <mat-menu #topEdit="matMenu" x-position="before" dense>
+      <mat-nav-list dense>
         <a md-list-item uiSref="workspace.summary" [uiParams]="{ id: documentId }"> <!--[routerLink]="['/projects/view/'+documentId+'/workspace/project-summary']">-->
           Edit
         </a>
         <a class="tc-red-500" md-list-item>
           Delete
         </a>
-      </md-nav-list>
-    </md-menu>
+      </mat-nav-list>
+    </mat-menu>
   </div>
 
-  <md-card-footer>
+  <mat-card-footer>
 
     <div class="card-tabs">
       <!--<a class="button-tab" routerLinkActive="active" md-button-sm [routerLink]="['recent']">Recent</a>-->
@@ -37,6 +37,6 @@
 
 
     </div>
-  </md-card-footer>
+  </mat-card-footer>
 
-</md-card>
+</mat-card>

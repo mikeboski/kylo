@@ -1,5 +1,5 @@
-<md-sidenav-container class="background-none shadow-none medikly-covalent-styling">
-  <md-sidenav disableClose="true" #column1 [mode]="isOver() ? 'over' : 'side'" [opened]="!isOver()" class="pa-0 ma-0 left-sidenav">
+<mat-sidenav-container class="background-none shadow-none medikly-covalent-styling">
+  <mat-sidenav disableClose="true" #column1 [mode]="isOver() ? 'over' : 'side'" [opened]="!isOver()" class="pa-0 ma-0 left-sidenav">
     <perfect-scrollbar class="overflow-container">
 
       <app-profile-header-card coverImage="/assets/medikly_theme/images/patterns/profile-pattern.jpg" class="small-profile-header" [profile]="profile"></app-profile-header-card>
@@ -28,12 +28,12 @@
         <!--Phones-->
         <div class="entity-section" formArrayName="phones">
           <div class="entity-section-child" *ngFor="let phone of userForm.controls.phones.controls; let i=index" [formGroupName]="i">
-            <md-select class="inline-select mt-0 mb-0" floatPlaceholder="never" formControlName="type">
-              <md-option value="HomePhone">Home Phone</md-option>
-              <md-option value="MobilePhone">Mobile Phone</md-option>
-              <md-option value="WorkPhone">Work Phone</md-option>
-              <md-option value="OtherPhone">Other Phone</md-option>
-            </md-select>
+            <mat-select class="inline-select mt-0 mb-0" floatPlaceholder="never" formControlName="type">
+              <mat-option value="HomePhone">Home Phone</mat-option>
+              <mat-option value="MobilePhone">Mobile Phone</mat-option>
+              <mat-option value="WorkPhone">Work Phone</mat-option>
+              <mat-option value="OtherPhone">Other Phone</mat-option>
+            </mat-select>
             <div class="content-info-section">
               <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input placeholder="+1 111 1111 1111"  mdInput formControlName="value">
@@ -52,11 +52,11 @@
         <!--Addressess-->
         <div class="entity-section" formArrayName="addresses">
           <div class="entity-section-child" *ngFor="let address of userForm.controls.addresses.controls; let i=index" [formGroupName]="i">
-            <md-select class="inline-select mt-0 mb-0" floatPlaceholder="never" formControlName="type">
-              <md-option value="HomeAddress">Home Address</md-option>
-              <md-option value="WorkAddress">Work Address</md-option>
-              <md-option value="OtherAddress">Other Address</md-option>
-            </md-select>
+            <mat-select class="inline-select mt-0 mb-0" floatPlaceholder="never" formControlName="type">
+              <mat-option value="HomeAddress">Home Address</mat-option>
+              <mat-option value="WorkAddress">Work Address</mat-option>
+              <mat-option value="OtherAddress">Other Address</mat-option>
+            </mat-select>
             <div class="content-info-section">
               <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input placeholder="25th street"  mdInput formControlName="value">
@@ -75,11 +75,11 @@
         <!--Emails-->
         <div class="entity-section" formArrayName="emails">
           <div class="entity-section-child" *ngFor="let email of userForm.controls.emails.controls; let i=index" [formGroupName]="i">
-            <md-select class="inline-select mt-0 mb-0" formControlName="type">
-              <md-option value="PersonalEmail">Personal Email</md-option>
-              <md-option value="WorkEmail">Work Email</md-option>
-              <md-option value="OtherEmail">Other Email</md-option>
-            </md-select>
+            <mat-select class="inline-select mt-0 mb-0" formControlName="type">
+              <mat-option value="PersonalEmail">Personal Email</mat-option>
+              <mat-option value="WorkEmail">Work Email</mat-option>
+              <mat-option value="OtherEmail">Other Email</mat-option>
+            </mat-select>
             <div class="content-info-section">
               <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input class="tc-blue-500" placeholder="email@email.com"  mdInput formControlName="value">
@@ -100,11 +100,11 @@
         <!--Websites-->
         <div class="entity-section" formArrayName="websites">
           <div class="entity-section-child" *ngFor="let website of userForm.controls.websites.controls; let i=index" [formGroupName]="i">
-            <md-select class="inline-select mt-0 mb-0" formControlName="type">
-              <md-option value="PersonalWebsite">Personal Website</md-option>
-              <md-option value="WorkWebsite">Work Website</md-option>
-              <md-option value="OtherWebsite">Other Website</md-option>
-            </md-select>
+            <mat-select class="inline-select mt-0 mb-0" formControlName="type">
+              <mat-option value="PersonalWebsite">Personal Website</mat-option>
+              <mat-option value="WorkWebsite">Work Website</mat-option>
+              <mat-option value="OtherWebsite">Other Website</mat-option>
+            </mat-select>
             <div class="content-info-section">
               <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input class="tc-blue-500" placeholder="http://www.sample.com"  mdInput formControlName="value">
@@ -123,13 +123,13 @@
         <!--Socials-->
         <div class="entity-section" formArrayName="socials">
           <div class="entity-section-child" *ngFor="let social of userForm.controls.socials.controls; let i=index" [formGroupName]="i">
-            <md-select class="inline-select mt-0 mb-0" formControlName="type">
-              <md-option value="Twitter">Twitter</md-option>
-              <md-option value="Facebook">Facebook</md-option>
-              <md-option value="Linkedin">Linkedin</md-option>
-              <md-option value="Klout">Klout</md-option>
-              <md-option value="Other">Other</md-option>
-            </md-select>
+            <mat-select class="inline-select mt-0 mb-0" formControlName="type">
+              <mat-option value="Twitter">Twitter</mat-option>
+              <mat-option value="Facebook">Facebook</mat-option>
+              <mat-option value="Linkedin">Linkedin</mat-option>
+              <mat-option value="Klout">Klout</mat-option>
+              <mat-option value="Other">Other</mat-option>
+            </mat-select>
             <div class="content-info-section">
               <mat-input-container class="mt-0 mb-0" style="width: 100%" floatPlaceholder="never">
                 <input class="tc-blue-500" placeholder="http://www.twitter.com/myuser"  mdInput formControlName="value">
@@ -175,7 +175,7 @@
       <br><br><br>
     </perfect-scrollbar>
 
-  </md-sidenav>
+  </mat-sidenav>
 
   <mat-toolbar color="primary" fxHide="false" fxHide.gt-sm>
     <button (click)="column1.toggle()" md-icon-button>
@@ -185,11 +185,11 @@
   </mat-toolbar>
 
   <div class="main-content-profile">
-    <md-card class="card-profile shadow-soft">
-      <md-card-content>
+    <mat-card class="card-profile shadow-soft">
+      <mat-card-content>
         <app-profile-key-stats class="small-profile-keystats" [profile]="profile"></app-profile-key-stats>
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
 
     <div fxLayout="row" class="section-filters">
       <div fxFlex.gt-sm="70" fxFlex.gt-xs="50" fxFlex="100">
@@ -201,89 +201,89 @@
       </div>
     </div>
 
-    <md-card class="card-profile shadow-none pt-0 pb-0 pl-0 pr-0">
-      <md-card-content>
-        <md-tab-group color="primary">
-          <md-tab>
-            <ng-template md-tab-label>ACTIVITY</ng-template>
-            <md-card-content>
+    <mat-card class="card-profile shadow-none pt-0 pb-0 pl-0 pr-0">
+      <mat-card-content>
+        <mat-tab-group color="primary">
+          <mat-tab>
+            <ng-template mat-tab-label>ACTIVITY</ng-template>
+            <mat-card-content>
               <app-main-activity></app-main-activity>
-            </md-card-content>
-          </md-tab>
-          <md-tab>
-            <ng-template md-tab-label>PRACTICE</ng-template>
+            </mat-card-content>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>PRACTICE</ng-template>
             <div class="activity-stream">
-              <md-card class="shadow-none">
-                <md-card-header>
-                  <img md-card-avatar src="assets/medikly_theme/images/providers/M/1.png">
-                  <md-card-title>Received a call from Joel</md-card-title>
-                  <md-card-subtitle>Header subtitle</md-card-subtitle>
-                </md-card-header>
-              </md-card>
-              <md-card class="shadow-none">
-                <md-card-header>
-                  <img md-card-avatar src="assets/medikly_theme/images/providers/F/1.png">
-                  <md-card-title>Header title</md-card-title>
-                  <md-card-subtitle>Header subtitle</md-card-subtitle>
-                </md-card-header>
-                <md-card-content>
+              <mat-card class="shadow-none">
+                <mat-card-header>
+                  <img mat-card-avatar src="assets/medikly_theme/images/providers/M/1.png">
+                  <mat-card-title>Received a call from Joel</mat-card-title>
+                  <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                </mat-card-header>
+              </mat-card>
+              <mat-card class="shadow-none">
+                <mat-card-header>
+                  <img mat-card-avatar src="assets/medikly_theme/images/providers/F/1.png">
+                  <mat-card-title>Header title</mat-card-title>
+                  <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
                   <p class="practice-tab-info">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus,
                     tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec
                     id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor
                     ligula, eget lacinia odio sem nec elit.</p>
-                </md-card-content>
-              </md-card>
-              <md-card class="shadow-none">
-                <md-card-header>
-                  <img md-card-avatar src="assets/medikly_theme/images/providers/M/2.png">
-                  <md-card-title>Header title</md-card-title>
-                  <md-card-subtitle>Added a photo</md-card-subtitle>
-                </md-card-header>
-                <!--     <md-card-content>
+                </mat-card-content>
+              </mat-card>
+              <mat-card class="shadow-none">
+                <mat-card-header>
+                  <img mat-card-avatar src="assets/medikly_theme/images/providers/M/2.png">
+                  <mat-card-title>Header title</mat-card-title>
+                  <mat-card-subtitle>Added a photo</mat-card-subtitle>
+                </mat-card-header>
+                <!--     <mat-card-content>
                        <img src="https://source.unsplash.com/300x150">
-                     </md-card-content>-->
-              </md-card>
-              <md-card class="shadow-none">
-                <md-card-header>
-                  <img md-card-avatar src="assets/medikly_theme/images/providers/F/2.png">
-                  <md-card-title>Header title</md-card-title>
-                  <md-card-subtitle>Header subtitle</md-card-subtitle>
-                </md-card-header>
-                <md-card-content>
+                     </mat-card-content>-->
+              </mat-card>
+              <mat-card class="shadow-none">
+                <mat-card-header>
+                  <img mat-card-avatar src="assets/medikly_theme/images/providers/F/2.png">
+                  <mat-card-title>Header title</mat-card-title>
+                  <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
                   <p class="practice-tab-info">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus,
                     tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec
                     id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor
                     ligula, eget lacinia odio sem nec elit.</p>
-                </md-card-content>
-              </md-card>
-              <md-card class="shadow-none">
-                <md-card-header>
-                  <img md-card-avatar src="assets/medikly_theme/images/providers/M/3.png">
-                  <md-card-title>Uploaded new file</md-card-title>
-                  <md-card-subtitle>Header subtitle</md-card-subtitle>
-                </md-card-header>
-              </md-card>
+                </mat-card-content>
+              </mat-card>
+              <mat-card class="shadow-none">
+                <mat-card-header>
+                  <img mat-card-avatar src="assets/medikly_theme/images/providers/M/3.png">
+                  <mat-card-title>Uploaded new file</mat-card-title>
+                  <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                </mat-card-header>
+              </mat-card>
             </div>
-          </md-tab>
-          <md-tab>
-            <ng-template md-tab-label>DIGITAL DNA</ng-template>
-          </md-tab>
-          <md-tab>
-            <ng-template md-tab-label>NETWORK</ng-template>
-          </md-tab>
-          <md-tab>
-            <ng-template md-tab-label>RESEARCH</ng-template>
-          </md-tab>
-        </md-tab-group>
-      </md-card-content>
-    </md-card>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>DIGITAL DNA</ng-template>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>NETWORK</ng-template>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>RESEARCH</ng-template>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
   </div>
 
-  <md-sidenav disableClose="true" align="end" #sidenavright mode="side" class="app-sidenav right-sidenav" opened="true">
+  <mat-sidenav disableClose="true" align="end" #sidenavright mode="side" class="app-sidenav right-sidenav" opened="true">
     <perfect-scrollbar class="overflow-container">
-      <md-tab-group color="primary" style="padding-top: 17.5px">
-        <md-tab>
-          <ng-template md-tab-label>ACTIVITY</ng-template>
+      <mat-tab-group color="primary" style="padding-top: 17.5px">
+        <mat-tab>
+          <ng-template mat-tab-label>ACTIVITY</ng-template>
       <td-expansion-panel-group>
         <td-expansion-panel disableRipple class="expansion-section" label="Opportunities (2)">
           <div class="md-padding">
@@ -329,12 +329,12 @@
           </div>
         </td-expansion-panel>
       </td-expansion-panel-group>
-        </md-tab>
-        <md-tab>
-          <ng-template md-tab-label>RELATED</ng-template>
-        </md-tab>
-      </md-tab-group>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>RELATED</ng-template>
+        </mat-tab>
+      </mat-tab-group>
     </perfect-scrollbar>
-  </md-sidenav>
+  </mat-sidenav>
 
-</md-sidenav-container>
+</mat-sidenav-container>

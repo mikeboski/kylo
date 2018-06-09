@@ -1,5 +1,5 @@
-<md-sidenav-container class="background-none shadow-none main-workspace medikly-covalent-styling">
-  <md-sidenav disableClose="true" #settingsNav [mode]="isOver() ? 'over' : 'side'" [opened]="!isOver()"
+<mat-sidenav-container class="background-none shadow-none main-workspace medikly-covalent-styling">
+  <mat-sidenav disableClose="true" #settingsNav [mode]="isOver() ? 'over' : 'side'" [opened]="!isOver()"
               class="ma-0 submenu-sidenav ">
     <perfect-scrollbar class="overflow-container left-sidebar-workspace">
 
@@ -12,21 +12,21 @@
             <button md-button color="primary" [disabled]="true" class="btn-outline btn-color-lightblue"><i
               class="material-icons mr-3-workspace">link</i>Link a dataset
             </button>
-            <button md-button color="primary" [md-menu-trigger-for]="addFiles"
+            <button md-button color="primary" [mat-menu-trigger-for]="addFiles"
                     class="btn-outline btn-color-lightblue ml-5-workspace"><i
               class="material-icons mr-3-workspace">cloud_upload</i>Add
               files
             </button>
-            <md-menu #addFiles="mdMenu" x-position="before">
-              <md-nav-list dense>
+            <mat-menu #addFiles="matMenu" x-position="before">
+              <mat-nav-list dense>
                 <a md-list-item (click)="openDialogUploadFiles()">
                   Upload files
                 </a>
                 <a md-list-item (click)="openDialogAddFilesUrl()">
                   Add files from URL
                 </a>
-              </md-nav-list>
-            </md-menu>
+              </mat-nav-list>
+            </mat-menu>
           </div>
         </div>
 
@@ -96,19 +96,19 @@
 
           <div fxLayout="row" fxLayoutAlign="center center" class="actions-block">
 
-            <button md-button color="primary" [md-menu-trigger-for]="newQuery"
+            <button md-button color="primary" [mat-menu-trigger-for]="newQuery"
                     class="btn-outline btn-color-lightblue ml-5">New query
             </button>
-            <md-menu #newQuery="mdMenu" x-position="before">
-              <md-nav-list dense>
+            <mat-menu #newQuery="matMenu" x-position="before">
+              <mat-nav-list dense>
                 <a md-list-item>
                   SQL query
                 </a>
                 <a md-list-item>
                   SPARQL query
                 </a>
-              </md-nav-list>
-            </md-menu>
+              </mat-nav-list>
+            </mat-menu>
           </div>
 
         </div>
@@ -134,7 +134,7 @@
       </div>
 
     </perfect-scrollbar>
-  </md-sidenav>
+  </mat-sidenav>
 
   <mat-toolbar color="primary" fxHide="false" fxHide.gt-sm>
     <button (click)="settingsNav.toggle()" md-icon-button>
@@ -147,6 +147,6 @@
     <div ui-view="child-content" class="child-content"></div>
   </div>
 
-</md-sidenav-container>
+</mat-sidenav-container>
 
 

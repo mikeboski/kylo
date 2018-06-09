@@ -1,25 +1,25 @@
-<md-card>
+<mat-card>
 
   <div fxLayout="row" fxLayoutAlign="center center">
-    <md-card-header>
-      <md-card-title>Data Dictionary</md-card-title>
-      <md-card-subtitle></md-card-subtitle>
+    <mat-card-header>
+      <mat-card-title>Data Dictionary</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
 
-    </md-card-header>
+    </mat-card-header>
     <span fxFlex></span>
   </div>
 
 
-  <md-card-content class="pa-0 content-data-dictionary">
+  <mat-card-content class="pa-0 content-data-dictionary">
 
-    <md-card class="pa-0 ma-0 shadow-none card-data-dictionary">
-      <md-card-header class="mt-0">
-        <img md-card-avatar style="border-radius: 2px" src="assets/medikly_theme/images/providers/M/4.png">
-        <md-card-title>geraldmorris/Project Name</md-card-title>
-        <md-card-subtitle><span class="flat-badge open-privacy">OPEN</span>&nbsp;Updated 9/26/2017</md-card-subtitle>
-      </md-card-header>
+    <mat-card class="pa-0 ma-0 shadow-none card-data-dictionary">
+      <mat-card-header class="mt-0">
+        <img mat-card-avatar style="border-radius: 2px" src="assets/medikly_theme/images/providers/M/4.png">
+        <mat-card-title>geraldmorris/Project Name</mat-card-title>
+        <mat-card-subtitle><span class="flat-badge open-privacy">OPEN</span>&nbsp;Updated 9/26/2017</mat-card-subtitle>
+      </mat-card-header>
 
-      <md-card-content>
+      <mat-card-content>
         <div *ngFor="let file of files" class="file-item">
           <div fxLayout="row">
             <div class="file-item-row">
@@ -39,18 +39,18 @@
             </div>
             <div class="mt-1">
 
-              <md-chip-list selectable="false" class="chips-description-file">
-                  <md-chip *ngFor="let label of file.file.labels" color="accent" selected="true" class="{{label.color}}-color">{{label.name}}</md-chip>
-              </md-chip-list>
+              <mat-chip-list selectable="false" class="chips-description-file">
+                  <mat-chip *ngFor="let label of file.file.labels" color="accent" selected="true" class="{{label.color}}-color">{{label.name}}</mat-chip>
+              </mat-chip-list>
             </div>
 
           </div>
 
         </div>
-      </md-card-content>
+      </mat-card-content>
 
-    </md-card>
+    </mat-card>
 
-  </md-card-content>
+  </mat-card-content>
 
-</md-card>
+</mat-card>

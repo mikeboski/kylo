@@ -30,11 +30,11 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
         
        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap" > 
         <div fxFlex="33" *ngFor="let chip of chips">
-        <md-chip-list selectable="false" class="chips-description-file">
-           <md-checkbox [checked]="chip.checked" [(ngModel)]="chip.checked">
-          <md-chip color="accent" selected="true" class="{{chip.color}}-color">{{chip.name}}</md-chip>
-        </md-checkbox>
-         </md-chip-list>
+        <mat-chip-list selectable="false" class="chips-description-file">
+           <mat-checkbox [checked]="chip.checked" [(ngModel)]="chip.checked">
+          <mat-chip color="accent" selected="true" class="{{chip.color}}-color">{{chip.name}}</mat-chip>
+        </mat-checkbox>
+         </mat-chip-list>
            </div>
            </div> 
     </mat-dialog-content>   

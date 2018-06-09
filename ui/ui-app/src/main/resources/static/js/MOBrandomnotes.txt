@@ -22,3 +22,17 @@ src/main/resources/static/js/feed-mgr/visual-query/services/spark/spark-query-en
                                    from line 2 of src/main/resources/static/assets/medikly_theme/styles/scss/_material.themes.scss\n 
                                           from line 3 of src/main/resources/static/assets/medikly_theme/styles/mdk-main.scss\n>>   $opacity: if($opacity == null, opacity($color), $opacity);\n\n   ---------------------------------^\n"
 }
+
+
+
+angular.js:14362 TypeError: _this._renderer.removeClass is not a function
+    at eval (common.umd.min.js?ver=0.9.0.1:34)
+    at Array.forEach (<anonymous>)
+    at NgClass._toggleClass (common.umd.min.js?ver=0.9.0.1:34)
+    at eval (common.umd.min.js?ver=0.9.0.1:34)
+    at Array.forEach (<anonymous>)
+    at NgClass._applyInitialClasses (common.umd.min.js?ver=0.9.0.1:34)
+    at NgClass.set [as klass] (common.umd.min.js?ver=0.9.0.1:34)
+    at ClassDirective.set [as classBase] (module.ts:91)
+    at updateProp (core.umd.min.js?ver=0.9.0.1:83)
+    at checkAndUpdateDirectiveInline (core.umd.min.js?ver=0.9.0.1:83)

@@ -50,12 +50,20 @@ define(['angular', 'kylo-common', '@uirouter/angular', 'kylo-services',
             url: '/homepage',
             loadChildren: 'medikly/home/home.module#HomeModule'
         });
-
+/*
         $stateProvider.state( {
-            name: 'view.**',
-            url: '/projects/view',
+            name: 'mdkprojectsview.**',
+            url: '/mdkprojectsview',
             loadChildren: 'medikly/project-view/project-view.module#ProjectViewModule'
         });
+        */
+        $stateProvider.state( {
+            name: 'mdkprojectsviewhome.**',
+            url: '/mdkprojectsviewhome',
+            loadChildren: 'medikly/project-view/project-view.module#ProjectViewModule'
+        });
+
+        
 
 
         $stateProvider
@@ -716,7 +724,7 @@ define(['angular', 'kylo-common', '@uirouter/angular', 'kylo-services',
                 });
             }
         });
-
+/*
         $stateProvider.state({
             name: 'projects.**',
             url: '/projects',
@@ -746,7 +754,7 @@ define(['angular', 'kylo-common', '@uirouter/angular', 'kylo-services',
                 });
             }
         });
-
+*/
         $stateProvider.state({
            name:'access-denied',
            url:'/access-denied',

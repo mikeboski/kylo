@@ -1,50 +1,50 @@
 <app-card-layout>
 
   <mdk-card-layout-content>
-    <md-card class="shadow-none pa-0 ma-0">
+    <mat-card class="shadow-none pa-0 ma-0">
       <app-project-info-top documentId="15"></app-project-info-top>
-      <md-card-content class="ml-0 mr-0 pl-0 pr-0 card-layout-content ">
+      <mat-card-content class="ml-0 mr-0 pl-0 pr-0 card-layout-content ">
 
         <perfect-scrollbar class="overflow-container">
 
     <div fxLayout="row" fxLayoutWrap="wrap">
 
       <div fxFlex.gt-sm="100" fxFlex="100">
-        <md-card class="ml-0 mr-0 mt-0">
+        <mat-card class="ml-0 mr-0 mt-0">
       <div fxLayout="row" fxLayoutAlign="center center" >
-        <md-card-header class="mt-0">
-          <img md-card-avatar src="assets/medikly_theme/images/hexa.png">
-          <md-card-title>Report Title</md-card-title>
-          <md-card-subtitle>Subtitle</md-card-subtitle>
-        </md-card-header>
+        <mat-card-header class="mt-0">
+          <img mat-card-avatar src="assets/medikly_theme/images/hexa.png">
+          <mat-card-title>Report Title</mat-card-title>
+          <mat-card-subtitle>Subtitle</mat-card-subtitle>
+        </mat-card-header>
         <span fxFlex></span>
-        <button md-icon-button md-button-sm [md-menu-trigger-for]="card1" aria-label="Open card menu">
+        <button md-icon-button md-button-sm [mat-menu-trigger-for]="card1" aria-label="Open card menu">
           <mat-icon>more_vert</mat-icon>
         </button>
-        <md-menu #card1="mdMenu" x-position="before" dense>
-          <md-nav-list dense>
+        <mat-menu #card1="matMenu" x-position="before" dense>
+          <mat-nav-list dense>
             <a (click)="openDialogRenameFile(document)" md-list-item>
               Edit
             </a>
             <a (click)="openDialogRemoveFile(document)" md-list-item>
               Delete
             </a>
-          </md-nav-list>
-        </md-menu>
+          </mat-nav-list>
+        </mat-menu>
       </div>
-      <md-sidenav-container>
+      <mat-sidenav-container>
 
         <mat-toolbar style="height: 120px;">
           <span>FILTERS BAR</span>
         </mat-toolbar>
 
-        <md-card-content class="pa-0">
+        <mat-card-content class="pa-0">
           <!--Score in context-->
-          <md-card class="pa-0 ma-0 shadow-none app-card-charts" >
-            <md-card-header>
-              <md-card-title>Your score in context</md-card-title>
-            </md-card-header>
-            <md-card-content>
+          <mat-card class="pa-0 ma-0 shadow-none app-card-charts" >
+            <mat-card-header>
+              <mat-card-title>Your score in context</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
               <div fxLayout="row" layout-align="center top">
                 <div fxFlex="255px" class="app-card-description">
                   <p>
@@ -136,83 +136,83 @@
                   </div>
                 </div>
               </div>
-            </md-card-content>
-            <md-card-actions class="pl-1 app-charts-footer">
+            </mat-card-content>
+            <mat-card-actions class="pl-1 app-charts-footer">
               <p><b>Source:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
               <p><b>Notes:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel vestibulum est, et vehicula purus. Donec eu mattis tortor. Quisque sit amet ex nec nisl tincidunt vulputate sed id massa. Etiam a diam imperdiet, pharetra orci vel, aliquet dolor. Maecenas vestibulum quam nec fermentum vehicula.</p>
-            </md-card-actions>
-          </md-card>
+            </mat-card-actions>
+          </mat-card>
           <!--End Score in context-->
 
-          <md-card class="pa-0 ma-0 shadow-none app-card-charts" *ngFor="let mc of [1,2,3,4,5]">
-            <md-card-header>
-              <md-card-title>Et harum quidem rerum</md-card-title>
-              <md-card-subtitle>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio</md-card-subtitle>
-            </md-card-header>
+          <mat-card class="pa-0 ma-0 shadow-none app-card-charts" *ngFor="let mc of [1,2,3,4,5]">
+            <mat-card-header>
+              <mat-card-title>Et harum quidem rerum</mat-card-title>
+              <mat-card-subtitle>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio</mat-card-subtitle>
+            </mat-card-header>
 
-            <md-card-content class="pt-0">
+            <mat-card-content class="pt-0">
               <div fxLayout="row" layout-align="center top">
                 <div *ngIf="mc % 2 == 0" fxFlex="33">
-                  <md-card class="pa-0 ma-0 shadow-none inner-chart-card">
-                    <md-card-header>
-                      <md-card-title>Title</md-card-title>
-                      <md-card-subtitle>Subtitle</md-card-subtitle>
-                    </md-card-header>
-                    <md-card-content class="pt-0">
+                  <mat-card class="pa-0 ma-0 shadow-none inner-chart-card">
+                    <mat-card-header>
+                      <mat-card-title>Title</mat-card-title>
+                      <mat-card-subtitle>Subtitle</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="pt-0">
                       <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,</p>
-                    </md-card-content>
-                  </md-card>
+                    </mat-card-content>
+                  </mat-card>
                 </div>
                 <div *ngFor="let t of [1,2]" fxFlex="33">
-                  <md-card class="pa-0 ma-0 shadow-none inner-chart-card">
-                    <md-card-header>
-                      <md-card-title>Title</md-card-title>
-                      <md-card-subtitle>Subtitle</md-card-subtitle>
-                    </md-card-header>
-                    <md-card-content class="pt-0">
+                  <mat-card class="pa-0 ma-0 shadow-none inner-chart-card">
+                    <mat-card-header>
+                      <mat-card-title>Title</mat-card-title>
+                      <mat-card-subtitle>Subtitle</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="pt-0">
                       <div class="stacked-bar-vertical-container">
                         <chart *ngFor="let tt of [1,2,3]" [options]="chartOptionsVertical"></chart>
                       </div>
-                    </md-card-content>
-                  </md-card>
+                    </mat-card-content>
+                  </mat-card>
                 </div>
                 <div  *ngIf="mc % 2 != 0" fxFlex="33" >
-                  <md-card class="pa-0 ma-0 shadow-none inner-chart-card">
-                    <md-card-header>
-                      <md-card-title>Title</md-card-title>
-                      <md-card-subtitle>Subtitle</md-card-subtitle>
-                    </md-card-header>
-                    <md-card-content class="pt-0">
+                  <mat-card class="pa-0 ma-0 shadow-none inner-chart-card">
+                    <mat-card-header>
+                      <mat-card-title>Title</mat-card-title>
+                      <mat-card-subtitle>Subtitle</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="pt-0">
                       <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,</p>
-                    </md-card-content>
-                  </md-card>
+                    </mat-card-content>
+                  </mat-card>
                 </div>
               </div>
-            </md-card-content>
-            <md-card-footer class="app-charts-footer">
+            </mat-card-content>
+            <mat-card-footer class="app-charts-footer">
               <div class="pl-1">
                 <p><b>Source:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 <p><b>Notes:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel vestibulum est, et vehicula purus. Donec eu mattis tortor. Quisque sit amet ex nec nisl tincidunt vulputate sed id massa. Etiam a diam imperdiet, pharetra orci vel, aliquet dolor. Maecenas vestibulum quam nec fermentum vehicula.</p>
               </div>
-            </md-card-footer>
-          </md-card>
+            </mat-card-footer>
+          </mat-card>
 
-        </md-card-content>
+        </mat-card-content>
 
-      </md-sidenav-container>
-    </md-card>
+      </mat-sidenav-container>
+    </mat-card>
       </div>
 
     </div>
         </perfect-scrollbar>
-      </md-card-content>
+      </mat-card-content>
 
-    </md-card>
+    </mat-card>
 
   </mdk-card-layout-content>
 
   <mdk-card-layout-left-sidebar>
-    <md-nav-list class="messages-nav" dense>
+    <mat-nav-list class="messages-nav" dense>
 
       <a href="javascript:;" class="measure-list-item" md-list-item>
         <mat-icon class="mat-text-muted ml-0 mr-0">inbox</mat-icon>
@@ -234,7 +234,7 @@
         <span class="ml-1">{{main.title}}</span>
       </a>
 
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
       <h3 md-subheader>Labels</h3>
       <a href="javascript:;" class="measure-list-item submenu-item-measure" *ngFor="let label of labelMenu"
          md-list-item>
@@ -246,19 +246,19 @@
         <mat-icon class="tc-blue-500 ml-0 mr-0">add</mat-icon>
         <span>Create label</span>
       </a>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
       <a href="javascript:;" class="measure-list-item" *ngFor="let data of dataMenu" md-list-item>
         <mat-icon class="mat-text-muted ml-0 mr-0">{{data.icon}}</mat-icon>
         <span class="ml-1">{{data.title}}</span>
       </a>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
       <a href="javascript:;" class="measure-list-item" *ngFor="let info of infoMenu" md-list-item>
         <mat-icon class="mat-text-muted ml-0 mr-0">{{info.icon}}</mat-icon>
         <span class="ml-1">{{info.title}}</span>
       </a>
 
 
-    </md-nav-list>
+    </mat-nav-list>
   </mdk-card-layout-left-sidebar>
 
 </app-card-layout>

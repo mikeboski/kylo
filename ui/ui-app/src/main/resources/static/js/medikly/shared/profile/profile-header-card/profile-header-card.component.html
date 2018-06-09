@@ -1,23 +1,23 @@
-<md-card class="app-avatar-card-heading shadow-none">
+<mat-card class="app-avatar-card-heading shadow-none">
 
     <ng-content select="app-card-top-actions"></ng-content>
 
 
-  <img md-card-image md-card-lg-image src="{{coverImage}}">
+  <img mat-card-image mat-card-lg-image src="{{coverImage}}">
   <img class="card-avatar" src="{{profile.avatar}}">
 
   <div class="card-titles">
-    <md-card-title class="tc-blue-600">
+    <mat-card-title class="tc-blue-600">
       {{profile.basic.first_name}} {{profile.basic.last_name}}, {{profile.basic.credential}}
-    </md-card-title>
+    </mat-card-title>
 
-    <md-card-subtitle>Oncologist - {{profile.addresses[0].city}},
-      {{profile.addresses[0].state}}</md-card-subtitle>
+    <mat-card-subtitle>Oncologist - {{profile.addresses[0].city}},
+      {{profile.addresses[0].state}}</mat-card-subtitle>
 
   </div>
-  <md-card-actions layout="row" layout-align="start center">
+  <mat-card-actions layout="row" layout-align="start center">
 
-    <button *ngFor="let network of socialNetworks" class="shadow-none social-icon" [class.tc-blue-600]="network.mouseOvered" (mouseover)="network.mouseOvered=true" (mouseleave)="network.mouseOvered=false" md-mini-fab md-card-icon color="transparent">
+    <button *ngFor="let network of socialNetworks" class="shadow-none social-icon" [class.tc-blue-600]="network.mouseOvered" (mouseover)="network.mouseOvered=true" (mouseleave)="network.mouseOvered=false" md-mini-fab mat-card-icon color="transparent">
       <i class="icon {{network.icon}}"></i>
     </button>
 
@@ -26,9 +26,9 @@
     <!--<button md-button color="accent" class="mr-1 style-buttons-profile tc-blue-600" (click)="throwEventFollow(profile)">Favorite</button>-->
 
 
-    <button md-icon-button [md-menu-trigger-for]="moreMenuActions"><mat-icon class="mat-text-muted">more_vert</mat-icon></button>
-    <md-menu #moreMenuActions="mdMenu" x-position="before">
-      <md-nav-list dense>
+    <button md-icon-button [mat-menu-trigger-for]="moreMenuActions"><mat-icon class="mat-text-muted">more_vert</mat-icon></button>
+    <mat-menu #moreMenuActions="matMenu" x-position="before">
+      <mat-nav-list dense>
         <a md-list-item>
           Lookup LinkedIn
         </a>
@@ -41,7 +41,7 @@
         <a md-list-item class="tc-red-500">
           Delete
         </a>
-      </md-nav-list>
-    </md-menu>
-  </md-card-actions>
-</md-card>
+      </mat-nav-list>
+    </mat-menu>
+  </mat-card-actions>
+</mat-card>

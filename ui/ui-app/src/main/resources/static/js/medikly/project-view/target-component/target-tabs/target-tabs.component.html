@@ -48,15 +48,15 @@
             </div>
 
             <!--DROPDOWN-->
-            <md-select style="width: 100%" placeholder="{{item.name}}" *ngIf="item.type=='dropdown'" class="pb-content">
-              <md-option *ngFor="let item of item.options" [value]="item.value">
+            <mat-select style="width: 100%" placeholder="{{item.name}}" *ngIf="item.type=='dropdown'" class="pb-content">
+              <mat-option *ngFor="let item of item.options" [value]="item.value">
                 {{ item.name }}
-              </md-option>
-            </md-select>
+              </mat-option>
+            </mat-select>
 
             <!--RANGE SLIDER-->
             <div *ngIf="item.type=='slider'" class="pb-content">
-              <md-slider #slidey thumbLabel min="{{item.min}}" max="{{item.max}}" step="{{item.step}}"  style="width: 100%"></md-slider>
+              <mat-slider #slidey thumbLabel min="{{item.min}}" max="{{item.max}}" step="{{item.step}}"  style="width: 100%"></mat-slider>
             </div>
 
           </div>

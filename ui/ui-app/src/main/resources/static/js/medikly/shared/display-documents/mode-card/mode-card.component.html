@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap" >
       <div fxFlex.xl="20" fxFlex.lg="25" fxFlex.md="33" fxFlex.sm="33" fxFlex.xs="50"
            *ngFor="let document of documents | orderBy: order: reverse">
-        <md-card class="card-grid">
+        <mat-card class="card-grid">
           <div  class="media-grid">
             <div>
               <div class="style-content-card" fxLayoutAlign="center center">
@@ -23,7 +23,7 @@
 
             </div>
           </div>
-          <md-card-content class="footer-card">
+          <mat-card-content class="footer-card">
             <div fxLayout="row" fxLayoutAlign="center center">
               <div fxFlex>
                 <p class="ma-0 title-item nowrap-text">{{document.file_name}}</p>
@@ -31,11 +31,11 @@
                   'mediumDate'}}</p>
               </div>
               <div class="mat-text-primary text-xl">
-                <button md-icon-button [md-menu-trigger-for]="moreMenuActions" style="margin-right: -10px;">
+                <button md-icon-button [mat-menu-trigger-for]="moreMenuActions" style="margin-right: -10px;">
                   <mat-icon class="mat-text-muted ">more_vert</mat-icon>
                 </button>
-                <md-menu #moreMenuActions="mdMenu" x-position="before">
-                  <md-nav-list dense>
+                <mat-menu #moreMenuActions="matMenu" x-position="before">
+                  <mat-nav-list dense>
                     <a (click)="openDialogRenameFile(document)" md-list-item>
                       Rename
                     </a>
@@ -45,13 +45,13 @@
                     <a md-list-item>
                       Open in new tab
                     </a>
-                  </md-nav-list>
-                </md-menu>
+                  </mat-nav-list>
+                </mat-menu>
 
               </div>
             </div>
-          </md-card-content>
-        </md-card>
+          </mat-card-content>
+        </mat-card>
 
       </div>
     </div>

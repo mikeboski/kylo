@@ -1,4 +1,4 @@
-<md-sidenav-container class="app-inner background-none shadow-none sidenav-container-directory medikly-covalent-styling" [class.listingEnabled]="listingEnabled">
+<mat-sidenav-container class="app-inner background-none shadow-none sidenav-container-directory medikly-covalent-styling" [class.listingEnabled]="listingEnabled">
   <div class="main-content" fxLayout="row" fxLayoutWrap="wrap">
 
     <!--List providers-->
@@ -20,12 +20,12 @@
       <mat-toolbar color="primary" class="toolbar-style">
 
         <div class="main-top-items" fxFlex>
-          <button md-button [md-menu-trigger-for]="user" class="mr-1 style-font">
+          <button md-button [mat-menu-trigger-for]="user" class="mr-1 style-font">
             All Providers (5,324,112)
             <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
-          <md-menu #user="mdMenu" x-position="before">
-            <md-nav-list dense>
+          <mat-menu #user="matMenu" x-position="before">
+            <mat-nav-list dense>
               <a md-list-item class="submenu-subitems tc-blue-600 all-providers-fs">
                 All people
                 <span fxFlex></span>
@@ -57,8 +57,8 @@
               <a md-list-item class="submenu-subitems tc-blue-600 all-providers-fs">
                 Create a Custom Filter
               </a>
-            </md-nav-list>
-          </md-menu>
+            </mat-nav-list>
+          </mat-menu>
           <button md-raised-button md-button-sm color="primary" class="mr-1 btn-light-blue add-new-style">
             Add New
           </button>
@@ -135,11 +135,11 @@
 
   </div>
 
-  <md-sidenav align="end" [opened]="quickpanelOpen" mode="over" #quickpanel (close)="showListing()">
+  <mat-sidenav align="end" [opened]="quickpanelOpen" mode="over" #quickpanel (close)="showListing()">
 
     <!--Compare Sidenav-->
     <perfect-scrollbar *ngIf="comparePanel" class="overflow-container">
-      <md-nav-list>
+      <mat-nav-list>
         <h3 md-subheader>Providers to Compare</h3>
 
         <ng-template let-item let-i="index" let-last="last" ngFor [ngForOf]="providersCompare">
@@ -153,7 +153,7 @@
           </a>
         </ng-template>
 
-      </md-nav-list>
+      </mat-nav-list>
       <div class="footer-buttons">
         <span fxFlex></span>
         <button md-raised-button md-button-sm color="accent"
@@ -166,7 +166,7 @@
 
     <!--Filters sidenav-->
     <perfect-scrollbar *ngIf="filterPanel" class="overflow-container">
-      <md-nav-list>
+      <mat-nav-list>
         <h3 md-subheader>Filters</h3>
 
         <td-expansion-panel-group>
@@ -184,7 +184,7 @@
                   More filters
                 </md-list-item>-->
 
-      </md-nav-list>
+      </mat-nav-list>
       <div class="footer-buttons">
         <span fxFlex></span>
         <button md-raised-button md-button-sm color="accent"
@@ -194,8 +194,8 @@
 
     </perfect-scrollbar>
 
-  </md-sidenav>
+  </mat-sidenav>
 
-</md-sidenav-container>
+</mat-sidenav-container>
 
 

@@ -7,10 +7,10 @@
     </button>
   </mat-toolbar>
 
-  <md-nav-list dense style="margin-top: -5px;">
+  <mat-nav-list dense style="margin-top: -5px;">
     <ng-template let-item let-i="index" let-last="last" ngFor [ngForOf]="providers">
 
-      <md-card class="card-list-profile shadow-none" [class.activeList]="selected == item" (click)="selectItem(item)">
+      <mat-card class="card-list-profile shadow-none" [class.activeList]="selected == item" (click)="selectItem(item)">
         <mat-icon class="ribbon-bookmark" *ngIf="following.indexOf(item.key)==-1"
                  [class.tc-grey-300]="following.indexOf(item.key)==-1" (click)="$event.stopPropagation(); throwEventFollow(item)"><i
           class="icon ion-bookmark"></i></mat-icon>
@@ -52,7 +52,7 @@
             </div>
             <span fxFlex></span>
 
-            <md-card-actions class="card-actions-style" fxLayout="column">
+            <mat-card-actions class="card-actions-style" fxLayout="column">
               <div class="text-uppercase">
                 <p class="mt-0 mb-0 text-md mat-text-muted title-statics">PV INDEX
                   <mat-icon style="font-size: 11px">help_outline</mat-icon>
@@ -72,13 +72,13 @@
                 <mat-icon style="font-size: 19px">add</mat-icon>
                 COMPARE
               </button>
-            </md-card-actions>
+            </mat-card-actions>
 
           </div>
         </div>
-      </md-card>
+      </mat-card>
 
     </ng-template>
-  </md-nav-list>
+  </mat-nav-list>
 </perfect-scrollbar>
 

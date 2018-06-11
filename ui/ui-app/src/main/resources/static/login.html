@@ -25,6 +25,7 @@
     <title>{{"view.login.KL" | translate}}</title>
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <style>
 
@@ -36,15 +37,60 @@
       height: 50%;
     }
 
-    #top {
-      top: 0;
-      background-color: rgb(52,131,186);
+    md-content.md-kylo-theme {
+      background-color: #f2f2f2;
+      //background-image: url(assets/images/login_template.png);
+      background-position: center;
+    }
+    .md-headline {
+      font-size: 42px;
+    }
+    #title {
+      padding-top: 40px;
+      padding-bottom: 37px;
     }
 
-    #bottom {
-      bottom: 0;
-      background-color: #ffffff;
+    md-card.md-kylo-theme {
+      background-color: transparent;
+      background-color: white;
+      
+
+      min-height: 700px;
     }
+    .inputs {
+
+    }
+    md-input-container.md-kylo-theme .md-input {
+      width:573px; 
+      font-size:42px;
+      padding-left: 50px;
+      height:42px;
+    }
+    md-input-container.md-kylo-theme>md-icon {
+      color: #cccccc;
+      font-size: 42px;    
+      height: 42px;
+      width: 42px;
+      min-height: 42px;
+      min-width: 42px;
+      top: -18px;
+      left: 31px;
+    }
+    md-input-container label:not(.md-no-float):not(.md-container-ignore)  {
+      padding-left: 50px;
+      font-size:42px;
+
+    }
+    #submitwrapper {
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    #submit {
+      background-color: transparent;
+    }
+
 
     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
       display: none !important;
@@ -58,31 +104,35 @@
 <div id="main" layout="column" layout-align="center center" layout-fill class="ng-cloak" >
 
 <md-content layout-fill>
-  <div id="top"></div>
-  <div id="bottom"></div>
   <div layout-align="center center" flex layout="column" layout-fill>
-    <md-card ng-controller="LoginController as vm" md-padding style="width:400px;max-width:400px;z-index: 999999;"  flex="nogrow" md-whiteframe="4">
-          <img src="assets/images/kylo-logo-orange-200.png" style="width: 200px;align-self: center" class="md-card-image">
-              <md-card-title layout-align="center center">
+      <img src="assets/images/medikly_logo_login.png" style="width:332px; align-self: center; padding-bottom: 50px;" class="md-card-image">
+    <md-card ng-controller="LoginController as vm" md-padding style="width:750px;max-width:750px;z-index: 999999;"  flex="nogrow" md-whiteframe="4">
+          
+              <md-card-title layout-align="center center" id="title">
                 <span class="md-headline">{{"view.login.Login" | translate}}</span>
             </md-card-title>
+            <img src="assets/images/google_sign_in.png" style="width:573px; align-self: center;  padding-bottom: 40px; display:block;" class="md-card-image">
+            <img src="assets/images/or_divider_login.png" style="width:573px; align-self: center;  padding-bottom: 60px; display:block;" class="md-card-image">
+
         <md-card-content>
 
         <div ng-show="vm.error" class="alert alert-danger">{{"view.login-app.login-error" | translate}}</div>
         <form name="form" action="/login" role="form" method="post">
             <div layout="column" flex layout-fill>
                 <md-input-container  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-                    <label for="username">{{"view.login.Username" | translate}}</label>
-                    <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
+                    <md-icon ng-bind="'email'"></md-icon>
+                    <label for="username"style="">{{"view.login.Username" | translate}}</label>
+                    <input type="text" name="username" id="username" class="form-control inputs" ng-model="vm.username" required style="" />
                     <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">{{"view.login.Uir" | translate}}</span>
                 </md-input-container>
                 <md-input-container  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                    <md-icon ng-bind="'lock'"></md-icon>
                    <label for="password">{{"view.login.Password" | translate}}</label>
-                    <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" autocomplete="off" required />
+                    <input type="password" name="password" id="password" class="form-control inputs" ng-model="vm.password" autocomplete="off" required style="width:573px;" />
                     <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{"view.login.Pir" | translate}}</span>
                 </md-input-container>
-                <div class="form-actions">
-                    <md-button type="submit" class="md-raised md-primary" ng-disabled="form.$invalid || vm.dataLoading" >{{"view.login.Login-btn" | translate}}</md-button>
+                <div class="form-actions" id="submitwrapper">
+                    <md-button id="submit" type="submit" class="md-raised md-primary" ng-disabled="form.$invalid || vm.dataLoading" >{{"view.login.Login-btn" | translate}}</md-button>
                 </div>
             </div>
           <input type="hidden" name="targetUrl" value="{{vm.targetUrl}}">

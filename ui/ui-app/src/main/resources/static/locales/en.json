@@ -610,13 +610,13 @@
     "views.TableController.Schemas": "Schemas",
 
     "view.login.KL": "Kylo Login",
-    "view.login.Login": "Login",
-    "view.login.Username": "Username",
-    "view.login.Uir": "Username is required",
+    "view.login.Login": "Sign in to your account",
+    "view.login.Username": "Email address",
+    "view.login.Uir": "Email address is required",
     "view.login.Password": "Password",
     "view.login.Pir": "Password is required",
     "view.login.Login-btn": "Login",
-    "view.login-app.login-error": "Invalid username or password.",
+    "view.login-app.login-error": "Invalid email address or password.",
 
     "views.module.Categories": "Categories",
 

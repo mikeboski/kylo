@@ -29,68 +29,73 @@
 
   <style>
 
-    #top,
-    #bottom {
-      position: fixed;
-      left: 0;
-      right: 0;
-      height: 50%;
-    }
-
     md-content.md-kylo-theme {
       background-color: #f2f2f2;
       //background-image: url(assets/images/login_template.png);
       background-position: center;
     }
     .md-headline {
-      font-size: 42px;
+      font-size: 21px;
     }
     #title {
-      padding-top: 40px;
-      padding-bottom: 37px;
+      padding-top: 20px;
+      padding-bottom: 19px;
     }
 
     md-card.md-kylo-theme {
       background-color: transparent;
       background-color: white;
       
-
-      min-height: 700px;
     }
     .inputs {
 
     }
     md-input-container.md-kylo-theme .md-input {
-      width:573px; 
-      font-size:42px;
-      padding-left: 50px;
-      height:42px;
+      width:286px; 
+      font-size:14px;
+      padding-left: 25px;
+      height:18px;
     }
     md-input-container.md-kylo-theme>md-icon {
       color: #cccccc;
-      font-size: 42px;    
-      height: 42px;
-      width: 42px;
-      min-height: 42px;
-      min-width: 42px;
-      top: -18px;
-      left: 31px;
+      font-size: 16px;    
+      height: 16px;
+      width: 16px;
+      min-height: 16px;
+      top: -3px;
+      left: 37px;
     }
     md-input-container label:not(.md-no-float):not(.md-container-ignore)  {
-      padding-left: 50px;
-      font-size:42px;
+      padding-left: 25px;
+      font-size:14px;
+      bottom: 146%;
 
+    }
+    #extralinks .md-button {
+      font-size: 11px;
     }
     #submitwrapper {
       text-align: center;
-      padding-top: 30px;
-      padding-bottom: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
     }
 
     #submit {
       background-color: transparent;
+      color: #4695ec;
+      font-size: 15px;
     }
+    #extralinks {
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+      min-height: auto;
+      color:#4695ec;
 
+    }
+    md-input-container label:not(.md-container-ignore).md-required:after {
+      content: "";
+    }
 
     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
       display: none !important;
@@ -105,14 +110,14 @@
 
 <md-content layout-fill>
   <div layout-align="center center" flex layout="column" layout-fill>
-      <img src="assets/images/medikly_logo_login.png" style="width:332px; align-self: center; padding-bottom: 50px;" class="md-card-image">
-    <md-card ng-controller="LoginController as vm" md-padding style="width:750px;max-width:750px;z-index: 999999;"  flex="nogrow" md-whiteframe="4">
+      <img src="assets/images/medikly_logo_login.png" style="width:166px; align-self: center; padding-bottom: 25px;" class="md-card-image">
+    <md-card ng-controller="LoginController as vm" md-padding style="width:375px;max-width:375px;z-index: 999999;"  flex="nogrow" md-whiteframe="4">
           
               <md-card-title layout-align="center center" id="title">
                 <span class="md-headline">{{"view.login.Login" | translate}}</span>
             </md-card-title>
-            <img src="assets/images/google_sign_in.png" style="width:573px; align-self: center;  padding-bottom: 40px; display:block;" class="md-card-image">
-            <img src="assets/images/or_divider_login.png" style="width:573px; align-self: center;  padding-bottom: 60px; display:block;" class="md-card-image">
+            <img src="assets/images/google_sign_in.png" style="width:286px; align-self: center;  padding-bottom: 20px; display:block;" class="md-card-image">
+            <img src="assets/images/or_divider_login.png" style="width:286px; align-self: center;  padding-bottom: 30px; display:block;" class="md-card-image">
 
         <md-card-content>
 
@@ -122,13 +127,13 @@
                 <md-input-container  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
                     <md-icon ng-bind="'email'"></md-icon>
                     <label for="username"style="">{{"view.login.Username" | translate}}</label>
-                    <input type="text" name="username" id="username" class="form-control inputs" ng-model="vm.username" required style="" />
+                    <input type="text" name="username" id="username" class="form-control inputs" ng-model="vm.username" required style="" md-autofocus="false" />
                     <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">{{"view.login.Uir" | translate}}</span>
                 </md-input-container>
                 <md-input-container  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
                     <md-icon ng-bind="'lock'"></md-icon>
                    <label for="password">{{"view.login.Password" | translate}}</label>
-                    <input type="password" name="password" id="password" class="form-control inputs" ng-model="vm.password" autocomplete="off" required style="width:573px;" />
+                    <input type="password" name="password" id="password" class="form-control inputs" ng-model="vm.password" autocomplete="off" required  />
                     <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{"view.login.Pir" | translate}}</span>
                 </md-input-container>
                 <div class="form-actions" id="submitwrapper">
@@ -139,6 +144,18 @@
         </form>
             </md-card-content>
     </md-card>
+
+    <md-card ng-controller="LoginController as vm" md-padding id="extralinks" style="width:400px; z-index: 999999;"  flex="nogrow" md-whiteframe="0" >
+
+      <md-card-actions  layout-align="space-between center" layout="row">
+        <button md-button>Forgot Password</button>
+        <button md-button>Need an account?</button>
+      </md-card-actions>
+    </md-card>
+    
+  </div>
+  <div>
+
   </div>
 </md-content>
 </div>

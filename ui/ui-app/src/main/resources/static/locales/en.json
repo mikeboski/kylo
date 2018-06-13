@@ -615,7 +615,7 @@
     "view.login.Uir": "Email address is required",
     "view.login.Password": "Password",
     "view.login.Pir": "Password is required",
-    "view.login.Login-btn": "Login",
+    "view.login.Login-btn": "SIGN IN",
     "view.login-app.login-error": "Invalid email address or password.",
 
     "views.module.Categories": "Categories",

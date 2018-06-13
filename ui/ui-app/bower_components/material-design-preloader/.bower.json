@@ -1,0 +1,35 @@
+{
+  "name": "material-design-preloader",
+  "version": "1.1.1",
+  "license": "MIT",
+  "homepage": "https://github.com/rtheunissen/material-design-preloader",
+  "authors": [
+    "Rudi Theunissen <rudolf.theunissen@gmail.com>"
+  ],
+  "description": "CSS animated SVG implementation of the Google Material Design preloader",
+  "main": [
+    "md-preloader.html",
+    "md-preloader.less"
+  ],
+  "keywords": [
+    "svg",
+    "material",
+    "design",
+    "preloader",
+    "spinner"
+  ],
+  "ignore": [
+    "*.md",
+    "*.json"
+  ],
+  "_release": "1.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.1",
+    "commit": "00038048dbaf331aecfbe369ae276468ec488b46"
+  },
+  "_source": "https://github.com/rtheunissen/material-design-preloader.git",
+  "_target": "^1.1.1",
+  "_originalSource": "material-design-preloader",
+  "_direct": true
+}

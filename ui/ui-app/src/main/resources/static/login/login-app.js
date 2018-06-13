@@ -96,7 +96,7 @@ define([
                 this.error = "Invalid username or password."
             }
 
-            $('#username').focus();
+            //$('#username').focus();
         }
         this.init();
 

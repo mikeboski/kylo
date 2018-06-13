@@ -3,12 +3,25 @@
             md-whiteframe="4"
             md-is-locked-open="$mdMedia('gt-md') && sideNavService.isLockOpen"
             layout="column" >
+  <style>
+    md-toolbar.md-kylo-theme:not(.md-menu-toolbar) {
+      background-color: white;
+      text-decoration: none;
+    }
+    md-toolbar.md-kylo-theme a{
+      text-decoration: none;
+    }
 
-  <md-toolbar class="md-hue-2 layout-column" style="" layout="column">
+    md-toolbar.md-kylo-theme img{
+      vertical-align: middle;
+    }
+    
+  </style>
+  <md-toolbar class="layout-column" style="" layout="column">
     <div layout="row" layout-align="center center" class="kylo-logo">
       <a href="/index.html" title="{{'views.main.Kylo' | translate}}">
-      <img src="assets/images/kylo-logo-rev.png" height="50px" ng-if="!collapsed">
-      <img src="assets/images/k_logo.png"  width="20px" ng-if="collapsed" style="padding-top: 5px;">
+      <img src="assets/mdkimages/m-logo_100by100.png"  width="20px" style="padding-top: 5px;">
+      <img src="assets/mdkimages/medikly-logo-orange-200.png" height="50px" ng-if="!collapsed">
       </a>
     </div>
   </md-toolbar>

@@ -132,14 +132,17 @@ public class Profiler {
             return null;
         }
 
-        String retVal;
+        String retVal = "";
 
         String profileObjectType = args[0];
         String profileObjectDesc = args[1];
         Integer n = Integer.valueOf(args[2]);
         String profileOutputTable = args[3];
         String fieldPolicyJsonPath = args[4];
-        Map<String, FieldPolicy> policyMap = loader.loadFieldPolicy(fieldPolicyJsonPath);
+        if(profileObjectType != "npilist" ) {
+
+        } else {
+        }
 
         String inputAndOutputTablePartitionKey = "ALL";
 
@@ -149,6 +152,8 @@ public class Profiler {
 
         switch (profileObjectType) {
             case "table":
+
+                Map<String, FieldPolicy> policyMap = loader.loadFieldPolicy(fieldPolicyJsonPath);
                 // Quote source table
                 final String[] tableRef = profileObjectDesc.split("\\.", 2);
                 final String safeTable = tableRef.length == 1 ? HiveUtils.quoteIdentifier(tableRef[0]) : HiveUtils.quoteIdentifier(tableRef[0], tableRef[1]);
@@ -173,8 +178,23 @@ public class Profiler {
             case "query":
                 retVal = profileObjectDesc;
                 break;
+            case "npilist":
+                log.info("npilist getCSV file case.");
+                log.error("havenot coded for npilist yet: for object type ({})", profileObjectType);
+                log.info("npilist getCSV file start.");
+                log.info("[PROFILER-INFO] npilist getCSV file start.");
+                DataSet df = sparkContextService.toDataSet(sqlContext.read()
+                .json("file:///tmp/npi_list.json"));
+                df.write().mode("overwrite").saveAsTable("testing.jsonnpilisttable");
+                log.info("[PROFILER-INFO] npilist getCSV file END. val df = sqlContext.read DONE");
+                log.info("npilist getCSV file END.");
+                retVal = "SELECT npi_all.`entity_type`, npi_all.`gender`, npi_all.`ingroup`, ";
+                retVal += "npi_all.`org_subpart`, npi_all.`soleprop`FROM `nppes`.`npi_entity` npi_all ";
+                retVal += " INNER JOIN `testing`.`jsonnpilisttable` npi_subset ON ";
+                retVal += "npi_subset.`npi` = npi_all.`npi`";
+                break;
             default:
-                log.error("Illegal command line argument for object type ({})", profileObjectType);
+                log.error("MOB Illegal command line argument for object type ({})", profileObjectType);
                 showCommandLineArgs();
                 return null;
         }

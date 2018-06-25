@@ -91,6 +91,12 @@ public class Profiler {
             return;
         }
 
+        log.info("[PROFILER-INFO] precomma replace Analyzing profile statistics for: [{}]", queryString);
+        /* inorder to support comma in sql since arguments are split on comma */
+        /* use `comma` in place of comma "," */
+        /*next line turns it back to comma */
+        queryString = queryString.replace("`comma`", "," );
+
         /* Run query and get result */
         log.info("[PROFILER-INFO] Analyzing profile statistics for: [{}]", queryString);
         resultDF = sparkContextService.sql(sqlContext, queryString);

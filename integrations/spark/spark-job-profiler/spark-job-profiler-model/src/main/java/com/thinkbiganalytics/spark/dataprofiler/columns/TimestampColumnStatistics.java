@@ -134,6 +134,7 @@ public class TimestampColumnStatistics extends StandardColumnStatistics {
 
         // Write timestamp-specific statistics
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MAX_TIMESTAMP), (maxTimestamp != null) ? maxTimestamp.toString() : ""));
+        rows.add(new OutputRow(columnField.name(), "Range", (maxTimestamp != null && minTimestamp != null) ?  String.valueOf((maxTimestamp.getTime() - minTimestamp.getTime())) : ""));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MIN_TIMESTAMP), (minTimestamp != null) ? minTimestamp.toString() : ""));
         return rows;
     }

@@ -218,6 +218,8 @@ public class IntegerColumnStatistics extends StandardColumnStatistics {
 
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MAX), String.valueOf(max)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MIN), String.valueOf(min)));
+        rows.add(new OutputRow(columnField.name(), "Range", String.valueOf(max-min)));
+        
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.SUM), String.valueOf(sum)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MEAN), String.valueOf(df.format(mean))));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.STDDEV), String.valueOf(df.format(stddev))));

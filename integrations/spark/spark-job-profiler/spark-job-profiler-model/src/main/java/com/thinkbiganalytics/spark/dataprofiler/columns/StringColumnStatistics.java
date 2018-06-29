@@ -248,6 +248,18 @@ public class StringColumnStatistics extends StandardColumnStatistics {
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MIN_LENGTH), String.valueOf(minLength)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.LONGEST_STRING), String.valueOf(longestString)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.SHORTEST_STRING), String.valueOf(shortestString)));
+        //MOB begin
+        rows.add(new OutputRow(columnField.name(), "MOB_null", String.valueOf(nullCount)));
+        double actualCount =  totalCount-(emptyCount+nullCount);
+        long uniqueCount = getUniqueCount();
+        rows.add(new OutputRow(columnField.name(), "Actual_Count", String.valueOf(actualCount)));
+        rows.add(new OutputRow(columnField.name(), "Completeness", 
+            String.valueOf(actualCount*100/totalCount)));
+        rows.add(new OutputRow(columnField.name(), "Distinctness", 
+            String.valueOf(uniqueCount/totalCount *100)));
+        rows.add(new OutputRow(columnField.name(), "Uniqueness", 
+            String.valueOf(uniqueCount/actualCount *100)));
+        //MOB end
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.EMPTY_COUNT), String.valueOf(emptyCount)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.PERC_EMPTY_VALUES), df.format(percEmptyValues)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MIN_STRING_CASE), String.valueOf(minStringCase)));

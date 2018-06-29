@@ -188,7 +188,7 @@ public class Profiler {
                 df.write().mode("overwrite").saveAsTable("testing.jsonnpilisttable");
                 log.info("[PROFILER-INFO] npilist getCSV file END. val df = sqlContext.read DONE");
                 log.info("npilist getCSV file END.");
-                retVal = "SELECT npi_all.`entity_type`, npi_all.`gender`, npi_all.`ingroup`, ";
+                retVal = "SELECT npi_all.npi, npi_all.`entity_type`, npi_all.`gender`, npi_all.`ingroup`, ";
                 retVal += "npi_all.`org_subpart`, npi_all.`soleprop`FROM `nppes`.`npi_entity` npi_all ";
                 retVal += " INNER JOIN `testing`.`jsonnpilisttable` npi_subset ON ";
                 retVal += "npi_subset.`npi` = npi_all.`npi`";

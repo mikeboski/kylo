@@ -35,6 +35,9 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Class to hold common profile statistics for columns of all data types
  */
@@ -55,6 +58,8 @@ public abstract class StandardColumnStatistics implements ColumnStatistics, Seri
     private double percUniqueValues;
     private double percDuplicateValues;
     private ProfilerConfiguration profilerConfiguration;
+
+    private static final Logger log = LoggerFactory.getLogger(StandardColumnStatistics.class);
 
 
     /**
@@ -148,6 +153,11 @@ public abstract class StandardColumnStatistics implements ColumnStatistics, Seri
      */
     private void writeTopNInformation(@Nonnull final List<OutputRow> rows) {
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.TOP_N_VALUES), topNValues.printTopNItems()));
+
+        log.info("MOB topNValues.printTopNItems(): [{}]", topNValues.printTopNItems());
+        
+        rows.add(new OutputRow(columnField.name(), "Mode", 
+        topNValues.getTopValue()));
     }
 
 
@@ -177,6 +187,17 @@ public abstract class StandardColumnStatistics implements ColumnStatistics, Seri
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.PERC_NULL_VALUES), df.format(percNullValues)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.PERC_UNIQUE_VALUES), df.format(percUniqueValues)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.PERC_DUPLICATE_VALUES), df.format(percDuplicateValues)));
+        if(String.valueOf(columnField.dataType()) != "StringType") {
+            double actualCount =  totalCount-(nullCount);
+            rows.add(new OutputRow(columnField.name(), "Actual_Count", String.valueOf(actualCount)));
+            rows.add(new OutputRow(columnField.name(), "Completeness", 
+            String.valueOf((totalCount >0) ? actualCount*100/totalCount : "NaN")));
+            
+            rows.add(new OutputRow(columnField.name(), "Distinctness", 
+            String.valueOf((totalCount >0) ? uniqueCount/totalCount *100  : "NaN")));
+            rows.add(new OutputRow(columnField.name(), "Uniqueness", 
+            String.valueOf((actualCount >0) ?uniqueCount/actualCount *100  : "NaN")));
+        }
 
         writeTopNInformation(rows);
     }

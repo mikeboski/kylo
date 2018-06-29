@@ -114,6 +114,21 @@ public class TopNDataList implements Serializable {
 
         return sb.toString();
     }
+//added MOB begin
+    public String getTopValue() {
+        int index = 1;
+        StringBuilder sb = new StringBuilder();
+        Iterator i = topNDataItemsForColumn.descendingIterator();
+        if(i.hasNext()) {
+            TopNDataItem item = (TopNDataItem) i.next();
+            sb.append(item.getValue());
+        } else {
+            sb.append("");
+        }
+
+        return sb.toString();
+    }
+//added MOB End;
 
 
     /**

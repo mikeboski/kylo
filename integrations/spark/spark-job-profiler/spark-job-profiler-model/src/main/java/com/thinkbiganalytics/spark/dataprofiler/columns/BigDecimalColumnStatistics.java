@@ -153,6 +153,7 @@ public class BigDecimalColumnStatistics extends StandardColumnStatistics {
 
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MAX), String.valueOf(max)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MIN), String.valueOf(min)));
+        rows.add(new OutputRow(columnField.name(), "Range", String.valueOf(max.subtract(min))));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.SUM), String.valueOf(sum)));
         return rows;
     }

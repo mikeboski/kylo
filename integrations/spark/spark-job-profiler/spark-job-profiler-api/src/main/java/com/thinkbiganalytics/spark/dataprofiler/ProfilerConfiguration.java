@@ -21,6 +21,10 @@ package com.thinkbiganalytics.spark.dataprofiler;
  */
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+import org.apache.spark.sql.Row;
+
 
 /**
  * Helper class to hold parameters for profiler
@@ -38,6 +42,8 @@ public class ProfilerConfiguration implements Serializable {
     private String outputTableName = "profilestats";
     private String outputTablePartitionColumnName = "processing_dttm";
     private String sqlDialect = "hiveql";  // Hive supported HQL
+    public String actionType = "table";  // added by MOB
+    public Map<String, Row> advancedStats = new HashMap<>();
 
     /**
      * Number of decimals to print out in console<br>
@@ -50,6 +56,16 @@ public class ProfilerConfiguration implements Serializable {
     public void setDecimalDigitsToDisplayConsoleOutput(Integer decimalDigitsToDisplayConsoleOutput) {
         this.decimalDigitsToDisplayConsoleOutput = decimalDigitsToDisplayConsoleOutput;
     }
+
+    //MOB
+    //fyi percentiles 5, 25,50, 75, 95
+    public void addAdvancedStats(String column, Row percentiles) {
+        advancedStats.put(column, percentiles);
+    } 
+
+    public Row getAdvancedStats(String column) {
+        return advancedStats.get(column);
+    } 
 
     /**
      * Partition key to read and write to

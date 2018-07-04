@@ -1,0 +1,26 @@
+  {
+    "@type": "DerivedDatasource",
+    "id": "0824de57-5142-485c-8104-d8c7ed7e7ecf",
+    "name": "coreid.npi_taxo_group1",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "645e7917-ac14-4557-b69f-db4f860a55f6",
+        "systemName": "npi_taxonomy_group",
+        "displayName": "NPI Taxonomy Group",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528869322893
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528869322942,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_taxo_group1",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },

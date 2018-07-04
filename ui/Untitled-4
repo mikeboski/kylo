@@ -1,0 +1,352 @@
+{
+  "owner": {
+    "displayName": "string",
+    "email": "string",
+    "enabled": false,
+    "groups": [
+      "string"
+    ],
+    "systemName": "string"
+  },
+  "allowedActions": {
+    "name": "string",
+    "actions": [
+      {
+        "systemName": "string",
+        "title": "string",
+        "description": "string",
+        "actions": [
+          {}
+        ]
+      }
+    ]
+  },
+  "roleMemberships": [
+    {
+      "role": {
+        "systemName": "string",
+        "title": "string",
+        "description": "string",
+        "allowedActions": {
+          "name": "string",
+          "actions": [
+            {
+              "systemName": "string",
+              "title": "string",
+              "description": "string",
+              "actions": [
+                {}
+              ]
+            }
+          ]
+        }
+      },
+      "users": [
+        {
+          "displayName": "string",
+          "email": "string",
+          "enabled": false,
+          "groups": [
+            "string"
+          ],
+          "systemName": "string"
+        }
+      ],
+      "groups": [
+        {
+          "description": "string",
+          "memberCount": 0,
+          "systemName": "string",
+          "title": "string"
+        }
+      ]
+    }
+  ],
+  "feedRoleMemberships": [
+    {
+      "role": {
+        "systemName": "string",
+        "title": "string",
+        "description": "string",
+        "allowedActions": {
+          "name": "string",
+          "actions": [
+            {
+              "systemName": "string",
+              "title": "string",
+              "description": "string",
+              "actions": [
+                {}
+              ]
+            }
+          ]
+        }
+      },
+      "users": [
+        {
+          "displayName": "string",
+          "email": "string",
+          "enabled": false,
+          "groups": [
+            "string"
+          ],
+          "systemName": "string"
+        }
+      ],
+      "groups": [
+        {
+          "description": "string",
+          "memberCount": 0,
+          "systemName": "string",
+          "title": "string"
+        }
+      ]
+    }
+  ],
+  "creationTime": "2018-06-17T13:25:56.552Z",
+  "id": "string",
+  "name": "string",
+  "description": "string",
+  "encrypted": false,
+  "compressed": false,
+  "sourceForFeeds": [
+    {
+      "id": "string",
+      "systemName": "string",
+      "displayName": "string",
+      "description": "string",
+      "owner": "string",
+      "state": "ENABLED",
+      "createdTime": "2018-06-17T13:25:56.552Z",
+      "precondition": {
+        "sla": {
+          "id": "string",
+          "name": "string",
+          "description": "string",
+          "defaultGroup": {
+            "condition": "string",
+            "obligations": [
+              {
+                "description": "string"
+              }
+            ]
+          },
+          "groups": [
+            {
+              "condition": "string",
+              "obligations": [
+                {
+                  "description": "string"
+                }
+              ]
+            }
+          ],
+          "slaChecks": [
+            {
+              "id": "string",
+              "cronSchedule": "string"
+            }
+          ],
+          "obligationErrors": [
+            "string"
+          ],
+          "slaCheckErrors": [
+            "string"
+          ],
+          "canEdit": false
+        }
+      },
+      "sources": [
+        {
+          "lastLoadTime": "2018-06-17T13:25:56.552Z",
+          "id": "string",
+          "datasourceId": "string",
+          "datasource": {}
+        }
+      ],
+      "destinations": [
+        {
+          "id": "string",
+          "fieldsPolicy": {
+            "fieldPolicies": [
+              {
+                "name": "string",
+                "description": "string",
+                "rule": "string"
+              }
+            ]
+          },
+          "feedId": "string",
+          "datasourceId": "string",
+          "datasource": {}
+        }
+      ],
+      "properties": {},
+      "category": {
+        "id": "string",
+        "systemName": "string",
+        "displayName": "string",
+        "description": "string",
+        "userProperties": {},
+        "collectedUserProperties": "string"
+      },
+      "currentInitStatus": {
+        "state": "PENDING",
+        "timestamp": "2018-06-17T13:25:56.552Z"
+      },
+      "allowIndexing": false,
+      "currentHistoryReindexingStatus": {
+        "historyReindexingState": "NEVER_RUN",
+        "lastModifiedTimestamp": "2018-06-17T13:25:56.552Z"
+      },
+      "dependentFeeds": [
+        {}
+      ],
+      "dependentFeedIds": [
+        "string"
+      ],
+      "usedByFeeds": [
+        {}
+      ],
+      "usedByFeedIds": [
+        "string"
+      ],
+      "allowedActions": {
+        "name": "string",
+        "actions": [
+          {
+            "systemName": "string",
+            "title": "string",
+            "description": "string",
+            "actions": [
+              {}
+            ]
+          }
+        ]
+      },
+      "modifiedTime": "2018-06-17T13:25:56.552Z",
+      "userProperties": {},
+      "collectedUserProperties": "string"
+    }
+  ],
+  "destinationForFeeds": [
+    {
+      "id": "string",
+      "systemName": "string",
+      "displayName": "string",
+      "description": "string",
+      "owner": "string",
+      "state": "ENABLED",
+      "createdTime": "2018-06-17T13:25:56.552Z",
+      "precondition": {
+        "sla": {
+          "id": "string",
+          "name": "string",
+          "description": "string",
+          "defaultGroup": {
+            "condition": "string",
+            "obligations": [
+              {
+                "description": "string"
+              }
+            ]
+          },
+          "groups": [
+            {
+              "condition": "string",
+              "obligations": [
+                {
+                  "description": "string"
+                }
+              ]
+            }
+          ],
+          "slaChecks": [
+            {
+              "id": "string",
+              "cronSchedule": "string"
+            }
+          ],
+          "obligationErrors": [
+            "string"
+          ],
+          "slaCheckErrors": [
+            "string"
+          ],
+          "canEdit": false
+        }
+      },
+      "sources": [
+        {
+          "lastLoadTime": "2018-06-17T13:25:56.552Z",
+          "id": "string",
+          "datasourceId": "string",
+          "datasource": {}
+        }
+      ],
+      "destinations": [
+        {
+          "id": "string",
+          "fieldsPolicy": {
+            "fieldPolicies": [
+              {
+                "name": "string",
+                "description": "string",
+                "rule": "string"
+              }
+            ]
+          },
+          "feedId": "string",
+          "datasourceId": "string",
+          "datasource": {}
+        }
+      ],
+      "properties": {},
+      "category": {
+        "id": "string",
+        "systemName": "string",
+        "displayName": "string",
+        "description": "string",
+        "userProperties": {},
+        "collectedUserProperties": "string"
+      },
+      "currentInitStatus": {
+        "state": "PENDING",
+        "timestamp": "2018-06-17T13:25:56.552Z"
+      },
+      "allowIndexing": false,
+      "currentHistoryReindexingStatus": {
+        "historyReindexingState": "NEVER_RUN",
+        "lastModifiedTimestamp": "2018-06-17T13:25:56.552Z"
+      },
+      "dependentFeeds": [
+        {}
+      ],
+      "dependentFeedIds": [
+        "string"
+      ],
+      "usedByFeeds": [
+        {}
+      ],
+      "usedByFeedIds": [
+        "string"
+      ],
+      "allowedActions": {
+        "name": "string",
+        "actions": [
+          {
+            "systemName": "string",
+            "title": "string",
+            "description": "string",
+            "actions": [
+              {}
+            ]
+          }
+        ]
+      },
+      "modifiedTime": "2018-06-17T13:25:56.552Z",
+      "userProperties": {},
+      "collectedUserProperties": "string"
+    }
+  ]
+}

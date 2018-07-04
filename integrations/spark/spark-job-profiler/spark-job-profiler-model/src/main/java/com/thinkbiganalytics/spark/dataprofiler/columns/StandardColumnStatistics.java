@@ -53,11 +53,12 @@ public abstract class StandardColumnStatistics implements ColumnStatistics, Seri
     /* Common metrics for all data types */
     long nullCount;
     long totalCount;
+    double actualCount = -1;
     private long uniqueCount;
     private double percNullValues;
     private double percUniqueValues;
     private double percDuplicateValues;
-    private ProfilerConfiguration profilerConfiguration;
+    public ProfilerConfiguration profilerConfiguration;
 
     private static final Logger log = LoggerFactory.getLogger(StandardColumnStatistics.class);
 
@@ -187,17 +188,30 @@ public abstract class StandardColumnStatistics implements ColumnStatistics, Seri
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.PERC_NULL_VALUES), df.format(percNullValues)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.PERC_UNIQUE_VALUES), df.format(percUniqueValues)));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.PERC_DUPLICATE_VALUES), df.format(percDuplicateValues)));
-        if(String.valueOf(columnField.dataType()) != "StringType") {
-            double actualCount =  totalCount-(nullCount);
-            rows.add(new OutputRow(columnField.name(), "Actual_Count", String.valueOf(actualCount)));
-            rows.add(new OutputRow(columnField.name(), "Completeness", 
-            String.valueOf((totalCount >0) ? actualCount*100/totalCount : "NaN")));
-            
-            rows.add(new OutputRow(columnField.name(), "Distinctness", 
-            String.valueOf((totalCount >0) ? uniqueCount/totalCount *100  : "NaN")));
-            rows.add(new OutputRow(columnField.name(), "Uniqueness", 
-            String.valueOf((actualCount >0) ?uniqueCount/actualCount *100  : "NaN")));
+        if(actualCount == -1) {
+            actualCount =  totalCount-(nullCount);
         }
+        rows.add(new OutputRow(columnField.name(), "Actual_Count", String.valueOf(actualCount)));
+        rows.add(new OutputRow(columnField.name(), "Completeness", 
+        String.valueOf((totalCount >0) ? actualCount*100/totalCount : "NaN")));
+        String distinctness =  String.valueOf((totalCount >0) ? uniqueCount/totalCount *100  : "NaN");
+        rows.add(new OutputRow(columnField.name(), "Distinctness", distinctness));
+        String uniqueness = String.valueOf((actualCount >0) ?uniqueCount/actualCount *100  : "NaN");
+        rows.add(new OutputRow(columnField.name(), "Uniqueness", 
+        uniqueness));
+
+        double uniqueness_num = (actualCount >0) ? uniqueCount/actualCount *100  : 0;
+        double distinctness_num = (totalCount >0) ?uniqueCount/totalCount *100  : 0;
+        
+        log.info("MOB distinctness[{}]", distinctness);
+        log.info("MOB uniqueness[{}]", uniqueness); 
+        log.info("MOB uniqueness == \"100\"[{}]", uniqueness == "100"); 
+        log.info("MOB distinctness == \"100\"[{}]", distinctness == "100"); 
+        log.info("MOB distinctness && uniqueness[{}]", ((uniqueness == "100") && (distinctness == "100" ))); 
+        
+        rows.add(new OutputRow(columnField.name(), "IsPrimaryKeyCandidate", 
+        ((uniqueness_num >= 100) && (distinctness_num == 100 )) ? "Yes"  : "No"));
+        
 
         writeTopNInformation(rows);
     }

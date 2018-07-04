@@ -1,0 +1,1309 @@
+[
+  {
+    "@type": "DerivedDatasource",
+    "id": "0824de57-5142-485c-8104-d8c7ed7e7ecf",
+    "name": "coreid.npi_taxo_group1",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "645e7917-ac14-4557-b69f-db4f860a55f6",
+        "systemName": "npi_taxonomy_group",
+        "displayName": "NPI Taxonomy Group",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528869322893
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528869322942,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_taxo_group1",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "18c48245-d938-4e67-aab6-000c17a52762",
+    "name": "group_practices.group_practice",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "e0c92166-f2e3-44f1-ad7f-10ff85118f71",
+        "systemName": "group_practice",
+        "displayName": "Group Practice",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528813687916
+      }
+    ],
+    "properties": {
+      "feed": "group_practice",
+      "Target schema": "group_practices",
+      "jcr:created": 1528813688220,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "group_practices",
+      "Target table": "group_practice"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "fcd1fc9b-221d-4b82-9715-c26a7cc06a79",
+    "name": "core.cnn_hosp_aff",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524437870411,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.cnn_hosp_aff",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "da4aa3e4-0872-45b5-ace4-46cf1c8e1ef4",
+    "name": "core.npi_entity",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524405849076,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_entity",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "34c79372-4c5b-4631-bf4d-00c6aa4802a5",
+    "name": "prescription.rxrawdata2016old",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1528403465917,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "prescription.rxrawdata2016old",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "JdbcDatasource",
+    "id": "472219b8-d17f-414b-a1e8-66510fa5d46b",
+    "name": "NewDB-Kylo",
+    "description": "Medikly Postgres NewDB",
+    "encrypted": false,
+    "compressed": false,
+    "type": "postgresql",
+    "icon": "grid_on",
+    "iconColor": "orange",
+    "controllerServiceId": "da81daf4-0162-1000-0689-05f0e7f9bae0"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "92b2fbcd-7188-464a-85e4-ea13f594535d",
+    "name": "coreid.npi_id",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "1741d1a5-c4c5-4f52-9ea8-66d8f8be5af4",
+        "systemName": "npi_id",
+        "displayName": "NPI ID",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528796363827
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528796344764,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_id",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "418ebc3e-97c8-42a4-9f3e-c0772f2ceaba",
+    "name": "uuid.group_practice_id",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "5a9b3107-cbda-4e90-993f-5e84a7571598",
+        "systemName": "group_practice_id",
+        "displayName": "NPI Group Practice ID",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528821595744
+      }
+    ],
+    "properties": {
+      "feed": "group_practice_id",
+      "Target schema": "uuid",
+      "jcr:created": 1528813837746,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "uuid",
+      "Target table": "group_practice_id"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "d50ea703-85b7-4bd4-97d8-79a47b52a9b9",
+    "name": "coreid.npi_group",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "e0c92166-f2e3-44f1-ad7f-10ff85118f71",
+        "systemName": "group_practice",
+        "displayName": "Group Practice",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528813687916
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528813688220,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_group",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "b5c5f03e-db21-466c-9345-a857433b47e7",
+    "name": "procedure.hcpcs_summary2015",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1528492139159,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "procedure.hcpcs_summary2015",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "b660027f-2f5d-40dd-bc6a-3e9d3d0b27ee",
+    "name": "core.npi_taxo_crswlk",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524435546220,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_taxo_crswlk",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "d316f1b5-4efc-4921-8d89-eca944d056cc",
+    "name": "mdk_core_new.npi_addresses",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524085286460,
+      "Source Database Connection": "da81daf4-0162-1000-0689-05f0e7f9bae0",
+      "Database Connection URL": "jdbc:postgresql://newdb-kylo.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "mdk_core_new.npi_addresses",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "7c75b2bc-6c02-4327-9612-ea68f41c7d82",
+    "name": "coreid.npi_prov_prof",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "25219d66-002f-4cd4-bc89-7895509c7112",
+        "systemName": "npi_provider_professional",
+        "displayName": "NPI Provider Professional",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528822602307
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528822602406,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_prov_prof",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "df81fbac-ebd6-4dcc-a5fd-ec90f5da6e69",
+    "name": "group_practices.npi_group_professional",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "f175c113-f1ac-4509-8e64-5d185403f094",
+        "systemName": "npi_group_professional",
+        "displayName": "NPI Group Professional",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528814603707
+      }
+    ],
+    "properties": {
+      "feed": "npi_group_professional",
+      "Target schema": "group_practices",
+      "jcr:created": 1528814603769,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "group_practices",
+      "Target table": "npi_group_professional"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "7c512383-def2-4664-bc9a-ef2dae48fa61",
+    "name": "core.npi_org_names",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524434599714,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_org_names",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "87eab00a-a002-442f-8f8a-440234dbcd5d",
+    "name": "/var/dropzone/TestD\\d{1,3}.csv",
+    "description": " Directory or File source",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1525329734673,
+      "Input Directory": "/var/dropzone",
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "File Filter": "TestD\\d{1,3}.csv"
+    },
+    "datasourceType": "DirectoryDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "20463f37-28d3-42ff-a713-fc027503f39b",
+    "name": "coreid.npi_taxo_crswlk",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "1991b4e1-91d6-46ba-add6-7db3e46f418a",
+        "systemName": "npi_taxonomy_crosswalk",
+        "displayName": "NPI Taxonomy Crosswalk",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528864193170
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528864193222,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_taxo_crswlk",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "3f2aac78-c1e0-42c2-a0f8-653af62f09c3",
+    "name": "coreid.npi_org_names",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "ba824126-29cc-4c8f-934f-d3cae7835931",
+        "systemName": "npi_organization_names",
+        "displayName": "NPI Organization Names",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528821282880
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528821282932,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_org_names",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "21da12fd-f24a-4338-bcc4-25a1fb97fee2",
+    "name": "nppes.npi_provider_names",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "f7971bce-5f7d-49a4-9caa-785707927834",
+        "systemName": "npi_provider_names",
+        "displayName": "NPI Provider Names",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528821547852
+      }
+    ],
+    "properties": {
+      "feed": "npi_provider_names",
+      "Target schema": "nppes",
+      "jcr:created": 1528821547932,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "nppes",
+      "Target table": "npi_provider_names"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "82a63e53-02b8-443f-94e4-a6ebb0c3d433",
+    "name": "/var/dropzone/mydata\\d{1,3}.csv",
+    "description": " Directory or File source",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1525284560477,
+      "Input Directory": "/var/dropzone",
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "File Filter": "mydata\\d{1,3}.csv"
+    },
+    "datasourceType": "DirectoryDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "c03e636b-f685-463c-b01c-692372bb6b53",
+    "name": "/var/dropzone/testE\\d{1,3}.csv",
+    "description": " Directory or File source",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1525381934480,
+      "Input Directory": "/var/dropzone",
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "File Filter": "testE\\d{1,3}.csv"
+    },
+    "datasourceType": "DirectoryDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "188a7450-e6ae-45d4-8c34-fc630dc714db",
+    "name": "organization.npi_organization_names",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "ba824126-29cc-4c8f-934f-d3cae7835931",
+        "systemName": "npi_organization_names",
+        "displayName": "NPI Organization Names",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528821282880
+      }
+    ],
+    "properties": {
+      "feed": "npi_organization_names",
+      "Target schema": "organization",
+      "jcr:created": 1528821282932,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "organization",
+      "Target table": "npi_organization_names"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "ce7ed58a-5d0e-41eb-82e8-447c3c9d0862",
+    "name": "coreid.npi_taxo_group",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1528864435097,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_taxo_group",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "26e51f07-110d-4859-a07a-03d4500240d6",
+    "name": "core.npi_prov_names",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524435380183,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_prov_names",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "0713d049-e046-45f5-90cc-1b8dff8eed54",
+    "name": "core.npi_prov_ext",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524435240159,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_prov_ext",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "153d4b06-76c5-49f9-a28e-21691b797789",
+    "name": "/var/dropzone/testB\\d{1,3}.csv",
+    "description": " Directory or File source",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1525314851692,
+      "Input Directory": "/var/dropzone",
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "File Filter": "testB\\d{1,3}.csv"
+    },
+    "datasourceType": "DirectoryDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "4fc8c1aa-3a9e-4395-8bb6-93daf6025c58",
+    "name": "core.ccn_hospinfo",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524437149563,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.ccn_hospinfo",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "JdbcDatasource",
+    "id": "fbf3bf72-7c02-4957-a540-4c15be87fb0b",
+    "name": "PostgresMetaStore",
+    "encrypted": false,
+    "compressed": false,
+    "type": "postgresql",
+    "icon": "grid_on",
+    "iconColor": "orange",
+    "controllerServiceId": "22c06543-0163-1000-b93b-caeed2078d6f"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "c9f91fba-7eff-4936-90ce-d21e0957b913",
+    "name": "coreid.npi_prov_names",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "f7971bce-5f7d-49a4-9caa-785707927834",
+        "systemName": "npi_provider_names",
+        "displayName": "NPI Provider Names",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528821547852
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528821547932,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_prov_names",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "eda77302-8866-4986-8b52-81646f7aea03",
+    "name": "prescription.rxrawdata2015",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1525813158339,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "prescription.rxrawdata2015",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "93f80449-f322-455d-993a-b8cdd50c96fa",
+    "name": "core.npi_phone",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524424103318,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_phone",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "59ec5ef3-88ee-42dc-bde3-9f1d2762297f",
+    "name": "referral.edges",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1528509296929,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "referral.edges",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "74bb1342-a8f2-483a-9361-994860ae3601",
+    "name": "coreid.npi_geo",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "0a6a2233-293d-496b-84e6-5bb080c81907",
+        "systemName": "npi_geo",
+        "displayName": "NPI Geo",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528809215698
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528809215753,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_geo",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "622d141e-e81b-4da9-b7c4-ebee49ff0a76",
+    "name": "coreid.npi_location",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "6665d3bb-d05f-4f51-a64b-a894fd92c5ad",
+        "systemName": "npi_location",
+        "displayName": "NPI Location",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528806377066
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528806377123,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_location",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "c3fc0509-f7df-42dc-8f08-7792e8825fdd",
+    "name": "thinkbig.nifi.index",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "b81b9348-986a-49b6-8a61-af8edc4270b2",
+        "systemName": "index_text_service",
+        "displayName": "Index Text Service",
+        "state": "ENABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1525886992810
+      }
+    ],
+    "properties": {
+      "jcr:created": 1520624639875,
+      "jcr:createdBy": "dladmin",
+      "Destination Name": "thinkbig.nifi.index",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "JMSDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "6a44e4cb-b00a-4634-87dd-871286c4bbc9",
+    "name": "/var/dropzone/mob\\d{1,3}.csv",
+    "description": " Directory or File source",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1525297812036,
+      "Input Directory": "/var/dropzone",
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "File Filter": "mob\\d{1,3}.csv"
+    },
+    "datasourceType": "DirectoryDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "46da1032-808a-4f69-8fc0-9c38ba282113",
+    "name": "core.npi_oid",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524434022286,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_oid",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "5eb8c49f-d00e-46c2-b7ba-d17d59a6828f",
+    "name": "/var/dropzone/TestC\\d{1,3}.csv",
+    "description": " Directory or File source",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1525316559085,
+      "Input Directory": "/var/dropzone",
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "File Filter": "TestC\\d{1,3}.csv"
+    },
+    "datasourceType": "DirectoryDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "bca81f82-3da1-4251-86b5-afa3e9fbfb2b",
+    "name": "coreid.npi_group_prof",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "f175c113-f1ac-4509-8e64-5d185403f094",
+        "systemName": "npi_group_professional",
+        "displayName": "NPI Group Professional",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528814603707
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528814603769,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_group_prof",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "39239224-3560-4694-a87d-06638eeeee34",
+    "name": "toys.products",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1520624701919,
+      "Source Database Connection": "a860df91-015b-1000-8a34-09efed019feb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "toys.products",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "db5f2496-29c9-4df2-963a-9228ef49f8ad",
+    "name": "mdk_core_new.npi_entity",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524363990207,
+      "Source Database Connection": "da81daf4-0162-1000-0689-05f0e7f9bae0",
+      "Database Connection URL": "jdbc:postgresql://newdb-kylo.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "mdk_core_new.npi_entity",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "a6cc2c46-a7e8-4f82-aa4c-175730fed486",
+    "name": "reference_data.npi_taxonomy_crosswalk",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "1991b4e1-91d6-46ba-add6-7db3e46f418a",
+        "systemName": "npi_taxonomy_crosswalk",
+        "displayName": "NPI Taxonomy Crosswalk",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528864193170
+      }
+    ],
+    "properties": {
+      "feed": "npi_taxonomy_crosswalk",
+      "Target schema": "reference_data",
+      "jcr:created": 1528864193222,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "reference_data",
+      "Target table": "npi_taxonomy_crosswalk"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "d38f01f6-5af3-4506-acdc-bcf3c1400903",
+    "name": "core.npi_group_ext",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524433689193,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_group_ext",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "92e93af3-498e-4eae-99bf-74972bb0bdc3",
+    "name": "core.npi_taxo_grp",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524435992499,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_taxo_grp",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "JdbcDatasource",
+    "id": "2148f599-4ed1-4b26-8c87-6d75466bb553",
+    "name": "Core NPI",
+    "description": "Medikly NewDB-most recent",
+    "encrypted": false,
+    "compressed": false,
+    "type": "postgresql",
+    "icon": "storage",
+    "iconColor": "#AB47BC",
+    "controllerServiceId": "ed2c980a-0162-1000-ebd6-d58f9a57d40f"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "fe63ffb8-8468-4e48-ac93-a7feb33fbcd9",
+    "name": "coreid.npi_phone",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "e05f4467-8404-475b-b59c-23c9b149f12a",
+        "systemName": "npi_phone",
+        "displayName": "NPI Phone",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528821399240
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528821399298,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_phone",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "ec782c9f-d97e-4aa5-ae02-8150e4dcfa29",
+    "name": "core.npi_group1",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1528530204905,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_group1",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "bc929106-03f6-4322-8469-cab59741dfdf",
+    "name": "core.npi_enrich",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524406682490,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_enrich",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "a2ff6509-0615-4538-9a46-e137125314ab",
+    "name": "core.npi_geolocode",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524428471920,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_geolocode",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "0279dd91-6b92-49e9-b1c2-86c98800fb6d",
+    "name": "nppes.npi_phone",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "e05f4467-8404-475b-b59c-23c9b149f12a",
+        "systemName": "npi_phone",
+        "displayName": "NPI Phone",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528821399240
+      }
+    ],
+    "properties": {
+      "feed": "npi_phone",
+      "Target schema": "nppes",
+      "jcr:created": 1528821399298,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "nppes",
+      "Target table": "npi_phone"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "6b26e830-7c04-4831-a08b-ffbdd4cdaf23",
+    "name": "/var/dropzone/allevents.csv",
+    "description": " Directory or File source",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1520624680292,
+      "Input Directory": "/var/dropzone",
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "File Filter": "allevents.csv"
+    },
+    "datasourceType": "DirectoryDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "93edbbbe-fe86-49ae-bede-3513bcb25c6e",
+    "name": "procedure.hcpcsraw2016",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1528506283192,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "procedure.hcpcsraw2016",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "46d07b28-4f24-4c90-897d-61994cb19961",
+    "name": "core.npi_geo",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524424927751,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_geo",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "c469fc98-ba36-483c-8cd6-df128e779533",
+    "name": "core.npi_location",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524414136498,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_location",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "49355144-9bf6-43a9-a30f-31bc352eeb49",
+    "name": "geolocation.npi_geo",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "0a6a2233-293d-496b-84e6-5bb080c81907",
+        "systemName": "npi_geo",
+        "displayName": "NPI Geo",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528809215698
+      }
+    ],
+    "properties": {
+      "feed": "npi_geo",
+      "Target schema": "geolocation",
+      "jcr:created": 1528809215753,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "geolocation",
+      "Target table": "npi_geo"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "32658bea-73c8-4153-b1de-de8b5b5b6dd2",
+    "name": "/var/dropzone/venue.csv",
+    "description": " Directory or File source",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1520624692891,
+      "Input Directory": "/var/dropzone",
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "File Filter": "venue.csv"
+    },
+    "datasourceType": "DirectoryDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "d79023ff-bec5-4865-988a-64a6dc5b7542",
+    "name": "core.npi_group",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1524433150237,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "core.npi_group",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "21a760bd-fb19-4717-9ffe-095772f59854",
+    "name": "reference_data.npi_taxonomy_group",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "645e7917-ac14-4557-b69f-db4f860a55f6",
+        "systemName": "npi_taxonomy_group",
+        "displayName": "NPI Taxonomy Group",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528869322893
+      }
+    ],
+    "properties": {
+      "feed": "npi_taxonomy_group",
+      "Target schema": "reference_data",
+      "jcr:created": 1528869322942,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "reference_data",
+      "Target table": "npi_taxonomy_group"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "7cd0fd1e-beb1-40d5-9b16-0ca0430491cd",
+    "name": "coreid.npi_group_id",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "5a9b3107-cbda-4e90-993f-5e84a7571598",
+        "systemName": "group_practice_id",
+        "displayName": "NPI Group Practice ID",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528821595744
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528813837746,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_group_id",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "469fef37-96c7-4099-9dea-7d3128c32682",
+    "name": "nppes.npi_id",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "1741d1a5-c4c5-4f52-9ea8-66d8f8be5af4",
+        "systemName": "npi_id",
+        "displayName": "NPI ID",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528796363827
+      }
+    ],
+    "properties": {
+      "feed": "npi_id",
+      "Target schema": "nppes",
+      "jcr:created": 1528796344764,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "nppes",
+      "Target table": "npi_id"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "a5ed187b-0902-4fec-a165-4687bfcecba7",
+    "name": "coreid.npi_entity",
+    "encrypted": false,
+    "compressed": false,
+    "sourceForFeeds": [
+      {
+        "id": "3bf1ef3c-8fcd-45f1-a005-449461464491",
+        "systemName": "npi_entity",
+        "displayName": "NPI Entity",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528798791032
+      }
+    ],
+    "properties": {
+      "jcr:created": 1528798791082,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "coreid.npi_entity",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "260202ee-523a-4b3e-90aa-fdf88223824b",
+    "name": "nppes.npi_entity",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "3bf1ef3c-8fcd-45f1-a005-449461464491",
+        "systemName": "npi_entity",
+        "displayName": "NPI Entity",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528798791032
+      }
+    ],
+    "properties": {
+      "feed": "npi_entity",
+      "Target schema": "nppes",
+      "jcr:created": 1528798791082,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "nppes",
+      "Target table": "npi_entity"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "ff6fd2ca-a32e-4e26-8be6-bd2a537161f6",
+    "name": "prescription.rxsummary2015",
+    "encrypted": false,
+    "compressed": false,
+    "properties": {
+      "jcr:created": 1525809733160,
+      "Source Database Connection": "ed2c980a-0162-1000-ebd6-d58f9a57d40f",
+      "Database Connection URL": "jdbc:postgresql://newdb.ccnvdsqtzvqe.us-east-1.rds.amazonaws.com:5432/newdb",
+      "jcr:createdBy": "dladmin",
+      "Source Table": "prescription.rxsummary2015",
+      "jcr:primaryType": "tba:properties"
+    },
+    "datasourceType": "DatabaseDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "1cf86988-b597-460c-9503-b334ad047836",
+    "name": "nppes.npi_location",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "6665d3bb-d05f-4f51-a64b-a894fd92c5ad",
+        "systemName": "npi_location",
+        "displayName": "NPI Location",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528806377066
+      }
+    ],
+    "properties": {
+      "feed": "npi_location",
+      "Target schema": "nppes",
+      "jcr:created": 1528806377123,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "nppes",
+      "Target table": "npi_location"
+    },
+    "datasourceType": "HiveDatasource"
+  },
+  {
+    "@type": "DerivedDatasource",
+    "id": "bec6a29f-8df3-4f46-82f3-73333144d6ea",
+    "name": "nppes.npi_provider_professional",
+    "encrypted": false,
+    "compressed": false,
+    "destinationForFeeds": [
+      {
+        "id": "25219d66-002f-4cd4-bc89-7895509c7112",
+        "systemName": "npi_provider_professional",
+        "displayName": "NPI Provider Professional",
+        "state": "DISABLED",
+        "allowIndexing": false,
+        "modifiedTime": 1528822602307
+      }
+    ],
+    "properties": {
+      "feed": "npi_provider_professional",
+      "Target schema": "nppes",
+      "jcr:created": 1528822602406,
+      "jcr:createdBy": "dladmin",
+      "jcr:primaryType": "tba:properties",
+      "category": "nppes",
+      "Target table": "npi_provider_professional"
+    },
+    "datasourceType": "HiveDatasource"
+  }
+]

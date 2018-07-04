@@ -26,6 +26,8 @@ import com.thinkbiganalytics.spark.dataprofiler.output.OutputRow;
 
 import org.apache.spark.sql.types.StructField;
 
+import org.apache.spark.sql.Row;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -224,6 +226,15 @@ public class IntegerColumnStatistics extends StandardColumnStatistics {
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.MEAN), String.valueOf(df.format(mean))));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.STDDEV), String.valueOf(df.format(stddev))));
         rows.add(new OutputRow(columnField.name(), String.valueOf(MetricType.VARIANCE), String.valueOf(df.format(variance))));
+        Row row = profilerConfiguration.getAdvancedStats(columnField.name());
+        rows.add(new OutputRow(columnField.name(), "5 percentile", String.valueOf(row.getDouble(0))));
+        rows.add(new OutputRow(columnField.name(), "25 percentile", String.valueOf(row.getDouble(1))));
+        rows.add(new OutputRow(columnField.name(), "50 percentile", String.valueOf(row.getDouble(2))));
+        rows.add(new OutputRow(columnField.name(), "Median", String.valueOf(row.getDouble(2))));
+        rows.add(new OutputRow(columnField.name(), "75 percentile", String.valueOf(row.getDouble(3))));
+        rows.add(new OutputRow(columnField.name(), "95 percentile", String.valueOf(row.getDouble(4))));
+
+
         return rows;
     }
 

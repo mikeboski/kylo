@@ -27,6 +27,7 @@ import com.thinkbiganalytics.spark.SparkContextService;
 import com.thinkbiganalytics.spark.dataprofiler.ProfilerConfiguration;
 import com.thinkbiganalytics.spark.dataprofiler.StatisticsModel;
 import com.thinkbiganalytics.spark.dataprofiler.output.OutputWriter;
+import com.thinkbiganalytics.spark.dataprofiler.output.OutputWriterDataSet;
 import com.thinkbiganalytics.spark.policy.FieldPolicyLoader;
 
 
@@ -48,6 +49,19 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+//MOB start
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+
+//MOB end
+
+
 
 /**
  * Generate data profile statistics for a table/query, and write result to a table
@@ -105,72 +119,136 @@ public class Profiler {
         /*next line turns it back to comma */
         queryString = queryString.replace("`comma`", "," );
 
-        
+        log.info("[PROFILER-INFO] profilerConfiguration.actionType: [{}]", profilerConfiguration.actionType);
 
-        /* Run query and get result */
-        log.info("[PROFILER-INFO] Analyzing profile statistics for: [{}]", queryString);
-        resultDF = sparkContextService.sql(sqlContext, queryString);
+        if( "dataset".equals(profilerConfiguration.actionType)) {
 
-        log.info("[PROFILER-INFO] schema: [{}]",resultDF.schema().treeString());
-        StructField fields[] = resultDF.schema().fields();
+            String profileOutputTable = profilerConfiguration.getOutputTableName();
+            String dataset_json_file = "/tmp/"+profileOutputTable+".json";
 
-        for (StructField f: fields) {           
-            //Do your stuff here
-            log.info("[PROFILER-INFO] schema  field name: [{}]",f.name());
-            log.info("[PROFILER-INFO] schema  field type: [{}]",f.dataType());
-            log.info("[PROFILER-INFO] schema  field type.simpleString(): [{}]",f.dataType().simpleString());
-            log.info("[PROFILER-INFO] schema  field is IntegerType: [{}]",f.dataType().simpleString() == "int");
-            if(f.dataType().simpleString() == "int") {
-                String sql_str = "SELECT percentile(npi_all."+f.name()+", 0.05) as "+f.name()+"_5_percent ";
-                sql_str += ", percentile(npi_all."+f.name()+", 0.25) as "+f.name()+"_25_percent ";
-                sql_str += ", percentile(npi_all."+f.name()+", 0.50) as "+f.name()+"_median ";
-                sql_str += ", percentile(npi_all."+f.name()+", 0.75) as "+f.name()+"_75_percent ";
-                sql_str += ", percentile(npi_all."+f.name()+", 0.95) as "+f.name()+"_95_percent ";
-                sql_str += " FROM `nppes`.`npi_entity` npi_all ";
-                sql_str += " INNER JOIN `testing`.`jsonnpilisttable` npi_subset ON ";
-                sql_str += "npi_subset.`npi` = npi_all.`npi`";
-                log.info("MOB percentile Part A");
-                DataSet percentileDF = sparkContextService.sql(sqlContext, sql_str); 
-                log.info("MOB percentile Part B");
-                
-               List<Row> rows = percentileDF.collectAsList();
-        
-               log.info("MOB percentile Part C");
-                //.map(_.toSeq);
-                log.info("MOB percentile [{}]", rows.toArray()[0]);
-                profilerConfiguration.addAdvancedStats(f.name(), rows.get(0));
+            log.info("[Dataset-INFO] profilerConfiguration.actionType [{}]", profilerConfiguration.actionType );
 
-                log.info("MOB percentile 0.05 Value [{}]", rows.get(0).get(0));
-                log.info("MOB percentile 0.05 Double Value [{}]", rows.get(0).getDouble(0));
-                log.info("MOB percentile 0.25 Value [{}]", rows.get(0).get(1));
-                log.info("MOB percentile 0.25 Double Value [{}]", rows.get(0).getDouble(1));
-                
-                
+            log.info("[Dataset-INFO]"+" DROP TABLE IF EXISTS "+ profileOutputTable);
+            DataSet notused_df =sparkContextService.sql(sqlContext,"DROP TABLE IF EXISTS "+ profileOutputTable);
+            log.info("[Dataset-INFO] "+"DROP TABLE DONE!");
+
+
+
+            JSONArray company = new JSONArray();
+
+            JSONObject jsonObject = new JSONObject();
+
+            jsonObject.put("Dataset_Name", "fakedb.faketable");
+            jsonObject.put("Record_Count", 54984165);
+            jsonObject.put("Field_Count", 9);
+            jsonObject.put("Text_Count", 4);
+            jsonObject.put("Numeric_Count", 4);
+            jsonObject.put("Boolean_Count", 1);
+
+
+            JSONObject jsonObject2 = new JSONObject();
+
+            jsonObject2.put("Dataset_Name", "fakedb.faketable2");
+            jsonObject2.put("Record_Count", 549841);
+            jsonObject2.put("Field_Count", 10);
+            jsonObject2.put("Text_Count", 4);
+            jsonObject2.put("Numeric_Count", 3);
+            jsonObject2.put("Boolean_Count", 3);
+
+
+            company.add(jsonObject);
+            company.add(jsonObject2);
+
+            // try-with-resources statement based on post comment below :)
+            try (FileWriter file = new FileWriter(dataset_json_file)) {
+                file.write(company.toJSONString());
+                log.info("[Dataset-INFO]"+"Successfully Copied JSON Object to File...[{}]", dataset_json_file);
+                log.info("[Dataset-INFO]"+"JSON Object: " + company);
+            } catch (Exception e) {
+                log.info("[Dataset-INFO]"+ "Failed to write file.");
+                e.printStackTrace();
             }
 
 
-            //resultDF.schema().
-        }
 
 
 
-        //MOB todo: remove return;
-        if(cat) {
-            //return;
-        }
+
+            //sparkContextService.sql(sqlContext, "CREATE TABLE IF NOT EXISTS src (Dataset_Name STRING, Record_Count STRING)");
 
 
-        /* Get profile statistics and write to table */
-        final StatisticsModel statisticsModel = profiler.profile(resultDF, profilerConfiguration);
+            DataSet df = sparkContextService.toDataSet(sqlContext.read()
+                    .json("file://"+dataset_json_file));
+            df.write().mode("overwrite").saveAsTable(profileOutputTable);
 
-        if (statisticsModel != null) {
-            OutputWriter.writeModel(statisticsModel, profilerConfiguration, sqlContext, sparkContextService);
+
+
         } else {
-            log.info("[PROFILER-INFO] No data to process. Hence, no profile statistics generated.");
-        }
+            /* Run query and get result */
+            log.info("[PROFILER-INFO] Analyzing profile statistics for: [{}]", queryString);
+            resultDF = sparkContextService.sql(sqlContext, queryString);
 
-        /* Wrap up */
-        log.info("[PROFILER-INFO] Profiling finished.");
+            log.info("[PROFILER-INFO] schema: [{}]", resultDF.schema().treeString());
+            StructField fields[] = resultDF.schema().fields();
+
+            for (StructField f : fields) {
+                //Do your stuff here
+                log.info("[PROFILER-INFO] schema  field name: [{}]", f.name());
+                log.info("[PROFILER-INFO] schema  field type: [{}]", f.dataType());
+                log.info("[PROFILER-INFO] schema  field type.simpleString(): [{}]", f.dataType().simpleString());
+                log.info("[PROFILER-INFO] schema  field is IntegerType: [{}]", f.dataType().simpleString() == "int");
+                if (f.dataType().simpleString() == "int") {
+                    String sql_str = "SELECT percentile(npi_all." + f.name() + ", 0.05) as " + f.name() + "_5_percent ";
+                    sql_str += ", percentile(npi_all." + f.name() + ", 0.25) as " + f.name() + "_25_percent ";
+                    sql_str += ", percentile(npi_all." + f.name() + ", 0.50) as " + f.name() + "_median ";
+                    sql_str += ", percentile(npi_all." + f.name() + ", 0.75) as " + f.name() + "_75_percent ";
+                    sql_str += ", percentile(npi_all." + f.name() + ", 0.95) as " + f.name() + "_95_percent ";
+                    sql_str += " FROM `nppes`.`npi_entity` npi_all ";
+                    sql_str += " INNER JOIN `testing`.`jsonnpilisttable` npi_subset ON ";
+                    sql_str += "npi_subset.`npi` = npi_all.`npi`";
+                    log.info("MOB percentile Part A");
+                    DataSet percentileDF = sparkContextService.sql(sqlContext, sql_str);
+                    log.info("MOB percentile Part B");
+
+                    List<Row> rows = percentileDF.collectAsList();
+
+                    log.info("MOB percentile Part C");
+                    //.map(_.toSeq);
+                    log.info("MOB percentile [{}]", rows.toArray()[0]);
+                    profilerConfiguration.addAdvancedStats(f.name(), rows.get(0));
+
+                    log.info("MOB percentile 0.05 Value [{}]", rows.get(0).get(0));
+                    log.info("MOB percentile 0.05 Double Value [{}]", rows.get(0).getDouble(0));
+                    log.info("MOB percentile 0.25 Value [{}]", rows.get(0).get(1));
+                    log.info("MOB percentile 0.25 Double Value [{}]", rows.get(0).getDouble(1));
+
+
+                }
+
+
+                //resultDF.schema().
+            }
+
+
+            //MOB todo: remove return;
+            if (cat) {
+                //return;
+            }
+
+
+            /* Get profile statistics and write to table */
+            final StatisticsModel statisticsModel = profiler.profile(resultDF, profilerConfiguration);
+
+            if (statisticsModel != null) {
+                OutputWriter.writeModel(statisticsModel, profilerConfiguration, sqlContext, sparkContextService);
+            } else {
+                log.info("[PROFILER-INFO] No data to process. Hence, no profile statistics generated.");
+            }
+
+            /* Wrap up */
+            log.info("[PROFILER-INFO] Profiling finished.");
+
+        }
     }
 
     /**
@@ -239,6 +317,9 @@ public class Profiler {
             case "query":
                 retVal = profileObjectDesc;
                 break;
+            case "dataset":
+                retVal = "Select fake;";
+                break;
             case "npilist":
                 log.info("npilist getCSV file case.");
                 log.error("havenot coded for npilist yet: for object type ({})", profileObjectType);
@@ -268,8 +349,11 @@ public class Profiler {
 
         if (n <= 0) {
             log.error("Illegal command line argument for n for top_n values ({})", n);
-            showCommandLineArgs();
-            return null;
+            //MOB fourcing to default value of 10 when bad param sent instead of fail:
+            //MOB  showCommandLineArgs();
+            //MOB return null;
+            profilerConfiguration.setNumberOfTopNValues(10);
+
         } else {
             profilerConfiguration.setNumberOfTopNValues(n);
         }

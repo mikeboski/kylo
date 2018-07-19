@@ -123,7 +123,7 @@ public class Profiler {
 
         if( "dataset".equals(profilerConfiguration.actionType)) {
 
-            String profileOutputTable = profilerConfiguration.getOutputTableName();
+            String profileOutputTable =  profilerConfiguration.getOutputDbName()+"."+profilerConfiguration.getOutputTableName();
             String dataset_json_file = "/tmp/"+profileOutputTable+".json";
 
             log.info("[Dataset-INFO] profilerConfiguration.actionType [{}]", profilerConfiguration.actionType );
@@ -133,37 +133,68 @@ public class Profiler {
             log.info("[Dataset-INFO] "+"DROP TABLE DONE!");
 
 
+            JSONArray rows = new JSONArray();
 
-            JSONArray company = new JSONArray();
+            String[] tables = queryString.split("\\|\\|\\|");
 
-            JSONObject jsonObject = new JSONObject();
+            for (String table : tables){
 
-            jsonObject.put("Dataset_Name", "fakedb.faketable");
-            jsonObject.put("Record_Count", 54984165);
-            jsonObject.put("Field_Count", 9);
-            jsonObject.put("Text_Count", 4);
-            jsonObject.put("Numeric_Count", 4);
-            jsonObject.put("Boolean_Count", 1);
+                log.info("[Dataset-INFO] "+"table: " + table);
 
+                JSONObject jsonObject = new JSONObject();
 
-            JSONObject jsonObject2 = new JSONObject();
+                jsonObject.put("Dataset_Name", table);
+                String sql_str = "Select count(*) as count from "+table;
+                log.info("[Dataset-INFO] start get count");
+                DataSet countDF = sparkContextService.sql(sqlContext, sql_str);
 
-            jsonObject2.put("Dataset_Name", "fakedb.faketable2");
-            jsonObject2.put("Record_Count", 549841);
-            jsonObject2.put("Field_Count", 10);
-            jsonObject2.put("Text_Count", 4);
-            jsonObject2.put("Numeric_Count", 3);
-            jsonObject2.put("Boolean_Count", 3);
+                List<Row> countRows = countDF.collectAsList();
+                Long recordCount = countRows.get(0).getLong(0);
+                log.info("[Dataset-INFO] count [{}]",  recordCount);
 
 
-            company.add(jsonObject);
-            company.add(jsonObject2);
+                jsonObject.put("Record_Count", recordCount);
+
+
+                /* Run query and get result limit one cause only interested in schema*/
+
+                sql_str = "Select * from " + table + " limit 1";
+                log.info("[Dataset-INFO] start get schema");
+                DataSet schemaDF = sparkContextService.sql(sqlContext, sql_str);
+
+                log.info("[Dataset-INFO] schema: [{}]", schemaDF.schema().treeString());
+                StructField fields[] = schemaDF.schema().fields();
+
+                for (StructField f : fields) {
+                    //Do your stuff here
+                    log.info("[PROFILER-INFO] schema  field name: [{}]", f.name());
+                    log.info("[PROFILER-INFO] schema  field type: [{}]", f.dataType());
+                    log.info("[PROFILER-INFO] schema  field type.simpleString(): [{}]", f.dataType().simpleString());
+                    log.info("[PROFILER-INFO] schema  field is IntegerType: [{}]", f.dataType().simpleString() == "int");
+
+                    // tinyint, bigint, int     double      string  binary
+                }
+
+
+                jsonObject.put("Field_Count", 9);
+                jsonObject.put("Text_Count", 4);
+                jsonObject.put("Numeric_Count", 4);
+                jsonObject.put("Boolean_Count", 1);
+
+                rows.add(jsonObject);
+
+
+            }
+
+
+
+
 
             // try-with-resources statement based on post comment below :)
             try (FileWriter file = new FileWriter(dataset_json_file)) {
-                file.write(company.toJSONString());
+                file.write(rows.toJSONString());
                 log.info("[Dataset-INFO]"+"Successfully Copied JSON Object to File...[{}]", dataset_json_file);
-                log.info("[Dataset-INFO]"+"JSON Object: " + company);
+                log.info("[Dataset-INFO]"+"JSON Object: " + rows);
             } catch (Exception e) {
                 log.info("[Dataset-INFO]"+ "Failed to write file.");
                 e.printStackTrace();
@@ -318,7 +349,7 @@ public class Profiler {
                 retVal = profileObjectDesc;
                 break;
             case "dataset":
-                retVal = "Select fake;";
+                retVal = profileObjectDesc;
                 break;
             case "npilist":
                 log.info("npilist getCSV file case.");
